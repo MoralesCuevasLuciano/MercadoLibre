@@ -2,6 +2,7 @@ package models.Juguete;
 
 import enums.CategoriaJuguete;
 import enums.MaterialJuguete;
+import models.Producto;
 
 public class JuegoDeMesa extends  Juguete{
     int cantidadJugadores;
@@ -63,5 +64,10 @@ public class JuegoDeMesa extends  Juguete{
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return 0;
     }
 }

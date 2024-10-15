@@ -1,5 +1,7 @@
 package models.Herramienta;
 
+import models.Producto;
+
 public class HerramientaElectrica extends Herramienta{
 
     private float voltaje;
@@ -80,5 +82,10 @@ public class HerramientaElectrica extends Herramienta{
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return 0;
     }
 }

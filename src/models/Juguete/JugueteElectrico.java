@@ -2,6 +2,7 @@ package models.Juguete;
 
 import enums.CategoriaJuguete;
 import enums.MaterialJuguete;
+import models.Producto;
 
 public class JugueteElectrico extends Juguete{
     int cantidadDePilas;
@@ -67,5 +68,10 @@ public class JugueteElectrico extends Juguete{
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return 0;
     }
 }

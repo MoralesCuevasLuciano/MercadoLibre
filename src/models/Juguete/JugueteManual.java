@@ -2,6 +2,7 @@ package models.Juguete;
 
 import enums.CategoriaJuguete;
 import enums.MaterialJuguete;
+import models.Producto;
 
 public class JugueteManual extends Juguete{
 
@@ -20,5 +21,21 @@ public class JugueteManual extends Juguete{
     @Override
     public void imprimirCliente() {
        super.imprimirCliente();
+    }
+
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return 0;
     }
 }

@@ -1,6 +1,7 @@
 package models.Herramienta;
 
 import enums.CategoriasHerramientas;
+import models.Producto;
 
 public class HerramientaManual extends Herramienta{
 
@@ -62,5 +63,10 @@ public class HerramientaManual extends Herramienta{
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return 0;
     }
 }

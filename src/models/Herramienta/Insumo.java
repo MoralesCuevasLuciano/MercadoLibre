@@ -1,6 +1,7 @@
 package models.Herramienta;
 
 import enums.MaterialInsumo;
+import models.Producto;
 
 public class Insumo extends Herramienta {
 
@@ -88,5 +89,10 @@ public class Insumo extends Herramienta {
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    @Override
+    public int compareTo(Producto o) {
+        return 0;
     }
 }
