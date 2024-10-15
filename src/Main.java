@@ -6,6 +6,8 @@ public class Main {
 
         System.out.println("probando git");
 
+        System.out.println("Todos son pruebas");
+
 
     }
 }
