@@ -3,7 +3,7 @@ package models;
 import java.util.Objects;
 import java.util.UUID;
 
-public abstract class Producto {
+public abstract class Producto implements Comparable<Producto> {
     private String id;
     private String nombre;
     private int stock;

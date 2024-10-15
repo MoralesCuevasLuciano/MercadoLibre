@@ -7,6 +7,8 @@ public class JugueteElectrico extends Juguete{
     int cantidadDePilas;
     float voltaje;
 
+
+    /**Constructores*/
     public JugueteElectrico(String nombre, String marca, String modelo, double precio, int stock, CategoriaJuguete categoria, int edad, MaterialJuguete material, int cantidadDePilas, float voltaje) {
         super(nombre, marca, modelo, precio, stock, categoria, edad, material);
         this.cantidadDePilas = cantidadDePilas;
@@ -14,24 +16,25 @@ public class JugueteElectrico extends Juguete{
     }
 
 
+    /**Getters y Setters*/
     public int getCantidadDePilas() {
         return cantidadDePilas;
     }
-
-    public JugueteElectrico CantidadDePilas(int cantidadDePilas) {
+    public JugueteElectrico cantidadDePilas(int cantidadDePilas) {
         this.cantidadDePilas = cantidadDePilas;
         return this;
     }
-
     public float getVoltaje() {
         return voltaje;
     }
-
-    public JugueteElectrico Voltaje(float voltaje) {
+    public JugueteElectrico voltaje(float voltaje) {
         this.voltaje = voltaje;
         return this;
     }
 
+
+
+    /**Imprimir*/
     @Override
     public void imprimir() {
         super.imprimir();
@@ -44,5 +47,25 @@ public class JugueteElectrico extends Juguete{
         super.imprimirCliente();
         System.out.println("Cantidad de baterias" + getCantidadDePilas());
         System.out.println("Voltaje " + getVoltaje());
+    }
+
+    @Override
+    public String toString() {
+        return "JugueteElectrico{" +
+                "cantidadDePilas=" + cantidadDePilas +
+                ", voltaje=" + voltaje +
+                '}';
+    }
+
+
+    /**Equals y HashCode*/
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
     }
 }

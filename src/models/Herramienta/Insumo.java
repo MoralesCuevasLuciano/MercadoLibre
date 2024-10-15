@@ -18,55 +18,75 @@ public class Insumo extends Herramienta {
         this.tipoDeMaterial = tipoDeMaterial;
     }
 
+
+
+    /**Getters y Setters*/
     public MaterialInsumo getTipoDeMaterial() {
         return tipoDeMaterial;
     }
-
-    public Insumo TipoDeMaterial(MaterialInsumo tipoDeMaterial) {
+    public Insumo tipoDeMaterial(MaterialInsumo tipoDeMaterial) {
         this.tipoDeMaterial = tipoDeMaterial;
         return this;
     }
-
     public float getLargo() {
         return largo;
     }
-
-    public Insumo Largo(float largo) {
+    public Insumo largo(float largo) {
         this.largo = largo;
         return this;
     }
-
     public float getDiametro() {
         return diametro;
     }
-
-    public Insumo Diametro(float diametro) {
+    public Insumo diametro(float diametro) {
         this.diametro = diametro;
         return this;
     }
-
     public float getAncho() {
         return ancho;
     }
-
-    public Insumo Ancho(float ancho) {
+    public Insumo ancho(float ancho) {
         this.ancho = ancho;
         return this;
     }
 
+
+
+    /**Imprimir*/
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Largo" + getLargo());
-        System.out.println("Ancho" + getAncho());
-        System.out.println("------------------------------------");
+        System.out.println("Largo:....................."+ getLargo());
+        System.out.println("Ancho:....................." + getAncho());
+        System.out.println("==============================================");
     }
-
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Largo" + getLargo());
-        System.out.println("Ancho" + getAncho());
-        System.out.println("------------------------------------");
+        System.out.println("Largo:....................." + getLargo());
+        System.out.println("Ancho:....................." + getAncho());
+        System.out.println("==============================================");
+    }
+
+
+    @Override
+    public String toString() {
+        return "Insumo{" +
+                "tipoDeMaterial=" + tipoDeMaterial +
+                ", largo=" + largo +
+                ", ancho=" + ancho +
+                ", diametro=" + diametro +
+                '}';
+    }
+
+
+    /**Equals y HashCode*/
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }
