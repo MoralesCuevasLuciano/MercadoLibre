@@ -4,8 +4,7 @@ import enums.CategoriasHerramientas;
 import models.Producto;
 
 public class HerramientaManual extends Herramienta{
-
-
+    private CategoriasHerramientas categorias;
 
     /**Constructores*/
     public HerramientaManual(String nombre, String marca, String modelo, double precio, int stock, CategoriasHerramientas categorias) {
@@ -13,8 +12,8 @@ public class HerramientaManual extends Herramienta{
         this.categorias = categorias;
     }
 
-    private CategoriasHerramientas categorias;
-
+    public HerramientaManual() {
+    }
 
     /**Getters y Setters*/
     public CategoriasHerramientas getCategorias() {
@@ -25,15 +24,13 @@ public class HerramientaManual extends Herramienta{
         return this;
     }
 
-
-
-
     /**Imprimir*/
     @Override
     public void imprimir() {
       super.imprimir();
-      System.out.println("Precio:...................." + getPrecio());
+      System.out.println("Uso........................" + getCategorias());
       System.out.println("==============================================");
+      System.out.println("");
 
     }
 
@@ -41,8 +38,9 @@ public class HerramientaManual extends Herramienta{
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Precio:...................." + getPrecio());
+        System.out.println("Uso........................" + getCategorias());
         System.out.println("==============================================");
+        System.out.println("");
     }
 
     @Override

@@ -21,6 +21,7 @@ public class Insumo extends Herramienta {
 
 
 
+
     /**Getters y Setters*/
     public MaterialInsumo getTipoDeMaterial() {
         return tipoDeMaterial;

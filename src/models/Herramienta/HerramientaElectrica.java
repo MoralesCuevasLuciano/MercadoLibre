@@ -15,8 +15,8 @@ public class HerramientaElectrica extends Herramienta{
         this.Inalambrico = esInalambrico;
     }
 
-
-
+    public HerramientaElectrica() {
+    }
 
     /**Getters y Setters*/
     public float getVoltaje() {
@@ -41,29 +41,30 @@ public class HerramientaElectrica extends Herramienta{
     @Override
     public void imprimir() {
       super.imprimir();
-        System.out.println("Voltaje:..................." + getVoltaje());
-        System.out.println("==============================================");
-        if(isInalambrico()==true){
-            System.out.println("El producto es inalambrico");
+        System.out.println("Voltaje:...................: " + getVoltaje());System.out.println("==============================================");
+        if(isInalambrico()){
+            System.out.println("La herramienta es inalambrica");
         }else{
-            System.out.println("Producto cableado");
+            System.out.println("La herramienta es cableada ");
         }
+        System.out.println("==============================================");
+        System.out.println("");
+
+    }
+    public void imprimirCliente(){
+        super.imprimirCliente();
+        System.out.println("Voltaje:...................: " + getVoltaje());
+        if(isInalambrico()){
+            System.out.println("La herramienta es inalambrica");
+        }else{
+            System.out.println("La herramienta es cableada ");
+        }
+        System.out.println("==============================================");
+
+        System.out.println("");
     }
 
     //IMPRIMIR SIN ID Y SIN STOCK YA QUE SON DATOS NO NECESARIOS PARA LOS CLIENTES
-
-    @Override
-    public void imprimirCliente() {
-      super.imprimirCliente();
-        System.out.println("Voltaje:..................." + getVoltaje());
-        System.out.println("==============================================");
-        if(isInalambrico()==true){
-            System.out.println("El producto es inalambrico");
-        }else{
-            System.out.println("Producto cableado");
-        }
-
-    }
 
 
     @Override

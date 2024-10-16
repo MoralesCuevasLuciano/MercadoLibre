@@ -16,6 +16,8 @@ public class JugueteElectrico extends Juguete{
         this.voltaje = voltaje;
     }
 
+    public JugueteElectrico() {
+    }
 
     /**Getters y Setters*/
     public int getCantidadDePilas() {
@@ -32,6 +34,10 @@ public class JugueteElectrico extends Juguete{
         this.voltaje = voltaje;
         return this;
     }
+    public JugueteElectrico voltaje(int voltaje) {
+        this.voltaje = (float) voltaje;
+        return this;
+    }
 
 
 
@@ -39,15 +45,15 @@ public class JugueteElectrico extends Juguete{
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Cantidad de baterias" + getCantidadDePilas());
-        System.out.println("Voltaje " + getVoltaje());
+        System.out.println("Cantidad de baterias.......: " + getCantidadDePilas());
+        System.out.println("Voltaje....................: " + getVoltaje());
     }
 
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Cantidad de baterias" + getCantidadDePilas());
-        System.out.println("Voltaje " + getVoltaje());
+        System.out.println("Cantidad de baterias.......: " + getCantidadDePilas());
+        System.out.println("Voltaje....................: " + getVoltaje());
     }
 
     @Override

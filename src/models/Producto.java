@@ -77,25 +77,23 @@ public abstract class Producto implements Comparable<Producto> {
 
     /**Imprimir*/
     public void imprimir() {
-        System.out.println("ID:........................" + getId());
-        System.out.println("Nombre:...................." + getNombre());
-        System.out.println("Marca:....................." + getMarca());
-        System.out.println("Modelo:...................." + getModelo());
-        System.out.println("Precio:...................." + getPrecio());
-        System.out.println("Stock:....................." + getStock());
-        System.out.println("==============================================");
+        System.out.println("ID:........................: " + getId());
+        System.out.println("Nombre:....................: " + getNombre());
+        System.out.println("Marca:.....................: " + getMarca());
+        System.out.println("Modelo:....................: " + getModelo());
+        System.out.println("Precio:....................: " + getPrecio());
+        System.out.println("Stock:.....................: " + getStock());
     }
 
+
+    /**IMPRIMIR SIN ID YA QUE SON DATOS NO NECESARIOS PARA LOS CLIENTES*/
     public void imprimirCliente() {
-        System.out.println("Nombre:...................." + getNombre());
-        System.out.println("Marca:....................." + getMarca());
-        System.out.println("Modelo:...................." + getModelo());
-        System.out.println("Precio:...................." + getPrecio());
-        System.out.println("==============================================");
+        System.out.println("Nombre:....................: " + getNombre());
+        System.out.println("Marca:.....................: " + getMarca());
+        System.out.println("Modelo:....................: " + getModelo());
+        System.out.println("Precio:....................: " + getPrecio());
+        System.out.println("Stock......................: " + getStock());
     }
-
-    /**IMPRIMIR SIN ID Y SIN STOCK YA QUE SON DATOS NO NECESARIOS PARA LOS CLIENTES*/
-    public abstract void imprimirCliente();
 
     @Override
     public String toString() {

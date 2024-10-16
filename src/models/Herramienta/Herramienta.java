@@ -15,8 +15,6 @@ public abstract class Herramienta extends Producto {
 
     /**Imprimir*/
 
-
-
     @Override
     public String toString() {
         return "Herramienta{}";

@@ -16,7 +16,8 @@ public class JuegoDeMesa extends  Juguete{
         this.duracion = duracion;
     }
 
-
+    public JuegoDeMesa() {
+    }
 
     /**Getters y Setters*/
     public int getCantidadJugadores() {
@@ -40,17 +41,19 @@ public class JuegoDeMesa extends  Juguete{
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Duracion:.................." + getDuracion());
-        System.out.println("Cantidad de Jugadores:....." + getCantidadJugadores());
+        System.out.println("Duracion:..................: " + getDuracion());
+        System.out.println("Cantidad de Jugadores:.....: " + getCantidadJugadores());
         System.out.println("==============================================");
+        System.out.println("");
     }
 
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Duracion:.................." + getDuracion());
-        System.out.println("Cantidad de Jugadores:....." + getCantidadJugadores());
+        System.out.println("Duracion:..................: " + getDuracion());
+        System.out.println("Cantidad de Jugadores:.....: " + getCantidadJugadores());
         System.out.println("==============================================");
+        System.out.println("");
     }
 
 
