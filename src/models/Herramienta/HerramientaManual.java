@@ -3,7 +3,7 @@ package models.Herramienta;
 import enums.CategoriasHerramientas;
 import models.Producto;
 
-public class HerramientaManual extends Herramienta{
+public class HerramientaManual extends Herramienta implements Comparable<HerramientaManual>{
     private CategoriasHerramientas categorias;
 
     /**Constructores*/
@@ -63,8 +63,9 @@ public class HerramientaManual extends Herramienta{
         return super.hashCode();
     }
 
+
     @Override
-    public int compareTo(Producto o) {
-        return 0;
+    public int compareTo(HerramientaManual o) {
+        return this.categorias.compareTo(o.categorias);
     }
 }

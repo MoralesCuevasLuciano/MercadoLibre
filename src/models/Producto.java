@@ -120,4 +120,9 @@ public abstract class Producto implements Comparable<Producto> {
     public int hashCode() {
         return Objects.hash(id, nombre, stock, precio, marca, modelo);
     }
+
+    @Override
+    public int compareTo(Producto o) {
+        return Double.compare(this.precio,o.precio);
+    }
 }

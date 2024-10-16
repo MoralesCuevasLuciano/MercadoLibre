@@ -34,8 +34,4 @@ public class JugueteManual extends Juguete{
         return super.equals(o);
     }
 
-    @Override
-    public int compareTo(Producto o) {
-        return 0;
-    }
 }

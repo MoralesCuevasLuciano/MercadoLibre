@@ -85,8 +85,5 @@ public class HerramientaElectrica extends Herramienta{
         return super.hashCode();
     }
 
-    @Override
-    public int compareTo(Producto o) {
-        return 0;
-    }
+
 }

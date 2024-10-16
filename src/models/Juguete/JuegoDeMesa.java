@@ -69,8 +69,5 @@ public class JuegoDeMesa extends  Juguete{
         return super.hashCode();
     }
 
-    @Override
-    public int compareTo(Producto o) {
-        return 0;
-    }
+
 }

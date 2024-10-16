@@ -76,8 +76,5 @@ public class JugueteElectrico extends Juguete{
         return super.equals(o);
     }
 
-    @Override
-    public int compareTo(Producto o) {
-        return 0;
-    }
+
 }
