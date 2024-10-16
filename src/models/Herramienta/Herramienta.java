@@ -10,28 +10,11 @@ public abstract class Herramienta extends Producto {
         super(nombre, marca, modelo, precio, stock);
     }
 
-
+    public Herramienta() {
+    }
 
     /**Imprimir*/
-    @Override
-    public void imprimir() {
-        System.out.println("ID:........................" + getId());
-        System.out.println("Nombre:...................." + getNombre());
-        System.out.println("Marca:....................." + getMarca());
-        System.out.println("Modelo:...................." + getModelo());
-        System.out.println("Precio:...................." + getPrecio());
-        System.out.println("Stock:....................." + getStock());
-        System.out.println("==============================================");
-    }
 
-    @Override
-    public void imprimirCliente() {
-        System.out.println("Nombre:...................." + getNombre());
-        System.out.println("Marca:....................." + getMarca());
-        System.out.println("Modelo:...................." + getModelo());
-        System.out.println("Precio:...................." + getPrecio());
-        System.out.println("==============================================");
-    }
 
 
     @Override

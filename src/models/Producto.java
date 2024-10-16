@@ -9,6 +9,7 @@ public abstract class Producto implements Comparable<Producto> {
     private int stock;
     private double precio;
     private String marca;
+    private String modelo;
 
     /**Constructores*/
     public Producto(String nombre, String marca, String modelo, double precio, int stock) {
@@ -20,54 +21,78 @@ public abstract class Producto implements Comparable<Producto> {
         this.stock = stock;
     }
     public Producto() {
+        this.id = UUID.randomUUID().toString();
     }
-    private String modelo;
 
 
     /**Getters y Setters*/
     public String getModelo() {
         return modelo;
     }
-    public Producto modelo(String modelo) {
-        this.modelo = modelo;
-        return this;
-    }
+
     public String getMarca() {
         return marca;
     }
-    public Producto marca(String marca) {
-        this.marca = marca;
-        return this;
-    }
+
     public double getPrecio() {
         return precio;
     }
-    public Producto precio(double precio) {
-        this.precio = precio;
-        return this;
-    }
+
     public int getStock() {
         return stock;
     }
-    public Producto stock(int stock) {
-        this.stock = stock;
-        return this;
-    }
+
     public String getNombre() {
         return nombre;
     }
-    public Producto nombre(String nombre) {
-        this.nombre = nombre;
-        return this;
-    }
+
     public String getId() {
         return id;
     }
 
+    public Producto nombre(String nombre) {
+        this.nombre = nombre;
+        return this;
+    }
 
+    public Producto stock(int stock) {
+        this.stock = stock;
+        return this;
+    }
+
+    public Producto precio(double precio) {
+        this.precio = precio;
+        return this;
+    }
+
+    public Producto marca(String marca) {
+        this.marca = marca;
+        return this;
+    }
+
+    public Producto modelo(String modelo) {
+        this.modelo = modelo;
+        return this;
+    }
 
     /**Imprimir*/
-    public abstract void imprimir();
+    public void imprimir() {
+        System.out.println("ID:........................" + getId());
+        System.out.println("Nombre:...................." + getNombre());
+        System.out.println("Marca:....................." + getMarca());
+        System.out.println("Modelo:...................." + getModelo());
+        System.out.println("Precio:...................." + getPrecio());
+        System.out.println("Stock:....................." + getStock());
+        System.out.println("==============================================");
+    }
+
+    public void imprimirCliente() {
+        System.out.println("Nombre:...................." + getNombre());
+        System.out.println("Marca:....................." + getMarca());
+        System.out.println("Modelo:...................." + getModelo());
+        System.out.println("Precio:...................." + getPrecio());
+        System.out.println("==============================================");
+    }
 
     /**IMPRIMIR SIN ID Y SIN STOCK YA QUE SON DATOS NO NECESARIOS PARA LOS CLIENTES*/
     public abstract void imprimirCliente();
