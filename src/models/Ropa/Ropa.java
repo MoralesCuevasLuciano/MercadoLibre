@@ -1,22 +1,20 @@
 package models.Ropa;
 
 import enums.GeneroRopa;
+import enums.TalleRemera;
 import models.Producto;
-
-import java.util.Comparator;
-import java.util.List;
 
 public abstract class Ropa extends Producto {
 
 
     private String color;
     private GeneroRopa genero;
-    private float talle;
+    private TalleRemera talle;
     private String material;
 
 
-    /*Constructor*/
-    public Ropa(String nombre, String marca, String modelo, double precio, int stock, String color, GeneroRopa genero, float talle, String material) {
+    /**Constructor*/
+    public Ropa(String nombre, String marca, String modelo, double precio, int stock, String color, GeneroRopa genero, TalleRemera talle, String material) {
         super(nombre, marca, modelo, precio, stock);
         this.color = color;
         this.genero = genero;
@@ -24,10 +22,8 @@ public abstract class Ropa extends Producto {
         this.material = material;
     }
 
-    public Ropa() {
-    }
 
-    /*Getters y Setters*/
+    /**Getters y Setters*/
     public String getColor() {
         return color;
     }
@@ -40,30 +36,27 @@ public abstract class Ropa extends Producto {
     public GeneroRopa getGenero() {
         return genero;
     }
-
     public Ropa genero(GeneroRopa genero) {
         this.genero = genero;
         return this;
     }
-
-    public float getTalle() {
+    public TalleRemera getTalle() {
         return talle;
     }
-
-    public Ropa talle(float talle) {
+    public Ropa talle(TalleRemera talle) {
         this.talle = talle;
         return this;
     }
-
     public String getMaterial() {
         return material;
     }
-
     public Ropa material(String material) {
         this.material = material;
         return this;
     }
 
+
+    /**Imprimir*/
     @Override
     public void imprimir() {
         super.imprimir();
@@ -73,7 +66,7 @@ public abstract class Ropa extends Producto {
         System.out.println("Material...................: " + getMaterial());
     }
 
-    /*
+    /**
     CODIGO PARA REALIZAR COMPARACIONES
 
     public void sort(List<Ropa>list) {
