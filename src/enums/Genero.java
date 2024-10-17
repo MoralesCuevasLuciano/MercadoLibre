@@ -1,6 +1,6 @@
 package enums;
 
-public enum GeneroRopa {
+public enum Genero {
     HOMBRE,
     MUJER,
     UNISEX;

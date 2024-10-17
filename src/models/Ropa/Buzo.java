@@ -1,6 +1,6 @@
 package models.Ropa;
 
-import enums.GeneroRopa;
+import enums.Genero;
 import enums.TalleRemera;
 
 public class Buzo extends Ropa {
@@ -11,7 +11,7 @@ public class Buzo extends Ropa {
     private boolean impermeable;
 
     /**Constructores*/
-    public Buzo(String nombre, String marca, String modelo, double precio, int stock, String color, GeneroRopa genero, TalleRemera talle, String material, boolean tieneCapucha, boolean impermeable, boolean tieneEstampado, boolean tieneBolsillos, boolean tieneCierre) {
+    public Buzo(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material, boolean tieneCapucha, boolean impermeable, boolean tieneEstampado, boolean tieneBolsillos, boolean tieneCierre) {
         super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
         this.tieneCapucha = tieneCapucha;
         this.impermeable = impermeable;

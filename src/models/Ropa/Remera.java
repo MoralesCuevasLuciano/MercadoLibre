@@ -1,6 +1,6 @@
 package models.Ropa;
 
-import enums.GeneroRopa;
+import enums.Genero;
 import enums.TalleRemera;
 import enums.TipoDeRemera;
 
@@ -10,7 +10,7 @@ public class Remera extends Ropa {
 
 
     /**Constructores*/
-    public Remera(String nombre, String marca, String modelo, double precio, int stock, String color, GeneroRopa genero, TalleRemera talle, String material) {
+    public Remera(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material) {
         super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
     }
 

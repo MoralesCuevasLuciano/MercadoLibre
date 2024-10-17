@@ -1,6 +1,6 @@
 package models.Ropa;
 
-import enums.GeneroRopa;
+import enums.Genero;
 import enums.TalleRemera;
 import models.Producto;
 
@@ -8,13 +8,13 @@ public abstract class Ropa extends Producto {
 
 
     private String color;
-    private GeneroRopa genero;
+    private Genero genero;
     private TalleRemera talle;
     private String material;
 
 
     /**Constructor*/
-    public Ropa(String nombre, String marca, String modelo, double precio, int stock, String color, GeneroRopa genero, TalleRemera talle, String material) {
+    public Ropa(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material) {
         super(nombre, marca, modelo, precio, stock);
         this.color = color;
         this.genero = genero;
@@ -33,10 +33,10 @@ public abstract class Ropa extends Producto {
         return this;
     }
 
-    public GeneroRopa getGenero() {
+    public Genero getGenero() {
         return genero;
     }
-    public Ropa genero(GeneroRopa genero) {
+    public Ropa genero(Genero genero) {
         this.genero = genero;
         return this;
     }

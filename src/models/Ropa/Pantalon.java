@@ -1,6 +1,6 @@
 package models.Ropa;
 
-import enums.GeneroRopa;
+import enums.Genero;
 import enums.TalleRemera;
 import enums.UsoCalzadoPantalon;
 
@@ -12,7 +12,7 @@ public class Pantalon extends Ropa{
 
 
     /**Constructores*/
-    public Pantalon(String nombre, String marca, String modelo, double precio, int stock, String color, GeneroRopa genero, TalleRemera talle, String material, int cantidadBolsillos, String estilo, UsoCalzadoPantalon usoDeCalzado, boolean tieneCierre) {
+    public Pantalon(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material, int cantidadBolsillos, String estilo, UsoCalzadoPantalon usoDeCalzado, boolean tieneCierre) {
         super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
         this.cantidadBolsillos = cantidadBolsillos;
         this.estilo = estilo;
