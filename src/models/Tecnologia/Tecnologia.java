@@ -46,30 +46,21 @@ public abstract class Tecnologia extends Producto{
         return this;
     }
 
-    @Override
-    public String toString() {
-        return "Tecnologia{" +
-                "peso=" + peso +
-                ", color='" + color + '\'' +
-                ", anio=" + anio +
-                '}';
-    }
-
     /**Imprimir*/
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Peso:......................: " + getPeso());
-        System.out.println("Color......................: " + getColor());
-        System.out.println("Año:.......................: " + getAnio());
+        System.out.println("Peso:......................: " + peso);
+        System.out.println("Color......................: " + color);
+        System.out.println("Año:.......................: " + anio);
     }
 
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Peso:......................: " + getPeso());
-        System.out.println("Color......................: " + getColor());
-        System.out.println("Año:.......................: " + getAnio());
+        System.out.println("Peso:......................: " + peso);
+        System.out.println("Color......................: " + color);
+        System.out.println("Año:.......................: " + anio);
 
     }
 
@@ -83,5 +74,14 @@ public abstract class Tecnologia extends Producto{
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
+    }
+
+    @Override
+    public String toString() {
+        return "Tecnologia{" +
+                "peso=" + peso +
+                ", color='" + color + '\'' +
+                ", anio=" + anio +
+                "} " + super.toString();
     }
 }

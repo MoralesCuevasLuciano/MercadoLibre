@@ -83,6 +83,7 @@ public abstract class Producto implements Comparable<Producto> {
         System.out.println("Modelo:....................: " + getModelo());
         System.out.println("Precio:....................: " + getPrecio());
         System.out.println("Stock:.....................: " + getStock());
+
     }
 
 

@@ -23,7 +23,10 @@ public abstract class Persona {
         this.direccion = direccion;
     }
 
-    public Persona(){};
+    public Persona() {
+    }
+
+    ;
 
 
     /**Getters y Setters*/
@@ -71,7 +74,7 @@ public abstract class Persona {
     }
 
 
-    /**Imprimir*/
+
     /**Imprimir*/
     public void imprimir() {
         System.out.println("ID:........................: " + id);
@@ -80,17 +83,27 @@ public abstract class Persona {
         System.out.println("Sexo:......................: " + sexo);
         System.out.println("Telefono:..................: " + telefono);
         System.out.println("Direccion:.................: " + direccion);
-        System.out.println("========================================");
-        System.out.println("");
     }
 
 
     /**IMPRIMIR SIN ID YA QUE SON DATOS NO NECESARIOS PARA LOS CLIENTES*/
     public void imprimirCliente() {
-        System.out.println("Nombre:....................: " + getNombre());
-        System.out.println("Marca:.....................: " + getMarca());
-        System.out.println("Modelo:....................: " + getModelo());
-        System.out.println("Precio:....................: " + getPrecio());
-        System.out.println("Stock......................: " + getStock());
+        System.out.println("Nombre:....................: " + nombre);
+        System.out.println("Dni:.......................: " + dni);
+        System.out.println("Sexo:......................: " + sexo);
+        System.out.println("Telefono:..................: " + telefono);
+        System.out.println("Direccion:.................: " + direccion);
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" +
+                "id='" + id + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", dni='" + dni + '\'' +
+                ", sexo=" + sexo +
+                ", telefono='" + telefono + '\'' +
+                ", direccion=" + direccion +
+                '}';
     }
 }
