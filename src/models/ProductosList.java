@@ -44,6 +44,11 @@ public class ProductosList {
         }
     }
 
+    public void removeTernario(Producto p, int stock){
+        String mensaje = (p.getStock() - stock >= 0) ? "Stock actualizado" : "No hay stock suficiente disponible para eliminar el producto";
+        System.out.println(mensaje);
+    }
+
     /**Mostrar producto segun nombre*/
     public void show(String nombre){
         for(Producto producto : productosList){

@@ -42,11 +42,8 @@ public class HerramientaElectrica extends Herramienta{
     public void imprimir() {
       super.imprimir();
         System.out.println("Voltaje:...................: " + getVoltaje());System.out.println("==============================================");
-        if(isInalambrico()){
-            System.out.println("La herramienta es inalambrica");
-        }else{
-            System.out.println("La herramienta es cableada ");
-        }
+        String mensaje = isInalambrico() ?  "El producto es inalambrico" : "El producto es cableado";
+        System.out.println(mensaje);
         System.out.println("==============================================");
         System.out.println("");
 
@@ -54,11 +51,8 @@ public class HerramientaElectrica extends Herramienta{
     public void imprimirCliente(){
         super.imprimirCliente();
         System.out.println("Voltaje:...................: " + getVoltaje());
-        if(isInalambrico()){
-            System.out.println("La herramienta es inalambrica");
-        }else{
-            System.out.println("La herramienta es cableada ");
-        }
+        String mensaje = isInalambrico() ?  "El producto es inalambrico" : "El producto es cableado";
+        System.out.println(mensaje);
         System.out.println("==============================================");
 
         System.out.println("");

@@ -1,12 +1,11 @@
+import models.Hogar.Escritorio;
+
 public class Main {
     public static void main(String[] args) {
 
+        Escritorio a = new Escritorio();
 
-        System.out.printf("Hello and welcome!");
-
-        System.out.println("probando git");
-
-        System.out.println("Todos son pruebas");
+        a.imprimir();
 
 
     }

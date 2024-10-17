@@ -10,7 +10,7 @@ public abstract class Hogar extends Producto {
     private UsoHogar uso;
     private String material;
 
-    /*CONSTRUCTORES*/
+    /**CONSTRUCTORES*/
 
     public Hogar(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material) {
         super(nombre, marca, modelo, precio, stock);
@@ -48,7 +48,7 @@ public abstract class Hogar extends Producto {
         this.material = material;
     }
 
-    /*IMPRIMIR*/
+    /**IMPRIMIR*/
 
     @Override
     public void imprimir() {
