@@ -1,4 +1,4 @@
-package models.Persona;
+package models.Usuario;
 
 public class Direccion {
 }

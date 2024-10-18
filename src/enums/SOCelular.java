@@ -1,5 +1,9 @@
 package enums;
 
 public enum SOCelular {
-    IOS,ANDROID,WINDOWSPHONE,HARMONYOS
+    ANDROID,
+    IOS,
+    WINDOWS_PHONE,
+    BLACKBERRY,
+    SYMBIAN;
 }

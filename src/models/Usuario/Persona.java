@@ -1,4 +1,4 @@
-package models.Persona;
+package models.Usuario;
 
 import enums.Genero;
 
@@ -20,13 +20,11 @@ public abstract class Persona {
         this.dni = dni;
         this.sexo = sexo;
         this.telefono = telefono;
-        this.direccion = direccion;
     }
 
     public Persona() {
     }
 
-    ;
 
 
     /**Getters y Setters*/
@@ -68,10 +66,9 @@ public abstract class Persona {
     public Direccion getDireccion() {
         return direccion;
     }
-    public Persona direccion(Direccion direccion) {
-        this.direccion = direccion;
-        return this;
-    }
+
+
+
 
 
 
@@ -106,4 +103,18 @@ public abstract class Persona {
                 ", direccion=" + direccion +
                 '}';
     }
+
+
+    /**
+     * Crear admin y cliente con sus atributos
+     * DE aca hereda Cliente y Administrador,
+     * los dos van a recorrer la lista de productos,
+     * pero el cliente va a comprar y el administrador va a modificar
+     * el user va a realizar compras, agregar cosas al carrito, etc
+     * hay que hacer al cliente un trycatch para que no compre mas de lo que hay en stock
+     * otro mas para que no pueda comprar si no tiene dinero suficiente en la cuenta
+     * Crear arrays para cliente de compras y administrador y que se guarden en un archivo
+     * para que no se pierdan los datos
+     *
+     * */
 }

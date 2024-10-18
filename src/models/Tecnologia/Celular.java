@@ -3,7 +3,7 @@ package models.Tecnologia;
 import enums.SOCelular;
 
 public class Celular extends Tecnologia{
-    private SOCelular SO;
+    private SOCelular so;
     private int duracionBateria;
     private float tamanioPantalla;
     private String procesador;
@@ -14,7 +14,7 @@ public class Celular extends Tecnologia{
 
     public Celular(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, SOCelular SO, int duracionBateria, float tamanioPantalla, String procesador, int ram, int capacidad) {
         super(nombre, marca, modelo, precio, stock, peso, color, anio);
-        this.SO = SO;
+        this.so = so;
         this.duracionBateria = duracionBateria;
         this.tamanioPantalla = tamanioPantalla;
         this.procesador = procesador;
@@ -28,7 +28,7 @@ public class Celular extends Tecnologia{
     /**Getters y Setters*/
 
     public SOCelular getSO() {
-        return SO;
+        return so;
     }
 
     public int getDuracionBateria() {
@@ -80,8 +80,8 @@ public class Celular extends Tecnologia{
 
     public void imprimir() {
         super.imprimir();
-        System.out.println("Sistema Operativo:......................: " + getSO());
-        System.out.println("Duracion de la Bateria......................: " + getDuracionBateria());
+        System.out.println("Sistema Operativo:.....................: " + so);
+        System.out.println("Duracion de la Bateria.................: " + getDuracionBateria());
         System.out.println("Tamaño pantalla:.......................: " + getTamanioPantalla());
         System.out.println("Procesador......................: " + getProcesador());
         System.out.println("Ram......................: " + getRam());
