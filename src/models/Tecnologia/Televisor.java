@@ -6,13 +6,12 @@ import enums.TipoTelevisor;
 public class Televisor extends Tecnologia{
     private boolean esSmart;
     private TipoTelevisor tipoTV;
-
     private int tamanio;
-
     private AhorroEnergia ahorroEnergia;
 
-    /**Constructores*/
 
+
+    /**Constructores*/
     public Televisor(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, boolean esSmart, TipoTelevisor tipoTV, int tamanio, AhorroEnergia ahorroEnergia) {
         super(nombre, marca, modelo, precio, stock, peso, color, anio);
         this.esSmart = esSmart;
@@ -24,50 +23,47 @@ public class Televisor extends Tecnologia{
     public Televisor() {
     }
 
-    /**Getters y Setters*/
 
+    /**Getters y Setters*/
     public boolean isEsSmart() {
         return esSmart;
     }
-
     public Televisor esSmart(boolean esSmart) {
         this.esSmart = esSmart;
         return this;
     }
-
     public TipoTelevisor getTipoTV() {
         return tipoTV;
     }
-
     public Televisor tipoTV(TipoTelevisor tipoTV) {
         this.tipoTV = tipoTV;
         return this;
     }
-
     public int getTamanio() {
         return tamanio;
     }
-
     public Televisor tamanio(int tamanio) {
         this.tamanio = tamanio;
         return this;
     }
-
     public AhorroEnergia getAhorroEnergia() {
         return ahorroEnergia;
     }
-
     public Televisor ahorroEnergia(AhorroEnergia ahorroEnergia) {
         this.ahorroEnergia = ahorroEnergia;
         return this;
     }
 
+
+    /**Imprimir*/
     public void imprimir() {
         super.imprimir();
         String mensaje = isEsSmart() ? "Es SMART" : "No es SMART";
-        System.out.println("Tipo de TV......................: " + getTipoTV());
-        System.out.println("Tamaño pantalla:.......................: " + getTamanio());
-        System.out.println("Procesador......................: " + getAhorroEnergia());
+        System.out.println("Tipo de TV.................: " + tipoTV);
+        System.out.println("Tamanio pantalla:..........: " + tamanio);
+        System.out.println("Procesador.................: " + ahorroEnergia);
+        System.out.println("==============================================");
+        System.out.println("");
     }
 
     @Override
@@ -75,9 +71,22 @@ public class Televisor extends Tecnologia{
         super.imprimirCliente();
         super.imprimir();
         String mensaje = isEsSmart() ? "Es SMART" : "No es SMART";
-        System.out.println("Tipo de TV......................: " + getTipoTV());
-        System.out.println("Tamaño pantalla:.......................: " + getTamanio());
-        System.out.println("Procesador......................: " + getAhorroEnergia());
+        System.out.println("Tipo de TV.................: " + tipoTV);
+        System.out.println("Tamaño pantalla:...........: " + tamanio);
+        System.out.println("Procesador.................: " + ahorroEnergia);
+        System.out.println("==============================================");
+        System.out.println("");
 
+    }
+
+
+    @Override
+    public String toString() {
+        return "Televisor{" +
+                "esSmart=" + esSmart +
+                ", tipoTV=" + tipoTV +
+                ", tamanio=" + tamanio +
+                ", ahorroEnergia=" + ahorroEnergia +
+                '}';
     }
 }

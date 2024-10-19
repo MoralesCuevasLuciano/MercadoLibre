@@ -6,10 +6,9 @@ public class Portatil extends Computadora {
     private int tamanio;
     private float duracionBateria;
 
-    /**
-     * Constructores
-     */
 
+
+    /**Constructores*/
     public Portatil(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, SOComputadora SO, String procesador, int ram, int capacidad, int tamanio, float duracionBateria) {
         super(nombre, marca, modelo, precio, stock, peso, color, anio, SO, procesador, ram, capacidad);
         this.tamanio = tamanio;
@@ -19,44 +18,51 @@ public class Portatil extends Computadora {
     public Portatil() {
     }
 
-    /**
-     * Getters y Setters
-     */
 
+    /**Getters y Setters*/
     public int getTamanio() {
         return tamanio;
     }
-
     public Portatil tamanio(int tamanio) {
         this.tamanio = tamanio;
         return this;
     }
-
     public float getDuracionBateria() {
         return duracionBateria;
     }
-
     public Portatil duracionBateria(float duracionBateria) {
         this.duracionBateria = duracionBateria;
         return this;
     }
 
-    /**
-     * Imprimir
-     */
 
+
+    /**Imprimir*/
     public void imprimir() {
         super.imprimir();
-        System.out.println("Gabinete:......................: " + getTamanio());
-        System.out.println("Fuente.......................: " + getDuracionBateria());
+        System.out.println("Gabinete:..................: " + tamanio);
+        System.out.println("Fuente.....................: " + duracionBateria);
+        System.out.println("==============================================");
+        System.out.println("");
 
     }
 
     @Override
     public void imprimirCliente() {
         super.imprimir();
-        System.out.println("Gabinete:......................: " + getTamanio());
-        System.out.println("Fuente.......................: " + getDuracionBateria());
+        System.out.println("Gabinete:..................: " + tamanio);
+        System.out.println("Fuente.....................: " + duracionBateria);
+        System.out.println("==============================================");
+        System.out.println("");
 
+    }
+
+
+    @Override
+    public String toString() {
+        return "Portatil{" +
+                "tamanio=" + tamanio +
+                ", duracionBateria=" + duracionBateria +
+                '}';
     }
 }

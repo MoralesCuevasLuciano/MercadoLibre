@@ -53,6 +53,7 @@ public abstract class Tecnologia extends Producto{
         System.out.println("Peso:......................: " + peso);
         System.out.println("Color......................: " + color);
         System.out.println("Año:.......................: " + anio);
+
     }
 
     @Override

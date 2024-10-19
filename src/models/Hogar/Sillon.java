@@ -27,7 +27,9 @@ public class Sillon extends Mueble{
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Capacidad:..............." + getCapacidad());
-        System.out.println("Estilo:.................." + getEstilo());
+        System.out.println("Capacidad:.................:" + getCapacidad());
+        System.out.println("Estilo:....................:" + getEstilo());
+        System.out.println("==============================================");
+        System.out.println("");
     }
 }

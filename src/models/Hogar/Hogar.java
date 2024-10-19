@@ -10,8 +10,8 @@ public abstract class Hogar extends Producto {
     private UsoHogar uso;
     private String material;
 
-    /**CONSTRUCTORES*/
 
+    /**CONSTRUCTORES*/
     public Hogar(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material) {
         super(nombre, marca, modelo, precio, stock);
         this.categoria = categoria;
@@ -22,31 +22,27 @@ public abstract class Hogar extends Producto {
     public Hogar() {
     }
 
-    /*GETTERS AND SET BUILDERS*/
-
+    /**Getters y Setters*/
     public CategoriasHogar getCategoria() {
         return categoria;
     }
-
     public void categoria(CategoriasHogar categoria) {
         this.categoria = categoria;
     }
-
     public UsoHogar getUso() {
         return uso;
     }
-
     public void Uso(UsoHogar uso) {
         this.uso = uso;
     }
-
     public String getMaterial() {
         return material;
     }
-
     public void material(String material) {
         this.material = material;
     }
+
+
 
     /**IMPRIMIR*/
 
@@ -55,6 +51,7 @@ public abstract class Hogar extends Producto {
         super.imprimir();
         System.out.println("Categoria:.................: " + getCategoria());
         System.out.println("Uso:.......................: " + getUso());
+
     }
 
     @Override
@@ -62,5 +59,14 @@ public abstract class Hogar extends Producto {
         super.imprimirCliente();
         System.out.println("Categoria:.................: " + getCategoria());
         System.out.println("Uso:.......................: " + getUso());
+    }
+
+    @Override
+    public String toString() {
+        return "Hogar{" +
+                "categoria=" + categoria +
+                ", uso=" + uso +
+                ", material='" + material + '\'' +
+                '}';
     }
 }

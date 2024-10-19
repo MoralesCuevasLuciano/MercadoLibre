@@ -1,5 +1,6 @@
 package models.Ropa;
 
+import enums.Genero;
 import enums.TalleRemera;
 import enums.UsoCalzadoPantalon;
 
