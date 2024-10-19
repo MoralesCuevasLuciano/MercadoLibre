@@ -52,6 +52,7 @@ public abstract class Hogar extends Producto {
         System.out.println("Categoria:.................: " + getCategoria());
         System.out.println("Uso:.......................: " + getUso());
 
+
     }
 
     @Override
@@ -59,6 +60,7 @@ public abstract class Hogar extends Producto {
         super.imprimirCliente();
         System.out.println("Categoria:.................: " + getCategoria());
         System.out.println("Uso:.......................: " + getUso());
+
     }
 
     @Override

@@ -45,16 +45,17 @@ public class Bazar extends Hogar{
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Tamaño:.................." + getTamanio());
-        String mensaje = isResistenteAlCalor() ? "Es resistente al calor" : "No es resistente al calor";
+        System.out.println("Tamaño:.................." + tamanio);
+        String mensaje = resistenteAlCalor ? "Es resistente al calor" : "No es resistente al calor";
         System.out.println(mensaje);
     }
 
     @Override
     public void imprimir() {
-        super.imprimir();
-        System.out.println("Tamaño:................." + getTamanio());
-        String mensaje = isResistenteAlCalor() ? "Es resistente al calor" : "No es resistente al calor";
+        super.imprimirCliente();
+        System.out.println("Tamaño:.................." + tamanio);
+        String mensaje = resistenteAlCalor ? "Es resistente al calor" : "No es resistente al calor";
         System.out.println(mensaje);
+        System.out.println("==============================================");
     }
 }

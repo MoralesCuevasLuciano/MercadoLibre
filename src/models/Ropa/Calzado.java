@@ -16,6 +16,7 @@ public class Calzado extends Ropa {
         this.uso = uso;
     }
 
+
     /**Getters y Setters*/
     public TipoCalzado getTipo() {
         return tipo;

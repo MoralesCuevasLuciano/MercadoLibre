@@ -43,16 +43,20 @@ public class Escritorio extends Mueble {
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Numero de Puertas.........." + getNumeroDePuertas());
+        System.out.println("Numero de Puertas..........:" + numeroDePuertas);
         String mensaje = isTieneCajones() ? "Tiene cajones" : "No tiene cajones";
         System.out.println(mensaje);
+        System.out.println("==============================================");
+
     }
 
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
-        System.out.println("Numero de Puertas.........." + getNumeroDePuertas());
+        System.out.println("Numero de Puertas..........:" + numeroDePuertas);
         String mensaje = isTieneCajones() ? "Tiene cajones" : "No tiene cajones";
         System.out.println(mensaje);
+        System.out.println("==============================================");
+
     }
 }

@@ -3,10 +3,12 @@ package models.Herramienta;
 import enums.CategoriasHerramientas;
 import models.Producto;
 
-public class HerramientaManual extends Herramienta implements Comparable<HerramientaManual>{
+public class HerramientaManual extends Herramienta {
     private CategoriasHerramientas categorias;
 
-    /**Constructores*/
+    /**
+     * Constructores
+     */
     public HerramientaManual(String nombre, String marca, String modelo, double precio, int stock, CategoriasHerramientas categorias) {
         super(nombre, marca, modelo, precio, stock);
         this.categorias = categorias;
@@ -15,22 +17,27 @@ public class HerramientaManual extends Herramienta implements Comparable<Herrami
     public HerramientaManual() {
     }
 
-    /**Getters y Setters*/
+    /**
+     * Getters y Setters
+     */
     public CategoriasHerramientas getCategorias() {
         return categorias;
     }
+
     public HerramientaManual categorias(CategoriasHerramientas categorias) {
         this.categorias = categorias;
         return this;
     }
 
-    /**Imprimir*/
+    /**
+     * Imprimir
+     */
     @Override
     public void imprimir() {
-      super.imprimir();
-      System.out.println("Uso........................" + getCategorias());
-      System.out.println("==============================================");
-      System.out.println("");
+        super.imprimir();
+        System.out.println("Uso........................" + getCategorias());
+        System.out.println("==============================================");
+        System.out.println("");
 
     }
 
@@ -51,21 +58,17 @@ public class HerramientaManual extends Herramienta implements Comparable<Herrami
     }
 
 
-
-
-    /**Equals y HashCode*/
+    /**
+     * Equals y HashCode
+     */
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
+
     @Override
     public int hashCode() {
         return super.hashCode();
     }
 
-
-    @Override
-    public int compareTo(HerramientaManual o) {
-        return this.categorias.compareTo(o.categorias);
-    }
 }

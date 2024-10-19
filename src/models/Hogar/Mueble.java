@@ -42,12 +42,16 @@ public class Mueble extends Hogar{
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
+        System.out.println("Capacidad:.................:" + capacidad);
+        System.out.println("Estilo:....................:" + estilo);
+
     }
 
     @Override
     public void imprimir() {
         super.imprimir();
-        System.out.println("Capacidad:..............." + getCapacidad());
-        System.out.println("Estilo:.................." + getEstilo());
+        System.out.println("Capacidad:.................:" + capacidad);
+        System.out.println("Estilo:....................:" + estilo);
+
     }
 }
