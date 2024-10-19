@@ -39,29 +39,19 @@ public class Cliente extends Persona{
     }
 
 
-    /** Comprar carrito*/
-
-    public String comprarCarrito() {
-        if (carrito.precioCarrito() < this.saldo) {
-            //historialCompras.add(carrito);
-            carrito.comprarCarrito();
-            return "Compra exitosa!";
-        }else {
-            return "Error, saldo insuficiente";
-        }
-    }
-
     /**IMPRIMIR*/
 
     @Override
     public void imprimir() {
         super.imprimir();
         System.out.println("Saldo:.....................: " + saldo);
+        System.out.println("");
     }
 
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
         System.out.println("Saldo:.....................: " + saldo);
+        System.out.println("");
     }
 }

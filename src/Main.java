@@ -5,19 +5,68 @@ import models.Hogar.Escritorio;
 import models.Hogar.Mueble;
 import models.Hogar.Sillon;
 import models.Ropa.Calzado;
+import models.Usuario.Carrito;
+import models.Usuario.Cliente;
+import models.Usuario.Direccion;
 
 public class Main {
     public static void main(String[] args) {
 
-        Escritorio a = new Escritorio();
+        Bazar a = new Bazar(
+                "Bazar Multiusos",
+                "MarcaX",
+                "ModeloY",
+                49.99,
+                20,
+                1.5f,
+                CategoriasHogar.JARDIN,
+                UsoHogar.COMER,
+                "Plástico",
+                true,
+                TamañoBazar.MEDIANO
+        );
+
+        // Crear un objeto Mueble
+        Mueble i = new Mueble(
+                "Silla de Comedor",
+                "MarcaA",
+                "ModeloB",
+                1,
+                50,
+                3.0f,
+                CategoriasHogar.JARDIN,
+                UsoHogar.COMER,
+                "Madera",
+                4,
+                EstiloMueble.LIVING
+        );
+
+        // Crear un objeto Escritorio
+        Escritorio o = new Escritorio(
+                "Escritorio Ejecutivo",
+                "MarcaC",
+                "ModeloD",
+                1,
+                10,
+                30.0f,
+                CategoriasHogar.JARDIN,
+                UsoHogar.DECORACION,
+                "Madera",
+                2,
+                EstiloMueble.LIVING,
+                3,
+                true
+        );
+        Direccion q = new Direccion();
+        Carrito t = new Carrito();
         Sillon e = new Sillon();
-        Mueble i = new Mueble();
-        Bazar o = new Bazar();
+
+
         Calzado zapatillas = new Calzado(
                 "Zapatillas Deportivas",  // nombre
                 "Nike",                   // marca
                 "Air Max",                // modelo
-                150.99,                   // precio
+                1,                   // precio
                 20,                       // stock
                 "Negro",                  // color
                 Genero.UNISEX,            // genero
@@ -26,10 +75,26 @@ public class Main {
                 TipoCalzado.BORCEGO,    // tipo
                 UsoCalzadoPantalon.CASUAL // uso
         );
-        zapatillas.imprimir();
-        a.imprimir();
-        e.imprimir();
-        i.imprimir();
+
+        Cliente cliente = new Cliente(
+                "C001",
+                "Ana Gómez",
+                "98765432B",
+                Genero.FEMENINO,
+                "555-9876",
+                q,
+                t,
+                150.75
+        );
+
+        cliente.imprimir();
+        t.agregarProducto(a);
+        t.agregarProducto(i);
+        t.agregarProducto(o);
+        t.mostrarCarrito();
+        System.out.println(t.comprarCarrito1(cliente));
+        cliente.imprimir();
+        t.mostrarCarrito();
 
     }
 }
