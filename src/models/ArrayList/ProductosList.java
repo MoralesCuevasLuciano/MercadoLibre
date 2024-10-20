@@ -1,4 +1,6 @@
-package models;
+package models.ArrayList;
+
+import models.Producto;
 
 import java.util.ArrayList;
 import java.util.Collections;

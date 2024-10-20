@@ -5,7 +5,7 @@ import models.Hogar.Escritorio;
 import models.Hogar.Mueble;
 import models.Hogar.Sillon;
 import models.Ropa.Calzado;
-import models.Usuario.Carrito;
+import models.ArrayList.CarritoList;
 import models.Usuario.Cliente;
 import models.Usuario.Direccion;
 
@@ -58,7 +58,7 @@ public class Main {
                 true
         );
         Direccion q = new Direccion();
-        Carrito t = new Carrito();
+        CarritoList t = new CarritoList();
         Sillon e = new Sillon();
 
 

@@ -1,15 +1,16 @@
-package models.Usuario;
+package models.ArrayList;
 
 import models.Producto;
+import models.Usuario.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Carrito {
+public class CarritoList {
     private List<Producto> carrito;
 
     /***CONSTRUCTOR*/
-    public Carrito() {
+    public CarritoList() {
         this.carrito = new ArrayList<>();
     }
 

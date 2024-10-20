@@ -1,16 +1,17 @@
 package models.Usuario;
 
 import enums.Genero;
+import models.ArrayList.CarritoList;
 
 public class Cliente extends Persona{
 
     private double saldo;
-    private Carrito carrito;
+    private CarritoList carrito;
     private HistorialCompras historialCompras;
 
     /**Constructores*/
 
-    public Cliente(String id, String nombre, String dni, Genero sexo, String telefono, Direccion direccion, Carrito carrito, double saldo) {
+    public Cliente(String id, String nombre, String dni, Genero sexo, String telefono, Direccion direccion, CarritoList carrito, double saldo) {
         super(id, nombre, dni, sexo, telefono, direccion);
         this.carrito = carrito;
         this.saldo = saldo;
@@ -29,11 +30,11 @@ public class Cliente extends Persona{
         return this;
     }
 
-    public Carrito getCarrito() {
+    public CarritoList getCarrito() {
         return carrito;
     }
 
-    public Cliente carrito(Carrito carrito) {
+    public Cliente carrito(CarritoList carrito) {
         this.carrito = carrito;
         return this;
     }
