@@ -88,9 +88,7 @@ public class Main {
         );
 
         cliente.imprimir();
-        t.agregarProducto(a);
-        t.agregarProducto(i);
-        t.agregarProducto(o);
+
         t.mostrarCarrito();
         System.out.println(t.comprarCarrito1(cliente));
         cliente.imprimir();
