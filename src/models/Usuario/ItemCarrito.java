@@ -1,4 +1,6 @@
-package models;
+package models.Usuario;
+
+import models.Producto;
 
 public class ItemCarrito {
     private Producto producto;
@@ -11,7 +13,6 @@ public class ItemCarrito {
     }
 
     /** METODOS*/
-
     public void vender(){
         if (cantidad <= producto.getStock()){
             this.producto.stock(producto.getStock()-cantidad);
@@ -19,6 +20,7 @@ public class ItemCarrito {
             System.out.println("El producto no tiene suficiente cantidad");
         }
     }
+
 
     @Override
     public String toString() {
@@ -29,12 +31,11 @@ public class ItemCarrito {
     }
 
     /** GETTERS AND SETTERS*/
-
     public Producto getProducto() {
         return producto;
     }
 
-    public ItemCarrito setProducto(Producto producto) {
+    public ItemCarrito producto(Producto producto) {
         this.producto = producto;
         return this;
     }
@@ -43,7 +44,7 @@ public class ItemCarrito {
         return cantidad;
     }
 
-    public ItemCarrito setCantidad(Integer cantidad) {
+    public ItemCarrito cantidad(Integer cantidad) {
         this.cantidad = cantidad;
         return this;
     }

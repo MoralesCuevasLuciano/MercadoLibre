@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ProductosList {
+public class AdministradorList {
     List<Producto> productosList;
 
     /**Constructores*/
-    public ProductosList(){
+    public AdministradorList(){
         this.productosList = new ArrayList<>();
     }
 
-    public ProductosList(int dim){
+    public AdministradorList(int dim){
         this.productosList = new ArrayList<>(dim);
     }
 
@@ -80,6 +80,29 @@ public class ProductosList {
         }
         return p;
     }
+
+    /**Buscar producto por marca y nombre*/
+    public Producto search(String marca, String nombre){
+        Producto p = null;
+        for(Producto producto : productosList){
+            if(producto.getMarca().equals(marca) && producto.getNombre().equals(nombre)){
+                p = producto;
+                return p;
+            }
+        }
+        return p;
+    }
+
+    /**Editar los atributos de un producto y que se guarde el nuevo producto*/
+    public void edit(Producto p, String nombre, String marca, String modelo, double precio, int stock){
+        p.nombre(nombre);
+        p.marca(marca);
+        p.modelo(modelo);
+        p.precio(precio);
+        p.stock(stock);
+    }
+
+
 
 
     /**Comparar segun el comparable de Producto*/

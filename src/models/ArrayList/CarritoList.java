@@ -1,8 +1,7 @@
 package models.ArrayList;
 
-import models.ItemCarrito;
-import models.Producto;
 import models.Usuario.Cliente;
+import models.Usuario.ItemCarrito;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +26,7 @@ public class CarritoList {
         System.out.println(itemCarrito.getProducto().getNombre() + " ha sido eliminado al carrito. \n");
     }
 
-
+    /**Muestra que hay en el carrito*/
     public void mostrarCarrito() {
         System.out.println("Productos en el carrito:");
         System.out.println("");
@@ -35,6 +34,8 @@ public class CarritoList {
             System.out.println(itemCarrito.getProducto().getNombre() + " - $" + itemCarrito.getProducto().getPrecio() + "\n");
         }
     }
+
+
 
     /** Devuelve precio del carrito*/
     public float precioCarrito(){
