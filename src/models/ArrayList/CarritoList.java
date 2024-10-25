@@ -30,8 +30,12 @@ public class CarritoList {
     public void mostrarCarrito() {
         System.out.println("Productos en el carrito:");
         System.out.println("");
+        if(carrito.isEmpty()) {
+            System.out.println("El carrito esta vacio");
+        }else{
         for (ItemCarrito itemCarrito : carrito) {
             System.out.println(itemCarrito.getProducto().getNombre() + " - $" + itemCarrito.getProducto().getPrecio() + "\n");
+        }
         }
     }
 
@@ -41,7 +45,7 @@ public class CarritoList {
     public float precioCarrito(){
         float precio = 0;
         for (ItemCarrito itemCarrito : carrito) {
-            precio += (float) itemCarrito.getProducto().getPrecio();
+            precio += (float) itemCarrito.getProducto().getPrecio() * itemCarrito.getCantidad();
         }
         return precio;
     }
@@ -51,7 +55,13 @@ public class CarritoList {
     public String comprarCarrito1(Cliente c) {
         if (precioCarrito() < c.getSaldo()) {
             //historialCompras.add(carrito);
-            c.saldo(c.getSaldo()-precioCarrito());
+            for (ItemCarrito itemCarrito : carrito) {
+                if(itemCarrito.vender()){
+                    c.saldo(c.getSaldo() - itemCarrito.getProducto().getPrecio() * itemCarrito.getCantidad());
+                }else {
+                    System.out.println("No hay suficiente stock de" + itemCarrito.getProducto().getNombre());
+                }
+            }
             this.comprarCarrito();
             return "Compra exitosa!";
         }else {

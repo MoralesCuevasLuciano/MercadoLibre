@@ -13,11 +13,12 @@ public class ItemCarrito {
     }
 
     /** METODOS*/
-    public void vender(){
+    public boolean vender(){
         if (cantidad <= producto.getStock()){
             this.producto.stock(producto.getStock()-cantidad);
+            return true;
         }else {
-            System.out.println("El producto no tiene suficiente cantidad");
+            return false;
         }
     }
 

@@ -9,6 +9,7 @@ import models.Ropa.Calzado;
 import models.ArrayList.CarritoList;
 import models.Usuario.Cliente;
 import models.Usuario.Direccion;
+import models.Usuario.ItemCarrito;
 
 public class Main {
     public static void main(String[] args) {
@@ -30,16 +31,25 @@ public class Main {
 
         Calzado zapatillas = new Calzado("Zapatillas Deportivas", "Nike", "Air Max", 1, 20, "Negro", Genero.UNISEX, TalleRemera.M, "Sintético", TipoCalzado.BORCEGO, UsoCalzadoPantalon.CASUAL);
 
-        Cliente cliente = new Cliente("C001", "Ana Gómez", "98765432B", Genero.FEMENINO, "555-9876", q, t, 150.75);
+        Cliente cliente = new Cliente("C001", "Ana Gómez", "98765432B", Genero.FEMENINO, "555-9876", q, t, 40150.75);
 
         cliente.imprimir();
 
-        /**Agregar los objetos al carrito*/
+        /**Agregar los objetos al repertorio de ventas*/
         admin.add(zapatillas);
         admin.edit(zapatillas, "zapatinas", "adidas", "modelo entrecasa", 20000, 5);
         zapatillas.imprimir();
 
+        /** Agregar objeto al carrito*/
 
+        ItemCarrito i1 = new ItemCarrito(zapatillas, 2); //crea un item de 2 zapatillas
+
+        cliente.getCarrito().agregarProducto(i1); //agrega el item de 2 zapatillas
+        cliente.getCarrito().mostrarCarrito();
+        System.out.println("El stock es " + zapatillas.getStock());
+        System.out.println(t.comprarCarrito1(cliente)); //se compran 2 zapatillas si hay saldo suf
+        System.out.println("El stock es " + zapatillas.getStock());
+        cliente.getCarrito().mostrarCarrito();
 
     }
 }
