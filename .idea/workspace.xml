@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="workspace">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ProductosList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/ProductosList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Carrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/CarritoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_2024_06_55__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_2024_06_55__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/Mock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/Mock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,11 +47,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Gamer/Desktop/tpFinal/MercadoLibre",
+    "last_opened_file_path": "C:/Users/pablo/OneDrive/Escritorio/Proyecto final programacion 2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
