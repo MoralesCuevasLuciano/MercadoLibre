@@ -6,6 +6,7 @@ public final class Mock {
     private static final Random random = new Random();
 
     //MOCK DE MARCAS
+
     private static final String[] marcasHerramientas = {
             "Bosch", "DeWalt", "Makita", "Stanley", "Milwaukee", "Black & Decker", "Ryobi", "Hilti", "Craftsman", "Ridgid"
     };
@@ -180,6 +181,12 @@ public final class Mock {
     public static String getNombreJuguetesManuales() {
         return juguetesManuales[random.nextInt(juguetesManuales.length)];
     }
+
+    public float getPrecio(){
+        return (float) (Math.random()*1000);
+    }
+
+
 
 
 
