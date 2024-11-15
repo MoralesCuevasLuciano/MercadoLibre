@@ -9,13 +9,14 @@ public class Escritorio extends Mueble {
     private int numeroDePuertas;
     private boolean tieneCajones;
 
-    /***CONSTRUCTORES*/
-
-    public Escritorio(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material, int capacidad, EstiloMueble estilo, int numeroDePuertas, boolean tieneCajones) {
-        super(nombre, marca, modelo, precio, stock, peso, categoria, uso, material, capacidad, estilo);
+    public Escritorio(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material, int capacidad, EstiloMueble estilo, int numeroDePuertas, boolean tieneCajones) {
+        super(nombre, cdp, stock, precio, marca, modelo, categoria, uso, material, capacidad, estilo);
         this.numeroDePuertas = numeroDePuertas;
         this.tieneCajones = tieneCajones;
     }
+
+    /***CONSTRUCTORES*/
+
 
     public Escritorio() {
     }

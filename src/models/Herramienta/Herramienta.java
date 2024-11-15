@@ -4,11 +4,13 @@ import models.Producto;
 
 public abstract class Herramienta extends Producto {
 
-
     /**Constructores*/
-    public Herramienta(String nombre, String marca, String modelo, double precio, int stock) {
-        super(nombre, marca, modelo, precio, stock);
+    public Herramienta(String nombre, String cdp, int stock, double precio, String marca, String modelo) {
+        super(nombre, cdp, stock, precio, marca, modelo);
     }
+
+
+
 
     public Herramienta() {
     }

@@ -5,21 +5,25 @@ import java.util.UUID;
 
 public abstract class Producto implements Comparable<Producto> {
     private String id;
+    private String cdp; //CODIGO DE PRODUCTO
     private String nombre;
     private int stock;
     private double precio;
     private String marca;
     private String modelo;
 
-    /**Constructores*/
-    public Producto(String nombre, String marca, String modelo, double precio, int stock) {
+    public Producto(String nombre,String cdp, int stock, double precio, String marca, String modelo) {
         this.id = UUID.randomUUID().toString();
+        this.cdp = cdp;
+        this.nombre = nombre;
+        this.stock = stock;
+        this.precio = precio;
         this.marca = marca;
         this.modelo = modelo;
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
     }
+
+    /**Constructores*/
+
     public Producto() {
         this.id = UUID.randomUUID().toString();
     }
@@ -84,6 +88,14 @@ public abstract class Producto implements Comparable<Producto> {
     public Producto modelo(String modelo) {
         this.modelo = modelo;
         return this;
+    }
+
+    public String getCdp() {
+        return cdp;
+    }
+
+    public void setCdp(String cdp) {
+        this.cdp = cdp;
     }
 
     /**Imprimir*/

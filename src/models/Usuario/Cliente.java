@@ -2,23 +2,27 @@ package models.Usuario;
 
 import enums.Genero;
 import models.ArrayList.CarritoList;
+import models.ArrayList.CartMap;
+import models.Producto;
 
 public class Cliente extends Persona{
 
     private double saldo;
-    private CarritoList carrito;
+    private CartMap carrito;
     private HistorialCompras historialCompras;
 
     /**Constructores*/
 
-    public Cliente(String id, String nombre, String dni, Genero sexo, String telefono, Direccion direccion, CarritoList carrito, double saldo) {
-        super(id, nombre, dni, sexo, telefono, direccion);
-        this.carrito = carrito;
+    public Cliente(String nombre, String dni, Genero sexo, String telefono, Direccion direccion, double saldo) {
+        super(nombre, dni, sexo, telefono, direccion);
+        this.carrito = new CartMap<>();
         this.saldo = saldo;
     }
 
     public Cliente() {
     }
+
+
 
     /**GETTERS AND SETTERS*/
     public double getSaldo() {
@@ -30,15 +34,21 @@ public class Cliente extends Persona{
         return this;
     }
 
-    public CarritoList getCarrito() {
+    public HistorialCompras getHistorialCompras() {
+        return historialCompras;
+    }
+
+    public void setHistorialCompras(HistorialCompras historialCompras) {
+        this.historialCompras = historialCompras;
+    }
+
+    public CartMap getCarrito() {
         return carrito;
     }
 
-    public Cliente carrito(CarritoList carrito) {
+    public void setCarrito(CartMap carrito) {
         this.carrito = carrito;
-        return this;
     }
-
 
     /**IMPRIMIR*/
 

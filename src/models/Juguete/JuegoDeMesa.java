@@ -9,12 +9,14 @@ public class JuegoDeMesa extends  Juguete{
     int duracion;
 
 
-    /**Constructores*/
-    public JuegoDeMesa(String nombre, String marca, String modelo, double precio, int stock, CategoriaJuguete categoria, int edad, MaterialJuguete material, int cantidadJugadores, int duracion) {
-        super(nombre, marca, modelo, precio, stock, categoria, edad, material);
+    public JuegoDeMesa(String nombre, String cdp, int stock, double precio, String marca, String modelo, int edad, CategoriaJuguete categoria, MaterialJuguete material, int cantidadJugadores, int duracion) {
+        super(nombre, cdp, stock, precio, marca, modelo, edad, categoria, material);
         this.cantidadJugadores = cantidadJugadores;
         this.duracion = duracion;
     }
+
+    /**Constructores*/
+
 
     public JuegoDeMesa() {
     }

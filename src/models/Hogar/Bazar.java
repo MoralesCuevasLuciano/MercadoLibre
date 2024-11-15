@@ -9,13 +9,16 @@ public class Bazar extends Hogar{
     private TamañoBazar tamanio;
     private boolean resistenteAlCalor;
 
+    public Bazar(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material, TamañoBazar tamanio, boolean resistenteAlCalor) {
+        super(nombre, cdp, stock, precio, marca, modelo, categoria, uso, material);
+        this.tamanio = tamanio;
+        this.resistenteAlCalor = resistenteAlCalor;
+    }
+
     /**CONSTRUCTORES*/
 
-    public Bazar(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material, boolean resistenteAlCalor, TamañoBazar tamanio) {
-        super(nombre, marca, modelo, precio, stock, peso, categoria, uso, material);
-        this.resistenteAlCalor = resistenteAlCalor;
-        this.tamanio = tamanio;
-    }
+
+
 
     public Bazar() {
     }

@@ -11,13 +11,13 @@ public class Buzo extends Ropa {
     private boolean impermeable;
 
     /**Constructores*/
-    public Buzo(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material, boolean tieneCapucha, boolean impermeable, boolean tieneEstampado, boolean tieneBolsillos, boolean tieneCierre) {
-        super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
+    public Buzo(String nombre, String cdp, int stock, double precio, String marca, String modelo, String color, Genero genero, TalleRemera talle, String material, boolean tieneCapucha, boolean tieneCierre, boolean tieneBolsillos, boolean tieneEstampado, boolean impermeable) {
+        super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
         this.tieneCapucha = tieneCapucha;
-        this.impermeable = impermeable;
-        this.tieneEstampado = tieneEstampado;
-        this.tieneBolsillos = tieneBolsillos;
         this.tieneCierre = tieneCierre;
+        this.tieneBolsillos = tieneBolsillos;
+        this.tieneEstampado = tieneEstampado;
+        this.impermeable = impermeable;
     }
 
     /**Getters y Setters*/

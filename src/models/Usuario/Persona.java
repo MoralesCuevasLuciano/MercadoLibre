@@ -14,8 +14,8 @@ public abstract class Persona {
 
 
     /**Constructores*/
-    public Persona(String id, String nombre, String dni, Genero sexo, String telefono, Direccion direccion) {
-        this.id = id;
+    public Persona(String nombre, String dni, Genero sexo, String telefono, Direccion direccion) {
+
         this.nombre = nombre;
         this.dni = dni;
         this.sexo = sexo;

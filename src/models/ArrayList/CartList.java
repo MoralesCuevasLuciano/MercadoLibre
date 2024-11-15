@@ -1,12 +1,13 @@
 package models.ArrayList;
 
+import models.Excepciones.NoHayStock;
 import models.Producto;
 import models.Usuario.Cliente;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartList {
+public class CartList <T extends Producto> {
     private List<Producto> carrito = new ArrayList<>();
     private List<Integer> cantidad = new ArrayList<>();
 
@@ -20,12 +21,12 @@ public class CartList {
     /**METODOS: FALTAN VALIDACIONES PERSO*/
 
     /**AGREGA AL CARRITO*/
-    public void addToCart(Producto p, int cantidad){
+    public void addToCart(T p, int cantidad) throws NoHayStock{
         if(p.getStock()>=cantidad){
             this.carrito.add(p);
             this.cantidad.add(cantidad);
         }else{
-            System.out.println("No hay disponible la cantidad que deseas " + "Solo hay " + p.getStock());
+            throw new NoHayStock("La cantidad de productos que deseas no estan disponibles");
         }
     }
     /**ELIMINA EL CARRITO*/

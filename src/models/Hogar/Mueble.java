@@ -8,8 +8,8 @@ public class Mueble extends Hogar{
     private int capacidad;
     private EstiloMueble estilo;
 
-    public Mueble(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material, int capacidad, EstiloMueble estilo) {
-        super(nombre, marca, modelo, precio, stock, peso, categoria, uso, material);
+    public Mueble(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material, int capacidad, EstiloMueble estilo) {
+        super(nombre, cdp, stock, precio, marca, modelo, categoria, uso, material);
         this.capacidad = capacidad;
         this.estilo = estilo;
     }

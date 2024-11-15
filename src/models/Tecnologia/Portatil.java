@@ -7,13 +7,14 @@ public class Portatil extends Computadora {
     private float duracionBateria;
 
 
-
-    /**Constructores*/
-    public Portatil(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, SOComputadora SO, String procesador, int ram, int capacidad, int tamanio, float duracionBateria) {
-        super(nombre, marca, modelo, precio, stock, peso, color, anio, SO, procesador, ram, capacidad);
+    public Portatil(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, SOComputadora so, String procesador, int ram, int capacidad, int tamanio, float duracionBateria) {
+        super(nombre, cdp, stock, precio, marca, modelo, peso, color, anio, so, procesador, ram, capacidad);
         this.tamanio = tamanio;
         this.duracionBateria = duracionBateria;
     }
+
+    /**Constructores*/
+
 
     public Portatil() {
     }

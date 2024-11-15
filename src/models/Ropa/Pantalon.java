@@ -12,8 +12,8 @@ public class Pantalon extends Ropa{
 
 
     /**Constructores*/
-    public Pantalon(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material, int cantidadBolsillos, String estilo, UsoCalzadoPantalon usoDeCalzado, boolean tieneCierre) {
-        super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
+    public Pantalon(String nombre, String cdp, int stock, double precio, String marca, String modelo, String color, Genero genero, TalleRemera talle, String material, int cantidadBolsillos, String estilo, UsoCalzadoPantalon usoDeCalzado, boolean tieneCierre) {
+        super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
         this.cantidadBolsillos = cantidadBolsillos;
         this.estilo = estilo;
         this.usoDeCalzado = usoDeCalzado;

@@ -6,13 +6,21 @@ public abstract class Tecnologia extends Producto{
     private String color;
     private int anio;
 
-    /**Constructores*/
-    public Tecnologia(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio) {
-        super(nombre, marca, modelo, precio, stock);
+    public Tecnologia(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio) {
+        super(nombre, cdp, stock, precio, marca, modelo);
         this.peso = peso;
         this.color = color;
         this.anio = anio;
     }
+
+    public Tecnologia(float peso, String color, int anio) {
+        this.peso = peso;
+        this.color = color;
+        this.anio = anio;
+    }
+
+    /**Constructores*/
+
 
     public Tecnologia() {
     }

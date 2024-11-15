@@ -7,13 +7,14 @@ public class Escritorio extends Computadora {
     private float fuente;
 
 
-
-    /**Constructores*/
-    public Escritorio(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, SOComputadora SO, String procesador, int ram, int capacidad, String gabinete, float fuente) {
-        super(nombre, marca, modelo, precio, stock, peso, color, anio, SO, procesador, ram, capacidad);
+    public Escritorio(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, SOComputadora so, String procesador, int ram, int capacidad, String gabinete, float fuente) {
+        super(nombre, cdp, stock, precio, marca, modelo, peso, color, anio, so, procesador, ram, capacidad);
         this.gabinete = gabinete;
         this.fuente = fuente;
     }
+
+    /**Constructores*/
+
 
     public Escritorio() {
     }

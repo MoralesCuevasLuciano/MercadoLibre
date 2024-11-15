@@ -9,10 +9,11 @@ public class HerramientaElectrica extends Herramienta{
 
 
     /**Constructores*/
-    public HerramientaElectrica(String nombre, String marca, String modelo, double precio, int stock, float voltaje, boolean esInalambrico) {
-        super(nombre, marca, modelo, precio, stock);
+
+    public HerramientaElectrica(String nombre, String cdp, int stock, double precio, String marca, String modelo, float voltaje, boolean inalambrico) {
+        super(nombre, cdp, stock, precio, marca, modelo);
         this.voltaje = voltaje;
-        this.Inalambrico = esInalambrico;
+        Inalambrico = inalambrico;
     }
 
     public HerramientaElectrica() {

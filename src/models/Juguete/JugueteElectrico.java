@@ -9,12 +9,13 @@ public class JugueteElectrico extends Juguete{
     float voltaje;
 
 
-    /**Constructores*/
-    public JugueteElectrico(String nombre, String marca, String modelo, double precio, int stock, CategoriaJuguete categoria, int edad, MaterialJuguete material, int cantidadDePilas, float voltaje) {
-        super(nombre, marca, modelo, precio, stock, categoria, edad, material);
+    public JugueteElectrico(String nombre, String cdp, int stock, double precio, String marca, String modelo, int edad, CategoriaJuguete categoria, MaterialJuguete material, int cantidadDePilas, float voltaje) {
+        super(nombre, cdp, stock, precio, marca, modelo, edad, categoria, material);
         this.cantidadDePilas = cantidadDePilas;
         this.voltaje = voltaje;
     }
+
+    /**Constructores*/
 
     public JugueteElectrico() {
     }

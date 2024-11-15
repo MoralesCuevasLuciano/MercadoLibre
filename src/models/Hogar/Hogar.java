@@ -11,13 +11,15 @@ public abstract class Hogar extends Producto {
     private String material;
 
 
-    /**CONSTRUCTORES*/
-    public Hogar(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material) {
-        super(nombre, marca, modelo, precio, stock);
+    public Hogar(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material) {
+        super(nombre, cdp, stock, precio, marca, modelo);
         this.categoria = categoria;
         this.uso = uso;
         this.material = material;
     }
+
+    /**CONSTRUCTORES*/
+
 
     public Hogar() {
     }

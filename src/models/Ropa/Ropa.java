@@ -13,15 +13,16 @@ public abstract class Ropa extends Producto {
     private String material;
 
 
+
     /**Constructor*/
-    public Ropa(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material) {
-        super(nombre, marca, modelo, precio, stock);
+
+    public Ropa(String nombre, String cdp, int stock, double precio, String marca, String modelo, String color, Genero genero, TalleRemera talle, String material) {
+        super(nombre, cdp, stock, precio, marca, modelo);
         this.color = color;
         this.genero = genero;
         this.talle = talle;
         this.material = material;
     }
-
 
     /**Getters y Setters*/
     public String getColor() {

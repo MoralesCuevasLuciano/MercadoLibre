@@ -11,16 +11,13 @@ public class Insumo extends Herramienta {
     private float diametro;
 
 
-    public Insumo(String nombre, String marca, String modelo, double precio, int stock, float ancho, float diametro, float largo, MaterialInsumo tipoDeMaterial) {
-        super(nombre, marca, modelo, precio, stock);
+    public Insumo(String nombre, String cdp, int stock, double precio, String marca, String modelo, MaterialInsumo tipoDeMaterial, float largo, float ancho, float diametro) {
+        super(nombre, cdp, stock, precio, marca, modelo);
+        this.tipoDeMaterial = tipoDeMaterial;
+        this.largo = largo;
         this.ancho = ancho;
         this.diametro = diametro;
-        this.largo = largo;
-        this.tipoDeMaterial = tipoDeMaterial;
     }
-
-
-
 
     /**Getters y Setters*/
     public MaterialInsumo getTipoDeMaterial() {

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class AdministradorList {
+public class AdministradorList <T extends Producto> {
     List<Producto> productosList;
 
     /**Constructores*/
@@ -20,7 +20,7 @@ public class AdministradorList {
 
 
     /**Agregar producto*/
-    public void add(Producto p){
+    public void add(T p){
         productosList.add(p);
     }
 
@@ -32,7 +32,7 @@ public class AdministradorList {
     }
 
     /**Eliminar producto*/
-    public void remove(Producto p){
+    public void remove(T p){
         productosList.remove(p);
     }
 
@@ -46,12 +46,21 @@ public class AdministradorList {
         }
     }
 
-    public void removeTernario(Producto p, int stock){
+    public void removeTernario(T p, int stock){
         String mensaje = (p.getStock() - stock >= 0) ? "Stock actualizado" : "No hay stock suficiente disponible para eliminar el producto";
         System.out.println(mensaje);
     }
 
+
+
+    public void show1(){
+        for(Producto p : productosList){
+            p.imprimirCliente();
+        }
+    }
+
     /**Mostrar producto segun nombre*/
+
     public void show(String nombre){
         for(Producto producto : productosList){
             if(producto.getNombre().equals(nombre)){
@@ -69,7 +78,7 @@ public class AdministradorList {
         }
     }
 
-    /**Mostrar producto segun id*/
+    /**Mostrar producto segun id ESTO TIENE QUE SER POR CODIGO DE PRODUCTO*/
     public Producto search(String id){
         Producto p = null;
         for(Producto producto : productosList){
@@ -85,7 +94,7 @@ public class AdministradorList {
     public Producto search(String marca, String nombre){
         Producto p = null;
         for(Producto producto : productosList){
-            if(producto.getMarca().equals(marca) && producto.getNombre().equals(nombre)){
+            if(producto.getMarca().equalsIgnoreCase(marca) && producto.getNombre().equalsIgnoreCase(nombre)){
                 p = producto;
                 return p;
             }
@@ -101,9 +110,6 @@ public class AdministradorList {
         p.precio(precio);
         p.stock(stock);
     }
-
-
-
 
     /**Comparar segun el comparable de Producto*/
     public void sort(){

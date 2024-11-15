@@ -10,13 +10,15 @@ public abstract class Juguete extends Producto {
     private MaterialJuguete material;
 
 
-    /**Constructores*/
-    public Juguete(String nombre, String marca, String modelo, double precio, int stock, CategoriaJuguete categoria, int edad, MaterialJuguete material) {
-        super(nombre, marca, modelo, precio, stock);
-        this.categoria = categoria;
+    public Juguete(String nombre, String cdp, int stock, double precio, String marca, String modelo, int edad, CategoriaJuguete categoria, MaterialJuguete material) {
+        super(nombre, cdp, stock, precio, marca, modelo);
         this.edad = edad;
+        this.categoria = categoria;
         this.material = material;
     }
+
+    /**Constructores*/
+
 
     public Juguete() {
     }

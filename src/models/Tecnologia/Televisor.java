@@ -10,15 +10,16 @@ public class Televisor extends Tecnologia{
     private AhorroEnergia ahorroEnergia;
 
 
-
-    /**Constructores*/
-    public Televisor(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, boolean esSmart, TipoTelevisor tipoTV, int tamanio, AhorroEnergia ahorroEnergia) {
-        super(nombre, marca, modelo, precio, stock, peso, color, anio);
+    public Televisor(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, boolean esSmart, TipoTelevisor tipoTV, int tamanio, AhorroEnergia ahorroEnergia) {
+        super(nombre, cdp, stock, precio, marca, modelo, peso, color, anio);
         this.esSmart = esSmart;
         this.tipoTV = tipoTV;
         this.tamanio = tamanio;
         this.ahorroEnergia = ahorroEnergia;
     }
+
+    /**Constructores*/
+
 
     public Televisor() {
     }

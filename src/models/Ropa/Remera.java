@@ -10,10 +10,11 @@ public class Remera extends Ropa {
 
 
     /**Constructores*/
-    public Remera(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material) {
-        super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
+    public Remera(String nombre, String cdp, int stock, double precio, String marca, String modelo, String color, Genero genero, TalleRemera talle, String material, TipoDeRemera tipoDeRemera, TalleRemera talle1) {
+        super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
+        this.tipoDeRemera = tipoDeRemera;
+        this.talle = talle1;
     }
-
 
     /**Getters y Setters*/
     public TipoDeRemera getTipoDeRemera() {

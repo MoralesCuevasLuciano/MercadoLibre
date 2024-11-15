@@ -10,12 +10,11 @@ public class Calzado extends Ropa {
     private UsoCalzadoPantalon uso;
 
     /**Constructores*/
-    public Calzado(String nombre, String marca, String modelo, double precio, int stock, String color, Genero genero, TalleRemera talle, String material, TipoCalzado tipo, UsoCalzadoPantalon uso) {
-        super(nombre, marca, modelo, precio, stock, color, genero, talle, material);
+    public Calzado(String nombre, String cdp, int stock, double precio, String marca, String modelo, String color, Genero genero, TalleRemera talle, String material, TipoCalzado tipo, UsoCalzadoPantalon uso) {
+        super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
         this.tipo = tipo;
         this.uso = uso;
     }
-
 
     /**Getters y Setters*/
     public TipoCalzado getTipo() {

@@ -11,9 +11,8 @@ public class Celular extends Tecnologia{
     private int capacidad;
 
 
-    /**Constructores*/
-    public Celular(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, SOCelular SO, int duracionBateria, float tamanioPantalla, String procesador, int ram, int capacidad) {
-        super(nombre, marca, modelo, precio, stock, peso, color, anio);
+    public Celular(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, SOCelular so, int duracionBateria, float tamanioPantalla, String procesador, int ram, int capacidad) {
+        super(nombre, cdp, stock, precio, marca, modelo, peso, color, anio);
         this.so = so;
         this.duracionBateria = duracionBateria;
         this.tamanioPantalla = tamanioPantalla;
@@ -21,6 +20,9 @@ public class Celular extends Tecnologia{
         this.ram = ram;
         this.capacidad = capacidad;
     }
+
+    /**Constructores*/
+
 
     public Celular() {
     }

@@ -11,14 +11,15 @@ public class Sillon extends Mueble{
     private String color;
 
 
-
-    /***CONSTRUCTORES*/
-    public Sillon(String nombre, String marca, String modelo, double precio, int stock, float peso, CategoriasHogar categoria, UsoHogar uso, String material, int capacidad, EstiloMueble estilo, float alto, float ancho, String color) {
-        super(nombre, marca, modelo, precio, stock, peso, categoria, uso, material, capacidad, estilo);
-        this.alto = alto;
+    public Sillon(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material, int capacidad, EstiloMueble estilo, float ancho, float alto, String color) {
+        super(nombre, cdp, stock, precio, marca, modelo, categoria, uso, material, capacidad, estilo);
         this.ancho = ancho;
+        this.alto = alto;
         this.color = color;
     }
+
+    /***CONSTRUCTORES*/
+
 
     public Sillon() {
     }

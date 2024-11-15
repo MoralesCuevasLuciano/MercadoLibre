@@ -9,15 +9,16 @@ public class Computadora extends Tecnologia{
     private int capacidad;
 
 
-
-    /**Constructores*/
-    public Computadora(String nombre, String marca, String modelo, double precio, int stock, float peso, String color, int anio, SOComputadora so, String procesador, int ram, int capacidad) {
-        super(nombre, marca, modelo, precio, stock, peso, color, anio);
+    public Computadora(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, SOComputadora so, String procesador, int ram, int capacidad) {
+        super(nombre, cdp, stock, precio, marca, modelo, peso, color, anio);
         this.so = so;
         this.procesador = procesador;
         this.ram = ram;
         this.capacidad = capacidad;
     }
+
+    /**Constructores*/
+
 
     public Computadora() {
     }

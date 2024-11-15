@@ -9,8 +9,9 @@ public class HerramientaManual extends Herramienta {
     /**
      * Constructores
      */
-    public HerramientaManual(String nombre, String marca, String modelo, double precio, int stock, CategoriasHerramientas categorias) {
-        super(nombre, marca, modelo, precio, stock);
+
+    public HerramientaManual(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHerramientas categorias) {
+        super(nombre, cdp, stock, precio, marca, modelo);
         this.categorias = categorias;
     }
 

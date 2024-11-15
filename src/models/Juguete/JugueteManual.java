@@ -7,10 +7,12 @@ import models.Producto;
 public class JugueteManual extends Juguete{
 
 
-    /**Constructores*/
-    public JugueteManual(String nombre, String marca, String modelo, double precio, int stock, CategoriaJuguete categoria, int edad, MaterialJuguete material) {
-        super(nombre, marca, modelo, precio, stock, categoria, edad, material);
+    public JugueteManual(String nombre, String cdp, int stock, double precio, String marca, String modelo, int edad, CategoriaJuguete categoria, MaterialJuguete material) {
+        super(nombre, cdp, stock, precio, marca, modelo, edad, categoria, material);
     }
+
+    /**Constructores*/
+
 
 
     @Override
