@@ -22,6 +22,11 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static json.JsonCliente.deserializarCliente;
+import static json.JsonCliente.serializarCliente;
+import static json.JsonProductos.deserializarProductos;
+import static json.JsonProductos.serializarProductos;
+
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
@@ -29,7 +34,7 @@ public class Main {
     public static void main(String[] args) {
             AdministradorList<Producto> t = new AdministradorList<>();
             Direccion s = new Direccion();
-            Cliente r = new Cliente("Richard","w323232",Genero.MASCULINO,"23232323",s,3000000);
+            Cliente r = new Cliente("Richard","w323232",Genero.MASCULINO,"23232323", "Calle luro 2",3000000);
             Menu a = new Menu(t,r);
 
         HerramientaElectrica taladro = new HerramientaElectrica("Taladro", "CDP001", 10, 1500.0, "Bosch", "X200", 18.0f, true);
@@ -44,14 +49,13 @@ public class Main {
         t.add(lijadora);
         t.add(destornillador);
 
+        /*serializarProductos(t);
+        AdministradorList<Producto> productos = deserializarProductos();
+        productos.show1();*/
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("productos.json"), t);
-            System.out.println("Productos guardados en productos.json");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        serializarCliente(r);
+        Cliente c1 = deserializarCliente();
+        c1.imprimirCliente();
     }
 
 }

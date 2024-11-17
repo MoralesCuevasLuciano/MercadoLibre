@@ -1,7 +1,11 @@
 package models.Herramienta;
 
 import enums.CategoriasHerramientas;
+import mocks.Mock;
 import models.Producto;
+
+import static mocks.Mock.getMarcaHerramientas;
+import static mocks.Mock.getNombreHerramientasManuales;
 
 public class HerramientaManual extends Herramienta {
     private CategoriasHerramientas categorias;
@@ -70,6 +74,16 @@ public class HerramientaManual extends Herramienta {
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    public static HerramientaManual herramientaManualRandom(){
+        return (HerramientaManual) new HerramientaManual()
+                .categorias(CategoriasHerramientas.values()[(int) (Math.random() * CategoriasHerramientas.values().length)])
+                .nombre(getNombreHerramientasManuales())
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                .marca(getMarcaHerramientas())
+                .modelo(Mock.getModeloHerramientas());
     }
 
 }

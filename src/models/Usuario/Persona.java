@@ -1,21 +1,27 @@
 package models.Usuario;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import enums.Genero;
 
 import java.util.UUID;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "@class"
+)
 public abstract class Persona {
     private String id;
     private String nombre;
     private String dni;
     private Genero sexo;
     private String telefono;
-    private Direccion direccion;
+    private String direccion;
 
 
     /**Constructores*/
-    public Persona(String nombre, String dni, Genero sexo, String telefono, Direccion direccion) {
-
+    public Persona(String nombre, String dni, Genero sexo, String telefono, String direccion) {
+        this.direccion = direccion;
         this.nombre = nombre;
         this.dni = dni;
         this.sexo = sexo;
@@ -63,14 +69,15 @@ public abstract class Persona {
         this.telefono = telefono;
         return this;
     }
-    public Direccion getDireccion() {
+
+    public String getDireccion() {
         return direccion;
     }
 
-
-
-
-
+    public Persona setDireccion(String direccion) {
+        this.direccion = direccion;
+        return this;
+    }
 
     /**Imprimir*/
     public void imprimir() {

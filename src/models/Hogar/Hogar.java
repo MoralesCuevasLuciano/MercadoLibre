@@ -34,7 +34,7 @@ public abstract class Hogar extends Producto {
     public UsoHogar getUso() {
         return uso;
     }
-    public void Uso(UsoHogar uso) {
+    public void uso(UsoHogar uso) {
         this.uso = uso;
     }
     public String getMaterial() {

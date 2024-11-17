@@ -17,6 +17,16 @@ public class CartMap <T extends Producto>{
         this.carrito = new HashMap<>();
     }
 
+    /**Getter y Setter*/
+    public Map<T, Integer> getCarrito() {
+        return carrito;
+    }
+
+    public CartMap<T> setCarrito(Map<T, Integer> carrito) {
+        this.carrito = carrito;
+        return this;
+    }
+
     /**METODOS*/
     public void agregarAlCarrito(T p, int cantidad) throws NoHayStock {
         if(p.getStock()<cantidad){

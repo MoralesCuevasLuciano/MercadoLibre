@@ -18,6 +18,15 @@ public class AdministradorList <T extends Producto> {
         this.productosList = new ArrayList<>(dim);
     }
 
+    /**Getter y Setter*/
+    public List<Producto> getProductosList() {
+        return productosList;
+    }
+
+    public AdministradorList<T> setProductosList(List<Producto> productosList) {
+        this.productosList = productosList;
+        return this;
+    }
 
     /**Agregar producto*/
     public void add(T p){

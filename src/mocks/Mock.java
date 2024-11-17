@@ -88,7 +88,7 @@ public final class Mock {
 
 
     private static final String[] nombresBazar = {
-            "Sofá de dos cuerpos", "Mesa de comedor", "Silla de oficina", "Cama queen size", "Escritorio de madera",
+            "Sofá de dos cuerpos", "Mesa de comedor", "Silla de oficina", "Cama queen size",
             "Mesa de noche", "Estante para libros", "Aparador", "Mesa de centro", "Cajonera",
             "Silla plegable", "Taburete alto", "Cuna de bebé", "Banco de jardín", "Mesa de jardín",
             "Sofá cama", "Mueble organizador", "Rincón de lectura", "Mueble TV", "Cabecero de cama",
@@ -182,7 +182,11 @@ public final class Mock {
         return juguetesManuales[random.nextInt(juguetesManuales.length)];
     }
 
-    public float getPrecio(){
+    public static float getPrecio(){
         return (float) (Math.random()*1000);
+    }
+
+    public static int getStock(){
+        return (int) (Math.random()*1000);
     }
 }

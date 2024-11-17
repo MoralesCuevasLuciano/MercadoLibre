@@ -9,9 +9,6 @@ public abstract class Herramienta extends Producto {
         super(nombre, cdp, stock, precio, marca, modelo);
     }
 
-
-
-
     public Herramienta() {
     }
 

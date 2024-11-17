@@ -1,8 +1,14 @@
 package models.Hogar;
 
 import enums.CategoriasHogar;
+import enums.MaterialInsumo;
 import enums.TamañoBazar;
 import enums.UsoHogar;
+import mocks.Mock;
+
+import java.util.Random;
+
+import static mocks.Mock.*;
 
 public class Bazar extends Hogar{
 
@@ -60,5 +66,23 @@ public class Bazar extends Hogar{
         String mensaje = resistenteAlCalor ? "Es resistente al calor" : "No es resistente al calor";
         System.out.println(mensaje);
         System.out.println("==============================================");
+    }
+
+    public static Bazar bazarRandom(){
+        Bazar bazar =  (Bazar) new Bazar()
+                .tamanio(TamañoBazar.values()[(int) (Math.random() * (TamañoBazar.values().length))])
+                .resistenteAlCalor(new Random().nextBoolean())
+                .nombre(getNombreBazar())
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                .marca(Mock.getMarcaBazar())
+                .modelo(Mock.getModeloBazar());
+
+        bazar.categoria(CategoriasHogar.values()[(int) (Math.random() * (CategoriasHogar.values().length))]);
+        bazar.uso(UsoHogar.values()[(int) (Math.random() * (UsoHogar.values().length))]);
+        /*
+        FALTA MOCK DE MATERIAL
+        bazar.material(Mock.getMaterial())*/
+        return bazar;
     }
 }

@@ -1,11 +1,18 @@
 package models.Herramienta;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import mocks.Mock;
 import models.Producto;
 
+import java.util.Random;
+
+import static mocks.Mock.getNombreHerramientasElectricas;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HerramientaElectrica extends Herramienta{
 
     private float voltaje;
-    private boolean Inalambrico;
+    private boolean inalambrico;
 
 
     /**Constructores*/
@@ -13,7 +20,7 @@ public class HerramientaElectrica extends Herramienta{
     public HerramientaElectrica(String nombre, String cdp, int stock, double precio, String marca, String modelo, float voltaje, boolean inalambrico) {
         super(nombre, cdp, stock, precio, marca, modelo);
         this.voltaje = voltaje;
-        Inalambrico = inalambrico;
+        this.inalambrico = inalambrico;
     }
 
     public HerramientaElectrica() {
@@ -23,20 +30,20 @@ public class HerramientaElectrica extends Herramienta{
     public float getVoltaje() {
         return voltaje;
     }
+
     public HerramientaElectrica voltaje(float voltaje) {
         this.voltaje = voltaje;
         return this;
     }
+
     public boolean isInalambrico() {
-        return Inalambrico;
+        return inalambrico;
     }
+
     public HerramientaElectrica inalambrico(boolean inalambrico) {
-        Inalambrico = inalambrico;
+        this.inalambrico = inalambrico;
         return this;
     }
-
-
-
 
     /**Imprimir*/
     @Override
@@ -66,7 +73,7 @@ public class HerramientaElectrica extends Herramienta{
     public String toString() {
         return "HerramientaElectrica{" +
                 "voltaje=" + voltaje +
-                ", Inalambrico=" + Inalambrico +
+                ", Inalambrico=" + inalambrico +
                 '}';
     }
 
@@ -78,6 +85,18 @@ public class HerramientaElectrica extends Herramienta{
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    public static HerramientaElectrica herramientaElectricaRandom(){
+        HerramientaElectrica herramientaElectrica = (HerramientaElectrica) new HerramientaElectrica()
+                .voltaje(220)
+                .inalambrico(new Random().nextBoolean())
+                .nombre(getNombreHerramientasElectricas())
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                .marca(Mock.getMarcaHerramientas())
+                .modelo(Mock.getModeloHerramientas());
+        return herramientaElectrica;
     }
 
 

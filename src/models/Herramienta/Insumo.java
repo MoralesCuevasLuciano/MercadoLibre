@@ -1,7 +1,10 @@
 package models.Herramienta;
 
 import enums.MaterialInsumo;
+import mocks.Mock;
 import models.Producto;
+
+import java.util.Random;
 
 public class Insumo extends Herramienta {
 
@@ -17,6 +20,9 @@ public class Insumo extends Herramienta {
         this.largo = largo;
         this.ancho = ancho;
         this.diametro = diametro;
+    }
+
+    public Insumo() {
     }
 
     /**Getters y Setters*/
@@ -89,5 +95,19 @@ public class Insumo extends Herramienta {
         return super.hashCode();
     }
 
+
+    public static Insumo insumoRandom() {
+        Insumo insumo = (Insumo) new Insumo()
+                .ancho((float) Math.random() * 100)
+                .largo((float)Math.random() * 100)
+                .diametro((float) Math.random() * 100)
+                .tipoDeMaterial(MaterialInsumo.values()[(int) (Math.random() * (MaterialInsumo.values().length))])
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio());
+                /*.nombre(Mock.getNombreInsumos())
+                .marca(Mock.getMarcaInsumos())
+                .modelo(Mock.getModeloInsumos()); AGREGAR FUNCIONES CUANDO ESTEN HECHAS EN EL MOCK*/
+        return insumo;
+    }
 
 }

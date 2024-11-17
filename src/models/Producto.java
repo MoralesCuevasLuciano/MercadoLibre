@@ -1,7 +1,15 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.util.Objects;
 import java.util.UUID;
+
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.CLASS, // Usa la clase completa como identificador
+        include = JsonTypeInfo.As.PROPERTY, // Se agrega como propiedad del JSON
+        property = "@class" // Nombre de la propiedad que contendrá el tipo
+)
 
 public abstract class Producto implements Comparable<Producto> {
     private String id;
@@ -11,6 +19,9 @@ public abstract class Producto implements Comparable<Producto> {
     private double precio;
     private String marca;
     private String modelo;
+
+
+    /**Constructores*/
 
     public Producto(String nombre,String cdp, int stock, double precio, String marca, String modelo) {
         this.id = UUID.randomUUID().toString();
@@ -22,12 +33,19 @@ public abstract class Producto implements Comparable<Producto> {
         this.modelo = modelo;
     }
 
-    /**Constructores*/
+    public Producto(String nombre,String cdp, int stock, double precio, String marca, String modelo, String id) {
+        this.id = id;
+        this.cdp = cdp;
+        this.nombre = nombre;
+        this.stock = stock;
+        this.precio = precio;
+        this.marca = marca;
+        this.modelo = modelo;
+    }
 
     public Producto() {
         this.id = UUID.randomUUID().toString();
     }
-
 
     /**Metodos*/
 
@@ -94,7 +112,7 @@ public abstract class Producto implements Comparable<Producto> {
         return cdp;
     }
 
-    public void setCdp(String cdp) {
+    public void cdp(String cdp) {
         this.cdp = cdp;
     }
 

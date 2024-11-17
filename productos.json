@@ -1,0 +1,58 @@
+{
+  "productosList" : [ {
+    "@class" : "models.Herramienta.HerramientaElectrica",
+    "id" : "661ede86-6a03-4163-b307-45bb9ee50a35",
+    "cdp" : "CDP001",
+    "nombre" : "Taladro",
+    "stock" : 10,
+    "precio" : 1500.0,
+    "marca" : "Bosch",
+    "modelo" : "X200",
+    "voltaje" : 18.0,
+    "inalambrico" : true
+  }, {
+    "@class" : "models.Herramienta.HerramientaElectrica",
+    "id" : "da66092b-c048-4728-a960-e332243d6b63",
+    "cdp" : "CDP002",
+    "nombre" : "Sierra Circular",
+    "stock" : 5,
+    "precio" : 3200.0,
+    "marca" : "Makita",
+    "modelo" : "CS600",
+    "voltaje" : 20.0,
+    "inalambrico" : false
+  }, {
+    "@class" : "models.Herramienta.HerramientaElectrica",
+    "id" : "e0d2ba0d-aa62-4bf7-8b41-8141dd69d0d8",
+    "cdp" : "CDP003",
+    "nombre" : "Amoladora",
+    "stock" : 7,
+    "precio" : 2100.0,
+    "marca" : "DeWalt",
+    "modelo" : "DWE402",
+    "voltaje" : 12.0,
+    "inalambrico" : true
+  }, {
+    "@class" : "models.Herramienta.HerramientaElectrica",
+    "id" : "c3cdaf37-d13b-4df3-b09f-87c03f5b0811",
+    "cdp" : "CDP005",
+    "nombre" : "Lijadora Orbital",
+    "stock" : 12,
+    "precio" : 1800.0,
+    "marca" : "Ryobi",
+    "modelo" : "RS300",
+    "voltaje" : 6.0,
+    "inalambrico" : false
+  }, {
+    "@class" : "models.Herramienta.HerramientaElectrica",
+    "id" : "0864baaa-54d2-4a8d-8a50-518d364c3d31",
+    "cdp" : "CDP004",
+    "nombre" : "Destornillador Eléctrico",
+    "stock" : 15,
+    "precio" : 850.0,
+    "marca" : "Black & Decker",
+    "modelo" : "BDX01",
+    "voltaje" : 4.8,
+    "inalambrico" : true
+  } ]
+}

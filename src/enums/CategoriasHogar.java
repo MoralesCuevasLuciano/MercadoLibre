@@ -1,5 +1,5 @@
 package enums;
 
 public enum CategoriasHogar {
-    BAÑO,JARDIN;
+    BAÑO,JARDIN, COCINA, LAVANDERIA, LIMPIEZA, ELECTRODOMESTICOS, BAZAR, MUEBLES, DECORACION;
 }

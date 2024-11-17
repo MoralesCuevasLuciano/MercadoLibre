@@ -3,6 +3,9 @@ package models.Hogar;
 import enums.CategoriasHogar;
 import enums.EstiloMueble;
 import enums.UsoHogar;
+import mocks.Mock;
+
+import java.util.Random;
 
 public class Escritorio extends Mueble {
 
@@ -58,6 +61,21 @@ public class Escritorio extends Mueble {
         String mensaje = isTieneCajones() ? "Tiene cajones" : "No tiene cajones";
         System.out.println(mensaje);
         System.out.println("==============================================");
+    }
 
+    public static Escritorio escritorioRandom(){
+        Escritorio escritorio = (Escritorio) new Escritorio()
+                .numeroDePuertas((int) (Math.random() * 4))
+                .tieneCajones(new Random().nextBoolean())
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                /*.marca(Mock.getMarcaMuebles())
+                .modelo(Mock.getModeloMuebles())*/
+                .nombre("Escritorio");
+        escritorio.categoria(CategoriasHogar.MUEBLES);
+        escritorio.uso(UsoHogar.ORGANIZAR);
+        /*escritorio.material(Mock.getMaterialMuebles());*/
+        return escritorio;
+        /*Lo comentado falta agregar*/
     }
 }
