@@ -49,7 +49,6 @@ public class Menu {
                 case 3 -> System.out.println("Gracias por ingresar");
             }
         }while(this.opcion!=0);
-
     }
 
     /**USANDO EL PRINCIPIO DE HACER QUE LAS FUNCIONES SOLO TENGAN UNA FUNCION*/

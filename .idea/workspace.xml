@@ -1,137 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="workspace">
+    <list default="true" id="aad5fc28-f184-4639-a740-ec8f5266775c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_18_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MercadoLibre.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MercadoLibre.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/json_simple_1_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_2024_06_55__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_19_10_2024_06_55__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mocks/Mock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/Mock.java" afterDir="false" />
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ArrayList/CarritoList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/CarritoList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/HistorialCompras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/HistorialCompras.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/ItemCarrito.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/ItemCarrito.java" afterDir="false" />
->>>>>>> bbe5def01b7c6e49efda6be7f86113df8943e779
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mocks/Mock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/Mock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ProductosJSON/ProductosJSON.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;kingrichard11&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/keilaayelen/MercadoLibre.git&quot;,
-    &quot;accountId&quot;: &quot;8691a52d-771b-4a6e-a14e-82aaadb316c3&quot;
-  }
-}</component>
   <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2nS85N8zgy1l4f9cbdOkRPq2VHa" />
+  <component name="ProjectId" id="2oxFJE368jpmzRxFcMDHfo0Mtrf" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-<<<<<<< HEAD
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-=======
-    "Application.Main.executor": "Run",
->>>>>>> bbe5def01b7c6e49efda6be7f86113df8943e779
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-<<<<<<< HEAD
-    "last_opened_file_path": "C:/Users/pablo/OneDrive/Escritorio/Proyecto final programacion 2",
-=======
-    "last_opened_file_path": "C:/Users/richa/OneDrive/Escritorio/TP FINAL",
->>>>>>> bbe5def01b7c6e49efda6be7f86113df8943e779
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\richa\OneDrive\Escritorio\TP FINAL\MercadoLibre\src" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
-      </set>
-    </attachedChunks>
-  </component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="" />
-      <created>1728954932833</created>
+      <changelist id="aad5fc28-f184-4639-a740-ec8f5266775c" name="Changes" comment="" />
+      <created>1731803247904</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1728954932833</updated>
-      <workItem from="1729332301815" duration="2847000" />
+      <updated>1731803247904</updated>
     </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace" />
   </component>
 </project>

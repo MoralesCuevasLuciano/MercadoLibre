@@ -185,9 +185,4 @@ public final class Mock {
     public float getPrecio(){
         return (float) (Math.random()*1000);
     }
-
-
-
-
-
 }

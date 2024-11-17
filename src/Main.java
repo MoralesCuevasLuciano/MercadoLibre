@@ -1,3 +1,4 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import enums.*;
 import enums.UsoCalzadoPantalon;
 import models.ArrayList.AdministradorList;
@@ -14,8 +15,11 @@ import models.Ropa.Calzado;
 import models.ArrayList.CarritoList;
 import models.Usuario.Cliente;
 import models.Usuario.Direccion;
+import org.json.JSONObject;
 
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
 
 
@@ -41,9 +45,13 @@ public class Main {
         t.add(destornillador);
 
 
-            a.ejecutaOpcionCliente(opcion);
-
-            }
-
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File("productos.json"), t);
+            System.out.println("Productos guardados en productos.json");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
