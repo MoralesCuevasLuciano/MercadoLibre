@@ -69,13 +69,12 @@ public class Escritorio extends Mueble {
                 .tieneCajones(new Random().nextBoolean())
                 .stock(Mock.getStock())
                 .precio(Mock.getPrecio())
-                /*.marca(Mock.getMarcaMuebles())
-                .modelo(Mock.getModeloMuebles())*/
+                .marca(Mock.getMarcaBazar())
+                .modelo(Mock.getModeloBazar())
                 .nombre("Escritorio");
         escritorio.categoria(CategoriasHogar.MUEBLES);
         escritorio.uso(UsoHogar.ORGANIZAR);
-        /*escritorio.material(Mock.getMaterialMuebles());*/
+        escritorio.material(Mock.getMaterialMuebles());
         return escritorio;
-        /*Lo comentado falta agregar*/
     }
 }

@@ -1,7 +1,10 @@
 package models.Juguete;
 
 import enums.CategoriaJuguete;
+import enums.MaterialInsumo;
 import enums.MaterialJuguete;
+import mocks.Mock;
+import models.Herramienta.Insumo;
 import models.Producto;
 
 public class JuegoDeMesa extends  Juguete{
@@ -69,6 +72,18 @@ public class JuegoDeMesa extends  Juguete{
     @Override
     public int hashCode() {
         return super.hashCode();
+    }
+
+    public static JuegoDeMesa juegoDeMesaRandom() {
+        JuegoDeMesa juegoDeMesa = (JuegoDeMesa) new JuegoDeMesa()
+                .cantidadJugadores((int) Math.random() *5)
+                .duracion((int)Math.random() * 120)
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                .nombre(Mock.getNombreJuegosMesa())
+                .marca(Mock.getMarcaJuguetes())
+                .modelo(Mock.getModeloJuegosDeMesa());
+        return juegoDeMesa;
     }
 
 

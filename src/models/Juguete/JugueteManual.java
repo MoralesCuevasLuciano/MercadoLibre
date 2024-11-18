@@ -2,7 +2,11 @@ package models.Juguete;
 
 import enums.CategoriaJuguete;
 import enums.MaterialJuguete;
+import mocks.Mock;
 import models.Producto;
+
+import static mocks.Mock.getNombreJuguetesElectricos;
+import static mocks.Mock.getNombreJuguetesManuales;
 
 public class JugueteManual extends Juguete{
 
@@ -11,7 +15,11 @@ public class JugueteManual extends Juguete{
         super(nombre, cdp, stock, precio, marca, modelo, edad, categoria, material);
     }
 
+    public JugueteManual() {
+    }
+
     /**Constructores*/
+
 
 
 
@@ -34,6 +42,16 @@ public class JugueteManual extends Juguete{
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
+    }
+
+    public static JugueteManual jugueteManualRandom(){
+        JugueteManual jugueteManual = (JugueteManual) new JugueteManual()
+                .nombre(getNombreJuguetesManuales())
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                .marca(Mock.getMarcaJuguetes())
+                .modelo(Mock.getModeloJuguetes());
+        return jugueteManual;
     }
 
 }

@@ -80,9 +80,7 @@ public class Bazar extends Hogar{
 
         bazar.categoria(CategoriasHogar.values()[(int) (Math.random() * (CategoriasHogar.values().length))]);
         bazar.uso(UsoHogar.values()[(int) (Math.random() * (UsoHogar.values().length))]);
-        /*
-        FALTA MOCK DE MATERIAL
-        bazar.material(Mock.getMaterial())*/
+        bazar.material(Mock.getMaterialBazar());
         return bazar;
     }
 }

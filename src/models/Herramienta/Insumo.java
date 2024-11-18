@@ -103,10 +103,10 @@ public class Insumo extends Herramienta {
                 .diametro((float) Math.random() * 100)
                 .tipoDeMaterial(MaterialInsumo.values()[(int) (Math.random() * (MaterialInsumo.values().length))])
                 .stock(Mock.getStock())
-                .precio(Mock.getPrecio());
-                /*.nombre(Mock.getNombreInsumos())
+                .precio(Mock.getPrecio())
+                .nombre(Mock.getNombreInsumos())
                 .marca(Mock.getMarcaInsumos())
-                .modelo(Mock.getModeloInsumos()); AGREGAR FUNCIONES CUANDO ESTEN HECHAS EN EL MOCK*/
+                .modelo(Mock.getModeloHerramientas());
         return insumo;
     }
 

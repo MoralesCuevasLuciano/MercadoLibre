@@ -11,6 +11,12 @@ public final class Mock {
             "Bosch", "DeWalt", "Makita", "Stanley", "Milwaukee", "Black & Decker", "Ryobi", "Hilti", "Craftsman", "Ridgid"
     };
 
+    private static final String[] marcasInsumos = {
+            "Fixser", "Sodecar", "Herdez", "Rex", "Basso",
+            "Sparta", "Scotch", "Obrero", "Sodecar", "Pirelli"
+    };
+
+
     private static final String[] marcasBazar = {
             "IKEA", "Palermo", "Rincón del Bazar", "Sodimac", "Easy", "Librería El Ateneo", "Falabella", "Casa Pons" , "Coto" , "Musimundo"
     };
@@ -43,6 +49,12 @@ public final class Mock {
             "Muñeco de Nieve Amistoso", "Casa de Muñecas Moderna", "Coche de Carreras", "Set de Jardinería Infantil", "Avión de Papel Volador",
             "Pista de Carreras Interactiva", "Kit de Superhéroes", "Animales de la Granja", "Juego de Memoria Divertido", "Zoológico Móvil"
     };
+
+    private static final String[] modeloJuegosDeMesa = {
+            "Dados", "Cartas", "Fichas", "Tablero", "Piezas",
+            "Marcadores", "Contadores", "Figuras", "Fichas de puntuación", "Carteles"
+    };
+
 
     private static final String[] modeloRopa = {
             "Camisa de Cuadro", "Jeans", "Vestido de Verano", "Campera de Cuero", "Sweater con Capucha",
@@ -80,10 +92,18 @@ public final class Mock {
             "Lijadora de Banda", "Pistola de Grapas", "Juego de Brocas"
     };
 
+
+
     private static final String[] herramientasManuales = {
             "Llave Ajustable", "Desarmador de Precisión", "Martillo de Goma", "Cortador de Placas", "Escuadra de Carpintero",
             "Cinta Métrica", "Pico de Gallo", "Atornillador Manual", "Cortadora de Cables", "Paleta de Yeso",
             "Juego de Llaves Allen"
+    };
+
+    private static final String[] insumos = {
+            "Tornillo", "Clavo", "Mecha", "Tuerca", "Arandela",
+            "Perno", "Grapa", "Clavo de Acero", "Tornillo de Mariposa", "Cinta Adhesiva",
+            "Bisagra", "Perno de Anclaje", "Anillo de Seguridad", "Pasador", "Manguera"
     };
 
 
@@ -114,8 +134,25 @@ public final class Mock {
             "Avión de Juguete", "Kit de Manualidades", "Muñeco de Trapo", "Pelota de Fútbol", "Bicicleta Infantil"
     };
 
+    //MOCK MATERIALES DE BAZAR
+
+    private static final String[] materialBazar = {
+            "Madera", "Acero", "Aluminio", "Vidrio", "Plástico",
+            "Cerámica", "Cobre", "Cartón", "Piedra", "Tela"
+    };
+
+    private static final String[] materialesMuebles = {
+            "Madera de Pino", "Madera de Roble", "Madera de Nogal", "Madera de Cedro", "Madera de Haya",
+            "Aluminio", "Acero Inoxidable", "Madera Contrachapada", "MDF", "Aglomerado"
+    };
+
+
     public static String getMarcaHerramientas(){
         return marcasHerramientas[random.nextInt(marcasHerramientas.length)];
+    }
+
+    public static String getMarcaInsumos(){
+        return marcasInsumos[random.nextInt(marcasInsumos.length)];
     }
 
     public static String getMarcaBazar() {
@@ -146,6 +183,11 @@ public final class Mock {
         return modeloJuguetes[random.nextInt(modeloJuguetes.length)];
     }
 
+    public static String getModeloJuegosDeMesa() {
+        return modeloJuegosDeMesa[random.nextInt(modeloJuegosDeMesa.length)];
+    }
+
+
     public static String getModeloRopa() {
         return modeloRopa[random.nextInt(modeloRopa.length)];
     }
@@ -166,6 +208,10 @@ public final class Mock {
         return herramientasManuales[random.nextInt(herramientasManuales.length)];
     }
 
+    public static String getNombreInsumos() {
+        return insumos[random.nextInt(insumos.length)];
+    }
+
     public static String getNombreBazar() {
         return nombresBazar[random.nextInt(nombresBazar.length)];
     }
@@ -180,6 +226,14 @@ public final class Mock {
 
     public static String getNombreJuguetesManuales() {
         return juguetesManuales[random.nextInt(juguetesManuales.length)];
+    }
+
+    public static String getMaterialBazar() {
+        return materialBazar[random.nextInt(materialBazar.length)];
+    }
+
+    public static String getMaterialMuebles() {
+        return materialesMuebles[random.nextInt(materialesMuebles.length)];
     }
 
     public static float getPrecio(){

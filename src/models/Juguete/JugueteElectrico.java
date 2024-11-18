@@ -2,7 +2,14 @@ package models.Juguete;
 
 import enums.CategoriaJuguete;
 import enums.MaterialJuguete;
+import mocks.Mock;
+import models.Herramienta.HerramientaElectrica;
 import models.Producto;
+
+import java.util.Random;
+
+import static mocks.Mock.getNombreHerramientasElectricas;
+import static mocks.Mock.getNombreJuguetesElectricos;
 
 public class JugueteElectrico extends Juguete{
     int cantidadDePilas;
@@ -41,7 +48,6 @@ public class JugueteElectrico extends Juguete{
     }
 
 
-
     /**Imprimir*/
     @Override
     public void imprimir() {
@@ -75,6 +81,18 @@ public class JugueteElectrico extends Juguete{
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
+    }
+
+    public static JugueteElectrico jugueteElectricoRandom(){
+        JugueteElectrico jugueteElectrico = (JugueteElectrico) new JugueteElectrico()
+                .cantidadDePilas((int) Math.random() *6)
+                .voltaje(12)
+                .nombre(getNombreJuguetesElectricos())
+                .stock(Mock.getStock())
+                .precio(Mock.getPrecio())
+                .marca(Mock.getMarcaJuguetes())
+                .modelo(Mock.getModeloJuguetes());
+        return jugueteElectrico;
     }
 
 
