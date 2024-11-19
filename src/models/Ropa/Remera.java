@@ -53,9 +53,15 @@ public class Remera extends Ropa {
 
     @Override
     public String toString() {
-        return "Remera{" +
-                "tipoDeRemera=" + tipoDeRemera +
-                ", talle=" + talle +
-                '}';
+        return "Nombre:........................:" +getNombre() +
+                "\nMarca:.........................: " + getMarca() +
+                "\nModelo:.........................: " + getModelo() +
+                "\nPrecio:.........................: " + getPrecio() +
+                "\nColor...........................: " + getColor() +
+                "\nGenero..........................: " +getGenero() +
+                "\nTalle...........................: " + getTalle() +
+                "\nMaterial........................: " + getMaterial() +
+                "\nTipo de remera:.................: " + getTipoDeRemera()+
+                "\n==============================================\n\n";
     }
 }

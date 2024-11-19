@@ -1,10 +1,9 @@
 package models.ArrayList;
 
 import models.Producto;
+import models.Ropa.Ropa;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class AdministradorList <T extends Producto> {
     List<Producto> productosList;
@@ -18,15 +17,6 @@ public class AdministradorList <T extends Producto> {
         this.productosList = new ArrayList<>(dim);
     }
 
-    /**Getter y Setter*/
-    public List<Producto> getProductosList() {
-        return productosList;
-    }
-
-    public AdministradorList<T> setProductosList(List<Producto> productosList) {
-        this.productosList = productosList;
-        return this;
-    }
 
     /**Agregar producto*/
     public void add(T p){
@@ -55,6 +45,10 @@ public class AdministradorList <T extends Producto> {
         }
     }
 
+    public int size(){
+        return this.productosList.size();
+    }
+
     public void removeTernario(T p, int stock){
         String mensaje = (p.getStock() - stock >= 0) ? "Stock actualizado" : "No hay stock suficiente disponible para eliminar el producto";
         System.out.println(mensaje);
@@ -78,6 +72,79 @@ public class AdministradorList <T extends Producto> {
         }
     }
 
+    public void show3(Producto p){
+        for(Producto producto : productosList){
+            if(producto.equals(p)){
+                System.out.println(producto);
+            }
+        }
+    }
+
+    public String[] getNombresProductos() {
+        String[] nombres = new String[this.productosList.size()];
+        for (int i = 0; i < this.productosList.size(); i++) {
+            nombres[i] = this.productosList.get(i).getNombre(); // Suponiendo que Producto tiene un método getNombre()
+        }
+        return nombres;
+    }
+
+    // Método para buscar un producto por su nombre
+    public Producto  buscarProductoPorNombre(String nombre) {
+        for (Producto t : this.productosList) {
+            if (t.getNombre().equalsIgnoreCase(nombre)) {
+                return t;
+            }
+        }
+        return null; // Retorna null si no encuentra el producto
+    }
+
+    public void mostrarProductosClases(String clase){
+        for(Producto producto : productosList){
+            if(producto.getClass().getSimpleName().equalsIgnoreCase(clase)){
+                producto.imprimirCliente();
+            }
+        }
+    }
+
+    public String[] mostrarProductosClases2(String clase) {
+        List<String> productosCoincidentes = new ArrayList<>();
+
+        for (int i = 0; i < productosList.size(); i++) {
+
+            if (productosList.get(i).getClass().getSimpleName().equalsIgnoreCase(clase)) {
+                productosCoincidentes.add(productosList.get(i).toString());
+            }
+        }
+
+
+        return productosCoincidentes.toArray(new String[0]);
+    }
+
+    public String[] obtenerNombresClases() {
+        Set<String> clases = new HashSet<>();
+
+        // Iterar sobre el arreglo de objetos y obtener el nombre de cada clase
+        for (int i = 0; i < productosList.size(); i++) {
+            clases.add(this.productosList.get(i).getClass().getSimpleName());  // Almacenar el nombre de la clase
+        }
+
+        String[] nombresClases = clases.toArray(new String[0]);
+        return nombresClases;
+    }
+
+    public String[] crearArregloDeNombres() {
+        // Crear un arreglo de nombres
+        String[] nombresArray = productosList.stream()
+                .map(Producto::getNombre)
+                .toArray(String[]::new);
+
+        // Imprimir el nombre de las clases de los elementos
+        for (int i = 0; i < productosList.size(); i++) {
+            nombresArray[i] = this.productosList.get(i).getClass().getSimpleName();
+        }
+
+        return nombresArray;
+    }
     /**Mostrar producto segun marca*/
     public void showMarca(String marca){
         for(Producto producto : productosList){
@@ -125,4 +192,6 @@ public class AdministradorList <T extends Producto> {
         Collections.sort(productosList);
     }
 }
+
+
 
