@@ -1,6 +1,7 @@
 import Menus.Menu;
 import Menus.MenuCliente;
 import Menus.MenuCliente2;
+import Menus.MenuPpal;
 import enums.*;
 import models.ArrayList.AdministradorList;
 import models.Herramienta.HerramientaElectrica;
@@ -24,6 +25,9 @@ public class Main {
         Cliente r = new Cliente("Richard","w323232",Genero.MASCULINO,"23232323", "s",3000000);
         Menu a = new Menu(t,r);
         MenuCliente2 j = new MenuCliente2(t,r);
+        MenuPpal menuPpal = new MenuPpal();
+
+
 
         HerramientaElectrica taladro = new HerramientaElectrica("Taladro", "CDP001", 10, 1500.0, "Bosch", "X200", 18.0f, true);
         HerramientaElectrica sierraCircular = new HerramientaElectrica("Sierra Circular", "CDP002", 5, 3200.0, "Makita", "CS600", 20.0f, false);
@@ -50,7 +54,15 @@ public class Main {
 
         e.imprimirCliente();
 
-        j.mostrar();
+        System.out.println("La opcion es " + menuPpal.getOpcion());
+
+        if(menuPpal.getOpcion()==2){ //encontrar la forma para mostrar el menu cliente
+            j.mostrar();
+        }
+        //menuPpal.mostrar();
+        //j.mostrar();
+
+
     }
 
 }
