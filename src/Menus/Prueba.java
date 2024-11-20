@@ -56,8 +56,5 @@ public class Prueba extends JFrame {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        Prueba ventana = new Prueba();
-        ventana.mostrar();
-    }
+
 }

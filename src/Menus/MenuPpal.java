@@ -7,14 +7,19 @@ import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
 public class MenuPpal extends JFrame {
+
     private int opcion;
     private String nombre;
     private String contraseña;
     private CountDownLatch latch;
+    private MenuCliente2 menuCliente;
+
 
     public MenuPpal()  {
 
         latch = new CountDownLatch(1);
+        this.menuCliente = menuCliente;
+
 
         JFrame menu = new JFrame("Mercado Libre");
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -40,10 +45,10 @@ public class MenuPpal extends JFrame {
         btnIngresarCliente.addActionListener(e -> ingresoCliente());
         panelOpciones.add(btnIngresarCliente);
 
-        JLabel lblNombre = new JLabel("- Lima Keyla Ayelen" +
+        JLabel lblNombre = new JLabel("- Lima Keila Ayelen" +
                 " - Morales Luciano" +
                 " - Llopart Manuel" +
-                " - Moreno Richar Jesus" +
+                " - Moreno Richard Jesus" +
                 " - Oviedo German -", JLabel.CENTER);
         menu.add(lblNombre, BorderLayout.SOUTH);
 

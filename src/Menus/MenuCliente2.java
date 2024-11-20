@@ -62,9 +62,7 @@ public class MenuCliente2 extends JFrame {
         JTextArea textAreaProductos = new JTextArea();
         textAreaProductos.setEditable(false);
 
-        for (Object producto : this.productos.getProductos()) {
-            textAreaProductos.append(producto + "\n");
-        }
+        this.productos.mostrareFrame(textAreaProductos);
 
         JScrollPane scrollPane = new JScrollPane(textAreaProductos);
         frameProductos.add(scrollPane, BorderLayout.CENTER);

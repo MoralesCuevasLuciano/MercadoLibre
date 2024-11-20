@@ -3,6 +3,7 @@ package models.ArrayList;
 import models.Producto;
 import models.Ropa.Ropa;
 
+import javax.swing.*;
 import java.util.*;
 
 public class AdministradorList <T extends Producto> {
@@ -36,6 +37,11 @@ public class AdministradorList <T extends Producto> {
         int newStock = p.getStock() + stock;
         p.stock(newStock);
         productosList.add(p);
+    }
+    public void mostrareFrame (JTextArea textArea){
+        for (Producto producto : this.productosList) {
+            textArea.append(producto + "\n");
+        }
     }
 
     /**Eliminar producto*/
