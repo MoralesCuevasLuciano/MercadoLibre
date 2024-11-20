@@ -1,5 +1,6 @@
 import Menus.Menu;
 import Menus.MenuCliente;
+import Menus.MenuCliente2;
 import enums.*;
 import models.ArrayList.AdministradorList;
 import models.Herramienta.HerramientaElectrica;
@@ -22,7 +23,7 @@ public class Main {
         Direccion s = new Direccion();
         Cliente r = new Cliente("Richard","w323232",Genero.MASCULINO,"23232323", "s",3000000);
         Menu a = new Menu(t,r);
-        MenuCliente j = new MenuCliente(r,t);
+        MenuCliente2 j = new MenuCliente2(t,r);
 
         HerramientaElectrica taladro = new HerramientaElectrica("Taladro", "CDP001", 10, 1500.0, "Bosch", "X200", 18.0f, true);
         HerramientaElectrica sierraCircular = new HerramientaElectrica("Sierra Circular", "CDP002", 5, 3200.0, "Makita", "CS600", 20.0f, false);

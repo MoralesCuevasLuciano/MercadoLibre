@@ -1,26 +1,21 @@
 package models.Usuario;
 
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import enums.Genero;
 import models.ArrayList.CarritoList;
 import models.ArrayList.CartMap;
 import models.Producto;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
-
-@JsonTypeName("Cliente")
 public class Cliente extends Persona{
 
     private double saldo;
-    @JsonIgnore
     private CartMap carrito;
     private HistorialCompras historialCompras;
 
     /**Constructores*/
 
-    public Cliente(String nombre, String dni, Genero sexo, String telefono, String direccion, double saldo) {
+    public Cliente(String nombre, String dni, Genero sexo, String telefono,String direccion, double saldo) {
         super(nombre, dni, sexo, telefono, direccion);
-        this.carrito = new CartMap<>();
+        this.carrito = new CartMap();
         this.saldo = saldo;
     }
 

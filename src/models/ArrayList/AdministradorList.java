@@ -13,6 +13,14 @@ public class AdministradorList <T extends Producto> {
         this.productosList = new ArrayList<>();
     }
 
+    public void get(int i){
+        this.productosList.get(i);
+    }
+
+    public List<Producto> getProductos() {
+        return this.productosList;
+    }
+
     public AdministradorList(int dim){
         this.productosList = new ArrayList<>(dim);
     }
@@ -72,12 +80,13 @@ public class AdministradorList <T extends Producto> {
         }
     }
 
-    public void show3(Producto p){
+    public Producto show3(Producto p){
         for(Producto producto : productosList){
             if(producto.equals(p)){
                 System.out.println(producto);
             }
         }
+        return p;
     }
 
     public String[] getNombresProductos() {
@@ -192,6 +201,4 @@ public class AdministradorList <T extends Producto> {
         Collections.sort(productosList);
     }
 }
-
-
 
