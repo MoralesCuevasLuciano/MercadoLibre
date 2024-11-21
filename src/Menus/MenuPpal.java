@@ -1,24 +1,28 @@
 package Menus;
 
+import models.ArrayList.AdministradorList;
+import models.Usuario.Cliente;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 
-public class MenuPpal extends JFrame {
+
+public class MenuPpal {
 
     private int opcion;
     private String nombre;
     private String contraseña;
-    private CountDownLatch latch;
-    private MenuCliente2 menuCliente;
+    private AdministradorList productos;
+    private Cliente cliente;
 
 
-    public MenuPpal()  {
+    public MenuPpal(AdministradorList productos, Cliente cliente)  {
 
-        latch = new CountDownLatch(1);
-        this.menuCliente = menuCliente;
+        this.productos = productos;
+        this.cliente = cliente;
 
 
         JFrame menu = new JFrame("Mercado Libre");
@@ -38,11 +42,11 @@ public class MenuPpal extends JFrame {
         menu.add(panelOpciones, BorderLayout.CENTER);
 
         JButton btnIngresarAdmin = new JButton("Ingresar como Admin");
-        btnIngresarAdmin.addActionListener(e -> ingresoAdmin2());
+        btnIngresarAdmin.addActionListener(e -> ingresoAdmin2(menu));
         panelOpciones.add(btnIngresarAdmin);
 
         JButton btnIngresarCliente = new JButton("Ingresar como Cliente");
-        btnIngresarCliente.addActionListener(e -> ingresoCliente());
+        btnIngresarCliente.addActionListener(e -> ingresoCliente(menu));
         panelOpciones.add(btnIngresarCliente);
 
         JLabel lblNombre = new JLabel("- Lima Keila Ayelen" +
@@ -62,24 +66,21 @@ public class MenuPpal extends JFrame {
         JPanel panelVacioEste = new JPanel();
         panelVacioEste.setPreferredSize(new Dimension(150, 400)); // Ancho de 150px
         menu.add(panelVacioEste, BorderLayout.EAST);
-        // Aquí bloqueamos el hilo principal hasta que el usuario complete el login
-        try {
-            latch.await(); // Espera hasta que el latch sea contado hacia abajo
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
 
 
     }
 
-    private void ingresoCliente(){
-        this.opcion=2;
-        latch.countDown();
+    private void ingresoCliente(JFrame menuppal){
+        menuppal.setVisible(false);
+        MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente);
+
     }
-    private void ingresoAdmin2(){
-        this.opcion=1;
-        latch.countDown();
+    private void ingresoAdmin2(JFrame menuppal){
+        menuppal.setVisible(false);
+
+        MenuAdmin mAdmin = new MenuAdmin(this.productos);
+
     }
 
     private void ingresoAdmin(JFrame frame){//OPCION SI LLEGAMOS A HACER LOGEO
@@ -102,13 +103,12 @@ public class MenuPpal extends JFrame {
 
         // Mostrar el JOptionPane con el panel creado
         int option = JOptionPane.showConfirmDialog(frame, panel, "Iniciar Sesión", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
-        latch.countDown();
 
     }
 
-    public void mostrar(){
-        setVisible(true);
-    }
+//    public void mostrar(){
+//        setVisible(true);
+//    }
 
     public Integer getOpcion() {
         return opcion;

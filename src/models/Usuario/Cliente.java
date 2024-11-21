@@ -20,6 +20,9 @@ public class Cliente extends Persona{
     }
 
     public Cliente() {
+        super();
+        this.carrito = new CartMap();
+        this.saldo = saldo;
     }
 
 
