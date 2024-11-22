@@ -8,4 +8,5 @@ public enum CategoriaJuguete {
     DEPORTIVO,
     MUÑECAS,
     MUSICAL,
+    JUEGOS_DE_MESA
 }

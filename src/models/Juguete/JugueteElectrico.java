@@ -1,6 +1,7 @@
 package models.Juguete;
 
 import enums.CategoriaJuguete;
+import enums.MaterialInsumo;
 import enums.MaterialJuguete;
 import mocks.Mock;
 import models.Herramienta.HerramientaElectrica;
@@ -8,8 +9,7 @@ import models.Producto;
 
 import java.util.Random;
 
-import static mocks.Mock.getNombreHerramientasElectricas;
-import static mocks.Mock.getNombreJuguetesElectricos;
+import static mocks.Mock.*;
 
 public class JugueteElectrico extends Juguete{
     int cantidadDePilas;
@@ -87,6 +87,9 @@ public class JugueteElectrico extends Juguete{
         JugueteElectrico jugueteElectrico = (JugueteElectrico) new JugueteElectrico()
                 .cantidadDePilas((int) Math.random() *6)
                 .voltaje(12)
+                .edad(random.nextInt(18))
+                .material(MaterialJuguete.valueOf(MaterialInsumo.values()[(int) Math.random() * MaterialInsumo.values().length].name()))
+                .categoria(CategoriaJuguete.valueOf(CategoriaJuguete.values()[(int) Math.random() * CategoriaJuguete.values().length].name()))
                 .nombre(getNombreJuguetesElectricos())
                 .stock(Mock.getStock())
                 .precio(Mock.getPrecio())

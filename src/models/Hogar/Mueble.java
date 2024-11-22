@@ -4,7 +4,9 @@ import enums.CategoriasHogar;
 import enums.EstiloMueble;
 import enums.UsoHogar;
 
-public class Mueble extends Hogar{
+import static mocks.Mock.*;
+
+public abstract class Mueble extends Hogar{
     private int capacidad;
     private EstiloMueble estilo;
 
@@ -54,4 +56,5 @@ public class Mueble extends Hogar{
         System.out.println("Estilo:....................:" + estilo);
 
     }
+
 }

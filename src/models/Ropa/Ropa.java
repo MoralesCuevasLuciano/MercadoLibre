@@ -24,6 +24,9 @@ public abstract class Ropa extends Producto {
         this.material = material;
     }
 
+    public Ropa() {
+    }
+
     /**Getters y Setters*/
     public String getColor() {
         return color;

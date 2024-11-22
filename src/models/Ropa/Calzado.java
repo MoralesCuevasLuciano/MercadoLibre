@@ -5,6 +5,8 @@ import enums.TalleRemera;
 import enums.TipoCalzado;
 import enums.UsoCalzadoPantalon;
 
+import static mocks.Mock.*;
+
 public class Calzado extends Ropa {
     private TipoCalzado tipo;
     private UsoCalzadoPantalon uso;
@@ -14,6 +16,9 @@ public class Calzado extends Ropa {
         super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
         this.tipo = tipo;
         this.uso = uso;
+    }
+
+    public Calzado() {
     }
 
     /**Getters y Setters*/
@@ -59,5 +64,21 @@ public class Calzado extends Ropa {
                 "tipo=" + tipo +
                 ", uso=" + uso +
                 '}';
+    }
+
+    public static Calzado calzadoRandom(){
+        Calzado calzado = (Calzado) new Calzado();
+        calzado.tipo = TipoCalzado.values()[(int) (Math.random() * TipoCalzado.values().length)];
+        calzado.uso = UsoCalzadoPantalon.values()[(int) (Math.random() * UsoCalzadoPantalon.values().length)];
+        calzado.color(getColores());
+        calzado.genero(Genero.values()[(int) (Math.random() * Genero.values().length)]);
+        calzado.talle(TalleRemera.values()[(int) (Math.random() * TalleRemera.values().length)]);
+        calzado.material(getMaterialRopa());
+        calzado.modelo(getModeloCalzado());
+        calzado.marca(getMarcaRopa());
+        calzado.nombre(calzado.getMarca() + " " + getNombreCalzado() +" " + calzado.getModelo());
+        calzado.stock((int) (Math.random() * 100));
+        calzado.precio(Math.random() * 300000);
+        return calzado;
     }
 }

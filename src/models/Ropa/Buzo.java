@@ -3,6 +3,8 @@ package models.Ropa;
 import enums.Genero;
 import enums.TalleRemera;
 
+import static mocks.Mock.*;
+
 public class Buzo extends Ropa {
     private boolean tieneCapucha;
     private boolean tieneCierre;
@@ -18,6 +20,13 @@ public class Buzo extends Ropa {
         this.tieneBolsillos = tieneBolsillos;
         this.tieneEstampado = tieneEstampado;
         this.impermeable = impermeable;
+    }
+
+    public Buzo(String nombre, String cdp, int stock, double precio, String marca, String modelo, String color, Genero genero, TalleRemera talle, String material) {
+        super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
+    }
+
+    public Buzo() {
     }
 
     /**Getters y Setters*/
@@ -93,5 +102,24 @@ public class Buzo extends Ropa {
                 ", tieneEstampado=" + tieneEstampado +
                 ", impermeable=" + impermeable +
                 '}';
+    }
+
+    public static Buzo buzoRandom(){
+        Buzo buzo = (Buzo) new Buzo();
+        buzo.impermeable(random.nextBoolean());
+        buzo.tieneBolsillos(random.nextBoolean());
+        buzo.tieneCapucha(random.nextBoolean());
+        buzo.tieneCierre(random.nextBoolean());
+        buzo.tieneEstampado(random.nextBoolean());
+        buzo.color(getColores());
+        buzo.talle(TalleRemera.values()[random.nextInt(TalleRemera.values().length)]);
+        buzo.genero(Genero.values()[random.nextInt(Genero.values().length)]);
+        buzo.material(getMaterialRopa());
+        buzo.marca(getMarcaRopa());
+        buzo.modelo(getModeloBuzo());
+        buzo.nombre(buzo.getMarca() + " " +  getNombreBuzo() + " "  + buzo.getModelo());
+        buzo.precio(random.nextDouble()*100000);
+        buzo.stock(random.nextInt(100));
+        return buzo;
     }
 }

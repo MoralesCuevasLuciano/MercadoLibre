@@ -1,12 +1,12 @@
 package models.Juguete;
 
 import enums.CategoriaJuguete;
+import enums.MaterialInsumo;
 import enums.MaterialJuguete;
 import mocks.Mock;
 import models.Producto;
 
-import static mocks.Mock.getNombreJuguetesElectricos;
-import static mocks.Mock.getNombreJuguetesManuales;
+import static mocks.Mock.*;
 
 public class JugueteManual extends Juguete{
 
@@ -46,6 +46,9 @@ public class JugueteManual extends Juguete{
 
     public static JugueteManual jugueteManualRandom(){
         JugueteManual jugueteManual = (JugueteManual) new JugueteManual()
+                .edad(random.nextInt(18))
+                .material(MaterialJuguete.valueOf(MaterialInsumo.values()[(int) Math.random() * MaterialInsumo.values().length].name()))
+                .categoria(CategoriaJuguete.valueOf(CategoriaJuguete.values()[(int) Math.random() * CategoriaJuguete.values().length].name()))
                 .nombre(getNombreJuguetesManuales())
                 .stock(Mock.getStock())
                 .precio(Mock.getPrecio())

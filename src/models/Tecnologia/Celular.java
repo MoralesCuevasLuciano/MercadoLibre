@@ -2,6 +2,8 @@ package models.Tecnologia;
 
 import enums.SOCelular;
 
+import static mocks.Mock.*;
+
 public class Celular extends Tecnologia{
     private SOCelular so;
     private int duracionBateria;
@@ -106,5 +108,24 @@ public class Celular extends Tecnologia{
                 ", ram=" + ram +
                 ", capacidad=" + capacidad +
                 '}';
+    }
+
+    public static Celular celularRandom(){
+        Celular celular = (Celular) new Celular();
+        celular.so = SOCelular.values()[(int) (Math.random() * SOCelular.values().length)];
+        celular.duracionBateria = (int) (Math.random() * 600);
+        celular.tamanioPantalla = (float) (Math.random() * 10);
+        celular.procesador(getNombreProcesadorAndroid());
+        celular.ram = (int) (Math.random() * 8);
+        celular.capacidad = (int) (Math.random() * 256);
+        celular.peso((float) (Math.random() * 200));
+        celular.color(getColores());
+        celular.anio((int) (Math.random() * (2024-2018 + 1) + 2018));
+        celular.marca(getMarcaTecnologia());
+        celular.modelo(getModeloCelulares());
+        celular.nombre(celular.getMarca() + " " + celular.getModelo());
+        celular.precio(random.nextDouble() * 1000000);
+        celular.stock((int) (Math.random() * 100));
+        return celular;
     }
 }

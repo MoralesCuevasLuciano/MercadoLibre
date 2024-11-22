@@ -2,6 +2,8 @@ package models.Tecnologia;
 
 import enums.SOComputadora;
 
+import static mocks.Mock.*;
+
 public class Portatil extends Computadora {
     private int tamanio;
     private float duracionBateria;
@@ -65,5 +67,24 @@ public class Portatil extends Computadora {
                 "tamanio=" + tamanio +
                 ", duracionBateria=" + duracionBateria +
                 '}';
+    }
+
+    public static Portatil portatilRandom(){
+        Portatil portatil = (Portatil) new Portatil();
+        portatil.tamanio = (int) (Math.random() * 100);
+        portatil.duracionBateria = (float) (Math.random() * 800);
+        portatil.so(SOComputadora.values()[(int) Math.random() * SOComputadora.values().length]);
+        portatil.procesador(getNombreProcesadorPc());
+        portatil.ram((int) (Math.random() * 32));
+        portatil.capacidad((int) (Math.random() * 2000));
+        portatil.peso((float) (Math.random() * 10));
+        portatil.color(getColores());
+        portatil.anio((int) (Math.random() * (2024-2018 + 1) + 2018));
+        portatil.marca(getMarcaTecnologia());
+        portatil.modelo(getModeloComputadoras());
+        portatil.nombre(portatil.getMarca() + " " + portatil.getModelo());
+        portatil.precio((Math.random() * 2000000));
+        portatil.stock((int) (Math.random() * 100));
+        return portatil;
     }
 }

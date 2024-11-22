@@ -4,6 +4,8 @@ import enums.CategoriasHogar;
 import enums.UsoHogar;
 import models.Producto;
 
+import java.util.Random;
+
 public abstract class Hogar extends Producto {
 
     private CategoriasHogar categoria;
@@ -11,17 +13,22 @@ public abstract class Hogar extends Producto {
     private String material;
 
 
-    public Hogar(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material) {
-        super(nombre, cdp, stock, precio, marca, modelo);
-        this.categoria = categoria;
-        this.uso = uso;
-        this.material = material;
-    }
+
+
+
+
 
     /**CONSTRUCTORES*/
 
 
     public Hogar() {
+    }
+
+    public Hogar(String nombre, String cdp, int stock, double precio, String marca, String modelo, CategoriasHogar categoria, UsoHogar uso, String material) {
+        super(nombre, cdp, stock, precio, marca, modelo);
+        this.categoria = categoria;
+        this.uso = uso;
+        this.material = material;
     }
 
     /**Getters y Setters*/

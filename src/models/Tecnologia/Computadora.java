@@ -2,7 +2,7 @@ package models.Tecnologia;
 
 import enums.SOComputadora;
 
-public class Computadora extends Tecnologia{
+public abstract class Computadora extends Tecnologia{
     private SOComputadora so;
     private String procesador;
     private int ram;
@@ -28,7 +28,7 @@ public class Computadora extends Tecnologia{
     public SOComputadora getSO() {
         return so;
     }
-    public Computadora SO(SOComputadora SO) {
+    public Computadora so(SOComputadora so) {
         this.so = so;
         return this;
     }

@@ -1,11 +1,30 @@
 package models.ArrayList;
 
 import models.Producto;
+import models.Tecnologia.Portatil;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.*;
 import java.util.List;
+
+import static models.Herramienta.HerramientaElectrica.herramientaElectricaRandom;
+import static models.Herramienta.HerramientaManual.herramientaManualRandom;
+import static models.Herramienta.Insumo.insumoRandom;
+import static models.Hogar.Bazar.bazarRandom;
+import static models.Hogar.Escritorio.escritorioRandom;
+import static models.Hogar.Sillon.sillonRandom;
+import static models.Juguete.JuegoDeMesa.juegoDeMesaRandom;
+import static models.Juguete.JugueteElectrico.jugueteElectricoRandom;
+import static models.Juguete.JugueteManual.jugueteManualRandom;
+import static models.Ropa.Buzo.buzoRandom;
+import static models.Ropa.Calzado.calzadoRandom;
+import static models.Ropa.Pantalon.pantalonRandom;
+import static models.Ropa.Remera.remeraRandom;
+import static models.Tecnologia.Celular.celularRandom;
+import static models.Tecnologia.PC_Escritorio.PC_EscritorioRandom;
+import static models.Tecnologia.Portatil.portatilRandom;
+import static models.Tecnologia.Televisor.televisorRandom;
 
 public class AdministradorList <T extends Producto> {
     List<T> productosList;
@@ -343,6 +362,111 @@ public class AdministradorList <T extends Producto> {
         editOpcionFrame.add(panel);
 
 
+    }
+
+    public void cargarProductosRandom1(int cantidad) {
+        for (int i = 0; i <= cantidad; i++) {
+            int random = 0;
+            while (random <1 || random>17) {
+                random = (int) (Math.random() * 17 - 1 + 1) + 1;
+            }
+             random= (int) (Math.random() * 17-1 + 1) + 1;
+            switch (random) {
+                case 1:
+                    add((T)herramientaElectricaRandom());
+                case 2:
+                    add((T)herramientaManualRandom());
+                case 3:
+                    add((T)insumoRandom());
+                case 4:
+                    add((T)juegoDeMesaRandom());
+                case 5:
+                    add((T)jugueteElectricoRandom());
+                case 6:
+                    add((T)jugueteManualRandom());
+                case 7:
+                    add((T)buzoRandom());
+                case 8:
+                    add((T)calzadoRandom());
+                case 9:
+                    add((T)pantalonRandom());
+                case 10:
+                    add((T)remeraRandom());
+                case 11:
+                    add((T)celularRandom());
+                case 12:
+                    add((T)PC_EscritorioRandom());
+                case 13:
+                    add((T) portatilRandom());
+                case 14:
+                    add((T) televisorRandom());
+                case 15:
+                    add((T) bazarRandom());
+                case 16:
+                    add((T) escritorioRandom());
+                case 17:
+                    add((T) sillonRandom());
+            }
+        }
+    }
+
+    public void cargarProductosRandom2(int cantidad) {
+        for (int i = 0; i < cantidad; i++) {
+            int random = (int) (Math.random() * 18-1 + 1) + 1;
+            switch (random) {
+                case 1:
+                    add((T)herramientaElectricaRandom());
+                    break;
+                case 2:
+                    add((T)herramientaManualRandom());
+                    break;
+                case 3:
+                    add((T)insumoRandom());
+                    break;
+                case 4:
+                    add((T)juegoDeMesaRandom());
+                    break;
+                case 5:
+                    add((T)jugueteElectricoRandom());
+                    break;
+                case 6:
+                    add((T)jugueteManualRandom());
+                    break;
+                case 7:
+                    add((T)buzoRandom());
+                    break;
+                case 8:
+                    add((T)calzadoRandom());
+                    break;
+                case 9:
+                    add((T)pantalonRandom());
+                    break;
+                case 10:
+                    add((T)remeraRandom());
+                    break;
+                case 11:
+                    add((T)celularRandom());
+                    break;
+                case 12:
+                    add((T)PC_EscritorioRandom());
+                    break;
+                case 13:
+                    add((T) portatilRandom());
+                    break;
+                case 14:
+                    add((T) televisorRandom());
+                    break;
+                case 15:
+                    add((T) bazarRandom());
+                    break;
+                case 16:
+                    add((T) escritorioRandom());
+                    break;
+                case 17:
+                    add((T) sillonRandom());
+                    break;
+            }
+        }
     }
 }
 

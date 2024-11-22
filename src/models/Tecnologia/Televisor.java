@@ -1,21 +1,20 @@
 package models.Tecnologia;
 
-import enums.AhorroEnergia;
 import enums.TipoTelevisor;
+
+import static mocks.Mock.*;
 
 public class Televisor extends Tecnologia{
     private boolean esSmart;
     private TipoTelevisor tipoTV;
     private int tamanio;
-    private AhorroEnergia ahorroEnergia;
 
 
-    public Televisor(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, boolean esSmart, TipoTelevisor tipoTV, int tamanio, AhorroEnergia ahorroEnergia) {
+    public Televisor(String nombre, String cdp, int stock, double precio, String marca, String modelo, float peso, String color, int anio, boolean esSmart, TipoTelevisor tipoTV, int tamanio) {
         super(nombre, cdp, stock, precio, marca, modelo, peso, color, anio);
         this.esSmart = esSmart;
         this.tipoTV = tipoTV;
         this.tamanio = tamanio;
-        this.ahorroEnergia = ahorroEnergia;
     }
 
     /**Constructores*/
@@ -47,13 +46,6 @@ public class Televisor extends Tecnologia{
         this.tamanio = tamanio;
         return this;
     }
-    public AhorroEnergia getAhorroEnergia() {
-        return ahorroEnergia;
-    }
-    public Televisor ahorroEnergia(AhorroEnergia ahorroEnergia) {
-        this.ahorroEnergia = ahorroEnergia;
-        return this;
-    }
 
 
     /**Imprimir*/
@@ -62,7 +54,6 @@ public class Televisor extends Tecnologia{
         String mensaje = isEsSmart() ? "Es SMART" : "No es SMART";
         System.out.println("Tipo de TV.................: " + tipoTV);
         System.out.println("Tamanio pantalla:..........: " + tamanio);
-        System.out.println("Procesador.................: " + ahorroEnergia);
         System.out.println("==============================================");
         System.out.println("");
     }
@@ -74,7 +65,6 @@ public class Televisor extends Tecnologia{
         String mensaje = isEsSmart() ? "Es SMART" : "No es SMART";
         System.out.println("Tipo de TV.................: " + tipoTV);
         System.out.println("Tamaño pantalla:...........: " + tamanio);
-        System.out.println("Procesador.................: " + ahorroEnergia);
         System.out.println("==============================================");
         System.out.println("");
 
@@ -87,7 +77,22 @@ public class Televisor extends Tecnologia{
                 "esSmart=" + esSmart +
                 ", tipoTV=" + tipoTV +
                 ", tamanio=" + tamanio +
-                ", ahorroEnergia=" + ahorroEnergia +
                 '}';
+    }
+
+    public static Televisor televisorRandom(){
+        Televisor televisor = (Televisor) new Televisor();
+        televisor.esSmart = random.nextBoolean();
+        televisor.tipoTV = TipoTelevisor.values()[(int) (Math.random() * TipoTelevisor.values().length)];
+        televisor.tamanio = (int) (Math.random() * 80);
+        televisor.peso((float) (Math.random() * 100));
+        televisor.color(getColores());
+        televisor.anio((int) (Math.random() * (2024-2018 + 1) + 2018));
+        televisor.marca(getMarcaTecnologia());
+        televisor.modelo(televisor.getTipoTV().toString());
+        televisor.nombre(televisor.getMarca() + " " + televisor.getModelo());
+        televisor.stock((int) (Math.random() * 100));
+        televisor.precio((Math.random() * 2000000));
+        return televisor;
     }
 }

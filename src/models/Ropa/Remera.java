@@ -4,6 +4,8 @@ import enums.Genero;
 import enums.TalleRemera;
 import enums.TipoDeRemera;
 
+import static mocks.Mock.*;
+
 public class Remera extends Ropa {
     private TipoDeRemera tipoDeRemera;
     private TalleRemera talle;
@@ -14,6 +16,9 @@ public class Remera extends Ropa {
         super(nombre, cdp, stock, precio, marca, modelo, color, genero, talle, material);
         this.tipoDeRemera = tipoDeRemera;
         this.talle = talle1;
+    }
+
+    public Remera() {
     }
 
     /**Getters y Setters*/
@@ -63,5 +68,20 @@ public class Remera extends Ropa {
                 "\nMaterial........................: " + getMaterial() +
                 "\nTipo de remera:.................: " + getTipoDeRemera()+
                 "\n==============================================\n\n";
+    }
+
+    public static Remera remeraRandom(){
+        Remera remera = (Remera) new Remera();
+        remera.tipoDeRemera = TipoDeRemera.values()[(int) (Math.random() * TipoDeRemera.values().length)];
+        remera.talle = TalleRemera.values()[(int) (Math.random() * TalleRemera.values().length)];
+        remera.color(getColores());
+        remera.genero(Genero.values()[(int) (Math.random() * Genero.values().length)]);
+        remera.material(getMaterialRopa());
+        remera.marca(getMarcaRopa());
+        remera.modelo(getModeloRemera());
+        remera.nombre(remera.getMarca() + " " + getNombreRemera() + " " + remera.getModelo());
+        remera.stock((int) (Math.random() * 100));
+        remera.precio(Math.random() * 100000);
+        return remera;
     }
 }

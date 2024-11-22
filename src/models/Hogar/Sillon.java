@@ -4,6 +4,8 @@ import enums.CategoriasHogar;
 import enums.EstiloMueble;
 import enums.UsoHogar;
 
+import static mocks.Mock.*;
+
 public class Sillon extends Mueble{
 
     private float ancho;
@@ -40,5 +42,24 @@ public class Sillon extends Mueble{
         super.imprimir();
         System.out.println("==============================================");
 
+    }
+
+    public static Sillon sillonRandom(){
+        Sillon sillon =(Sillon) new Sillon();
+        sillon.alto = random.nextFloat(0.5f, 1.5f);
+        sillon.ancho = random.nextFloat(0.5f, 1.5f);
+        sillon.color = getColores();
+        sillon.categoria(CategoriasHogar.MUEBLES);
+        sillon.uso(UsoHogar.CUIDADO_PERSONAL);
+        sillon.material("Madera");
+        sillon.capacidad(random.nextInt(1, 5));
+        sillon.estilo(EstiloMueble.values()[random.nextInt(EstiloMueble.values().length)]);
+        sillon.capacidad(random.nextInt(10));
+        sillon.nombre(getNombresSillones());
+        sillon.marca(getMarcaMuebles());
+        sillon.modelo(getModeloMueble());
+        sillon.stock(random.nextInt(1, 50));
+        sillon.precio(random.nextDouble(5000, 100000));
+        return sillon;
     }
 }

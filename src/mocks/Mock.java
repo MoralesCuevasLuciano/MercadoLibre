@@ -3,7 +3,7 @@ package mocks;
 import java.util.Random;
 
 public final class Mock {
-    private static final Random random = new Random();
+    public static final Random random = new Random();
 
     //MOCK DE MARCAS
 
@@ -16,6 +16,10 @@ public final class Mock {
             "Sparta", "Scotch", "Obrero", "Sodecar", "Pirelli"
     };
 
+    private static final String[] marcasMuebles = {
+            "Nordic Living", "Urban Habitat", "Casa Moderna", "Rustic Charm", "Luxe Interiors", "Vintage Vibes", "The Furniture Co.", "Artisan Spaces", "Cozy Nest", "EcoHome Designs", "Trendy Furnishings", "Elegant Essence", "Bold Lines", "Timber & Steel", "Minimalist Magic", "Oak Haven", "HomeCraft", "Modular Masters", "Heritage Woods", "Chic Corners"
+    };
+
 
     private static final String[] marcasBazar = {
             "IKEA", "Palermo", "Rincón del Bazar", "Sodimac", "Easy", "Librería El Ateneo", "Falabella", "Casa Pons" , "Coto" , "Musimundo"
@@ -25,9 +29,9 @@ public final class Mock {
             "Barbie", "Hot Wheels", "Rasti", "Hasbro", "Mattel", "Lego", "Rasti", "YolyBell", "Educando", "Toy Planet"
     };
 
-    private static final String[] marcasRopa = {"Topper", "UnderArmour", "Nike", "Adidas", "Levis", "Puma", "Lacoste", "Prune", "NorthFace", "Fila"};
+    private static final String[] marcasRopa = {"Topper", "UnderArmour", "Nike", "Adidas", "Levis", "Puma", "Lacoste", "Prune", "NorthFace", "Fila", "Urban Threads", "Velvet Lane", "Golden Stitch", "Luxe Appeal", "Bold & Basic", "Civic Style", "Amber Wardrobe", "Pure Cotton Co.", "Royal Threads", "Eclipse Wear", "Summit Apparel", "Infinite Trend", "Street Vogue", "True Edge", "Ocean Breeze", "Classic Charm", "Modern Tailor", "Aspire Fit", "Timeless Elegance", "Frost & Co."};
 
-    private static final String[] marcasTecnologia = {"Apple", "Samsung", "Sony", "LG", "Lenovo", "Philips", "HP", "Dell", "Asus", "Xiaomi"};
+    private static final String[] marcasTecnologia = {"Apple", "Samsung", "Xiaomi", "Huawei", "Google", "OnePlus", "Motorola", "Sony", "Oppo", "Realme", "LG", "Asus", "Nokia", "Lenovo", "Vivo"};
 
     //MOCK DE MODELOS
     private static final String[] modeloHerramientas = {
@@ -37,6 +41,10 @@ public final class Mock {
             "DCS356C1", "DWE7485", "DCH273P2", "DCS570B", "DWE6423K",
             "DCS334B", "DCH273X1", "DCH172X1", "DCS388B", "DCHJ080",
             "DCE081", "DCP580N", "DWD520", "DCHT860N", "DCS7485B"
+    };
+
+    private static final String[] modeloMueble = {
+            "Denver Sofa", "Oslo Dining Table", "Cambridge Armchair", "Luna Coffee Table", "Vienna Bed Frame", "Aurora Bookshelf", "Hampton Dresser", "Berlin Nightstand", "Milan TV Stand", "Phoenix Recliner", "Stockholm Wardrobe", "Sierra Loveseat", "Verona Bar Stool", "Aspen Sectional", "Dakota Sideboard", "Montreal Chaise Lounge", "Savannah Bench", "Brooklyn Console Table", "Madrid Ottoman", "Geneva Cabinet"
     };
 
     private static final String[] modeloBazar = {"Modelo A", "Modelo B", "Modelo C", "Modelo D", "Modelo E", "Modelo F", "Modelo G", "Modelo H", "Modelo I", "Modelo J"};
@@ -54,17 +62,6 @@ public final class Mock {
             "Dados", "Cartas", "Fichas", "Tablero", "Piezas",
             "Marcadores", "Contadores", "Figuras", "Fichas de puntuación", "Carteles"
     };
-
-
-    private static final String[] modeloRopa = {
-            "Camisa de Cuadro", "Jeans", "Vestido de Verano", "Campera de Cuero", "Sweater con Capucha",
-            "Pollera Larga", "Shorts", "Abrigo de Invierno", "Blusa Elegante", "Bermuda",
-            "Mono de Trabajo", "Vestido de Fiesta", "Remera Estampada", "Chaleco", "Overol",
-            "Traje de Baño", "Joggers", "Remera de Manga Larga", "Botas de Trekking", "Zapatos Formales",
-            "Remera Deportiva", "Campera Impermeable", "Pantalón Cargo", "Gorro de Lana", "Bufanda",
-            "Zapatillas Deportivas", "Mono de Verano", "Tirantes", "Pijama", "Zapatillas Urbanas"
-    };
-
 
     private static final String[] modeloCelulares = {
             "iPhone 14", "Samsung Galaxy S22", "Google Pixel 6", "OnePlus 9", "Xiaomi Mi 11",
@@ -146,9 +143,145 @@ public final class Mock {
             "Aluminio", "Acero Inoxidable", "Madera Contrachapada", "MDF", "Aglomerado"
     };
 
+    private static final String[] colores = {
+            "Rojo", "Azul", "Verde", "Amarillo", "Naranja", "Violeta", "Celeste", "Blanco", "Negro"
+    };
+
+    private static final String[] nombresSillones = {
+            "Armonía", "Serenity", "Lúmina", "Osaka", "Baltimore", "Cloud Nine", "Zenith", "Eterna", "Oxford", "Nova", "Valencia", "Solstice", "Everest", "Cumbre", "Mistral", "Savoy", "Aurora", "Cairo", "Velvet Touch", "Lodge"
+    };
+
+    private static final String[] tallesRopa = {
+            "XS", "S", "M", "L", "XL", "XXL", "XXXL", "34", "36", "38", "40", "42", "44", "46", "48", "Petite", "Regular", "Tall", "Slim Fit", "Plus Size"
+    };
+
+    private static final String[] materialesRopa = {
+            "Algodón", "Lana", "Poliéster", "Seda", "Lino", "Rayón", "Nylon", "Elastano", "Denim", "Franela", "Viscosa", "Cáñamo", "Tencel", "Pana", "Acrílico", "Cuero", "Gamuzina", "Cashmere", "Lycra", "Bambú"
+    };
+
+    private static final String[] modelosBuzos = {
+            "Buzo Canguro", "Buzo Oversize", "Buzo Crop", "Buzo con Cremallera", "Buzo con Capucha", "Buzo de Lana", "Buzo de Polar", "Buzo Deportivo", "Buzo Estampado", "Buzo Básico", "Buzo Tie-Dye", "Buzo Bordado", "Buzo a Rayas", "Buzo de Algodón Orgánico", "Buzo de Punto", "Buzo Slim Fit", "Buzo Acolchado", "Buzo con Bolsillo", "Buzo de Cuello Redondo", "Buzo Vintage"
+    };
+
+    private static final String[] nombresBuzos = {
+            "Storm", "Aurora", "Shadow", "Eclipse", "Nimbus", "Blizzard", "Horizon", "Crest", "Summit", "Pulse", "Drift", "Frost", "Radiance", "Echo", "Zephyr", "Lunar", "Vortex", "Altitude", "Glide", "Halo"
+    };
+
+    private static final String[] modelosRemeras = {
+            "Remera Básica", "Remera Oversize", "Remera Slim Fit", "Remera de Cuello en V", "Remera de Cuello Redondo", "Remera de Algodón", "Remera Estampada", "Remera de Manga Larga", "Remera sin Mangas", "Remera Polo", "Remera Crop", "Remera Tie-Dye", "Remera Bordada", "Remera Rayada", "Remera Deportiva", "Remera con Bolsillo", "Remera Vintage", "Remera de Modal", "Remera de Cuello Alto", "Remera de Corte Recto"
+    };
+
+    private static final String [] nombresRemeras = {
+            "Nova", "Pulse", "Bliss", "Echo", "Summit", "Lunar", "Vivid", "Ethereal", "Horizon", "Zenith", "Drift", "Crest", "Vortex", "Halo", "Nimbus", "Radiance", "Glide", "Fusion", "Solstice", "Apex"
+    };
+
+    private static final String[] modelosPatnalones= {
+            "Pantalón Skinny", "Pantalón Slim Fit", "Pantalón Palazzo", "Pantalón Jogger", "Pantalón Cargo", "Pantalón Chino", "Pantalón Recto", "Pantalón Acampanado", "Pantalón de Cuero", "Pantalón de Lana", "Pantalón Sastre", "Pantalón Deportivo", "Pantalón de Tiro Alto", "Pantalón de Tiro Bajo", "Pantalón Cropped", "Pantalón Wide Leg", "Pantalón Pijama", "Pantalón de Algodón", "Pantalón Rayado", "Pantalón de Cintura Elástica"
+    };
+    private static final String[] nombresPantalones = {
+        "Trail", "Summit", "Vista", "Loom", "Stride", "Horizon", "Crest", "Flow", "Pivot", "Pulse", "Echo", "Peak", "Frost", "Lunar", "Tide", "Nimbus", "Drift", "Glide", "Apex", "Eclipse"
+    };
+    private static final String[] modelosCalzados = {
+        "Zapatillas Deportivas", "Botas de Montaña", "Mocasines de Cuero", "Sandalias Planas", "Zapatos Oxford", "Botines Chelsea", "Zapatillas Running", "Zapatos Derby", "Alpargatas", "Botas Militares", "Zapatos de Tacón", "Sandalias de Plataforma", "Bailarinas", "Botas Altas", "Zapatillas Skate", "Zapatos Monk Strap", "Pantuflas de Casa", "Zapatos Náuticos", "Zapatos Brogue", "Sneakers Retro"
+    };
+    private static final String[] nombresCalzado= {
+        "Strider", "Nimbus", "Trailblazer", "Summit", "Crest", "Echo", "Pulse", "Loom", "Trek", "Glide", "Lunar", "Horizon", "Vortex", "Drift", "Apex", "Sprint", "Vertex", "Frost", "Eclipse", "Dash"
+    };
+
+    private static final String[] nombresProcesadoresAndroid = {
+
+            "Snapdragon 8 Gen 2", "Snapdragon 778G", "Exynos 2200", "Exynos 1380", "MediaTek Dimensity 9200", "MediaTek Helio G99", "Apple A17 Bionic", "Apple A15 Bionic", "Google Tensor G3", "Google Tensor G2", "Kirin 9000", "Kirin 990", "Unisoc T610", "Snapdragon 480+", "Dimensity 8100", "Snapdragon 870", "Snapdragon 4 Gen 1", "Exynos 2100", "MediaTek Dimensity 1200", "Snapdragon 7+ Gen 2"
+    };
+
+
+    private static final String[] nombresProcesadoresPc = {
+            "Intel Core i9-13900K", "Intel Core i7-12700H", "Intel Core i5-13600KF", "Intel Core i3-12100F", "AMD Ryzen 9 7950X", "AMD Ryzen 7 7800X3D", "AMD Ryzen 5 7600", "AMD Ryzen 3 5300G", "Intel Xeon W-2400", "AMD Threadripper PRO 5995WX", "Intel Pentium Gold G7400", "AMD Athlon 3000G", "Intel Core i9-12900HX", "AMD Ryzen 9 5900X", "Intel Celeron N4020", "AMD Ryzen 7 PRO 6850U", "Intel Core i7-13700K", "AMD FX-8350", "Intel Core i5-12400", "AMD Ryzen 5 5600X"
+    };
+    /*
+    private static final String[] = {
+
+    };
+    private static final String[] = {
+
+    };
+    private static final String[] = {
+
+    };
+    private static final String[] = {
+
+    };
+    private static final String[] = {
+
+    };
+    private static final String[] = {
+
+    };
+    private static final String[] = {
+
+    };*/
+
+    public static String getNombreProcesadorAndroid(){
+        return nombresProcesadoresAndroid[random.nextInt(nombresProcesadoresAndroid.length)];
+    }
+
+    public static String getNombreProcesadorPc(){
+        return nombresProcesadoresPc[random.nextInt(nombresProcesadoresPc.length)];
+    }
+
+    public static String getModeloBuzo(){
+        return modelosBuzos[random.nextInt(modelosBuzos.length)];
+    }
+
+    public static String getNombreBuzo(){
+        return nombresBuzos[random.nextInt(nombresBuzos.length)];
+    }
+
+    public static String getModeloRemera(){
+        return modelosRemeras[random.nextInt(modelosRemeras.length)];
+    }
+
+    public static String getNombreRemera(){
+        return nombresRemeras[random.nextInt(nombresRemeras.length)];
+    }
+
+    public static String getModeloPantalon(){
+        return modelosPatnalones[random.nextInt(modelosPatnalones.length)];
+    }
+
+    public static String getNombrePantalon(){
+        return nombresPantalones[random.nextInt(nombresPantalones.length)];
+    }
+
+    public static String getModeloCalzado(){
+        return modelosCalzados[random.nextInt(modelosCalzados.length)];
+    }
+
+    public static String getNombreCalzado(){
+        return nombresCalzado[random.nextInt(nombresCalzado.length)];
+    }
+
+    public static String getMaterialRopa(){
+        return materialesRopa[random.nextInt(materialesRopa.length)];
+    }
+
+    public static String getTalleRopa(){
+        return tallesRopa[random.nextInt(tallesRopa.length)];
+    }
 
     public static String getMarcaHerramientas(){
         return marcasHerramientas[random.nextInt(marcasHerramientas.length)];
+    }
+
+    public static String getMarcaMuebles(){
+        return marcasMuebles[random.nextInt(marcasMuebles.length)];
+    }
+
+    public static String getNombresSillones(){
+        return nombresSillones[random.nextInt(nombresSillones.length)];
+    }
+
+    public static String getColores(){
+        return colores[random.nextInt(colores.length)];
     }
 
     public static String getMarcaInsumos(){
@@ -175,6 +308,10 @@ public final class Mock {
         return modeloHerramientas[random.nextInt(modeloHerramientas.length)];
     };
 
+    public static String getModeloMueble(){
+        return modeloMueble[random.nextInt(modeloMueble.length)];
+    }
+
     public static String getModeloBazar() {
         return modeloBazar[random.nextInt(modeloBazar.length)];
     }
@@ -187,10 +324,6 @@ public final class Mock {
         return modeloJuegosDeMesa[random.nextInt(modeloJuegosDeMesa.length)];
     }
 
-
-    public static String getModeloRopa() {
-        return modeloRopa[random.nextInt(modeloRopa.length)];
-    }
 
     public static String getModeloCelulares() {
         return modeloCelulares[random.nextInt(modeloCelulares.length)];

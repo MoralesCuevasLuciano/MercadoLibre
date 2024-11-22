@@ -4,6 +4,8 @@ import enums.Genero;
 import enums.TalleRemera;
 import enums.UsoCalzadoPantalon;
 
+import static mocks.Mock.*;
+
 public class Pantalon extends Ropa{
     private int cantidadBolsillos;
     private String estilo;
@@ -18,6 +20,9 @@ public class Pantalon extends Ropa{
         this.estilo = estilo;
         this.usoDeCalzado = usoDeCalzado;
         this.tieneCierre = tieneCierre;
+    }
+
+    public Pantalon() {
     }
 
     /**Getters y Setters*/
@@ -83,5 +88,21 @@ public class Pantalon extends Ropa{
                 ", usoDeCalzado=" + usoDeCalzado +
                 ", tieneCierre=" + tieneCierre +
                 '}';
+    }
+
+    public static Pantalon pantalonRandom(){
+        Pantalon pantalon = (Pantalon) new Pantalon();
+        pantalon.cantidadBolsillos(random.nextInt(6));
+        pantalon.tieneCierre(random.nextBoolean());
+        pantalon.estilo(getModeloPantalon());
+        pantalon.usoDeCalzado(UsoCalzadoPantalon.values()[random.nextInt(UsoCalzadoPantalon.values().length)]);
+        pantalon.color(getColores());
+        pantalon.genero(Genero.values()[random.nextInt(Genero.values().length)]);
+        pantalon.talle(TalleRemera.values()[random.nextInt(TalleRemera.values().length)]);
+        pantalon.material(getMaterialRopa());
+        pantalon.modelo(getModeloPantalon());
+        pantalon.marca(getMarcaRopa());
+        pantalon.nombre("Pantalon " + pantalon.getMarca() + " "  +getNombrePantalon() + " "+ pantalon.getModelo());
+        return pantalon;
     }
 }
