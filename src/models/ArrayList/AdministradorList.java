@@ -4,8 +4,10 @@ import models.Producto;
 import models.Ropa.Ropa;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.util.*;
+import java.util.List;
 
 public class AdministradorList <T extends Producto> {
     List<T> productosList;
@@ -214,13 +216,59 @@ public class AdministradorList <T extends Producto> {
         for (Producto producto : this.productosList) {
             JButton botonProducto = new JButton(producto.getNombre()+ " Stock=" + producto.getStock());
             botonProducto.setSize(20,10);
-            //botonProducto.addActionListener(e -> editAction());
+            botonProducto.addActionListener(e -> editAction());
             panel.add(botonProducto);
         }
     }
 
     private void editAction(){
+        JFrame editFrame = new JFrame("Editar Producto");
+        editFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        editFrame.setLayout(new GridLayout());
+        editFrame.setLocationRelativeTo(null);
+        editFrame.setVisible(true);
+        editFrame.setSize(400,175);
+        editFrame.setResizable(false);
 
+        JPanel panelBotones = new JPanel();
+        panelBotones.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        editFrame.add(panelBotones);
+
+
+        JButton btnEditarNombre = new JButton("Editar Nombre");
+        btnEditarNombre.setSize(20,10);
+        //btnEditarNombre.addActionListener(e -> );
+        panelBotones.add(btnEditarNombre);
+
+        JButton btnEditarMarca = new JButton("Editar Marca");
+        btnEditarMarca.setSize(20,10);
+        panelBotones.add(btnEditarMarca);
+
+        JButton btnEditarModelo = new JButton("Editar Modelo");
+        btnEditarModelo.setSize(20,10);
+        panelBotones.add(btnEditarModelo);
+
+        JButton btnEditarPrecio = new JButton("Editar Precio");
+        btnEditarPrecio.setSize(20,10);
+        panelBotones.add(btnEditarPrecio);
+
+        JButton btnEditarStock = new JButton("Editar Stock");
+        btnEditarStock.setSize(20,10);
+        panelBotones.add(btnEditarStock);
+
+
+    }
+
+    private void editarNombreFrame(){
+        JFrame editNombreFrame = new JFrame("Editar Nombre");
+        editNombreFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        editNombreFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        editNombreFrame.setLocationRelativeTo(null);
+        editNombreFrame.setVisible(true);
+        editNombreFrame.setSize(200,175);
+        editNombreFrame.setResizable(false);
+
+        JTextField txtNombre = new JTextField("Ingrese nuevo nombre");
     }
 }
 

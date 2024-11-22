@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 21-11-24">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,12 +29,12 @@
     &quot;assignee&quot;: &quot;kingrichard11&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/keilaayelen/MercadoLibre.git&quot;,
-    &quot;accountId&quot;: &quot;8691a52d-771b-4a6e-a14e-82aaadb316c3&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/keilaayelen/MercadoLibre.git",
+    "accountId": "23456ee5-b1b6-45da-aa2d-9523e96a99f1"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -98,6 +96,7 @@
       <updated>1728954932833</updated>
       <workItem from="1729332301815" duration="2847000" />
       <workItem from="1732218013240" duration="13443000" />
+      <workItem from="1732280199636" duration="2352000" />
     </task>
     <task id="LOCAL-00001" summary="Manu 20-11-24">
       <option name="closed" value="true" />
