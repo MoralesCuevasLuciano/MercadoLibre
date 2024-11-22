@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 20-11-24">
-      <change afterPath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" afterDir="false" />
+    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 21-11-24">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menus/MenuPpal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuPpal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +97,7 @@
       <option name="presentableId" value="Default" />
       <updated>1728954932833</updated>
       <workItem from="1729332301815" duration="2847000" />
-      <workItem from="1732218013240" duration="5470000" />
+      <workItem from="1732218013240" duration="13443000" />
     </task>
     <task id="LOCAL-00001" summary="Manu 20-11-24">
       <option name="closed" value="true" />
@@ -108,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732114418025</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Manu 21-11-24">
+      <option name="closed" value="true" />
+      <created>1732223856665</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732223856665</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +135,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="workspace" />
     <MESSAGE value="Manu 20-11-24" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manu 20-11-24" />
+    <MESSAGE value="Manu 21-11-24" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manu 21-11-24" />
   </component>
 </project>

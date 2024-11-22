@@ -32,12 +32,12 @@ public class Main {
             HerramientaElectrica amoladora = new HerramientaElectrica("Amoladora", "CDP003", 7, 2100.0, "DeWalt", "DWE402", 12.0f, true);
             HerramientaElectrica destornillador = new HerramientaElectrica("Destornillador Eléctrico", "CDP004", 15, 850.0, "Black & Decker", "BDX01", 4.8f, true);
             HerramientaElectrica lijadora = new HerramientaElectrica("Lijadora Orbital", "CDP005", 12, 1800.0, "Ryobi", "RS300", 6.0f, false);
-            Remera e = new Remera("asda", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
-            Remera d = new Remera("asda", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
-            Remera n = new Remera("asda", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
-            Remera b = new Remera("asda", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
-            Remera u = new Remera("asda", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
-            Remera q = new Remera("asda", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
+            Remera e = new Remera("Coca", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
+            Remera d = new Remera("Fernet", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
+            Remera n = new Remera("Pistola", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
+            Remera b = new Remera("Cuchillo", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
+            Remera u = new Remera("F-17", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
+            Remera q = new Remera("Agua mineral", "213123", 21, 2121, "123213", "32131", "312312", Genero.UNISEX, TalleRemera.L, "dwadawd", TipoDeRemera.MANGA3_4, TalleRemera.M);
 
             t.add(sierraCircular);
             t.add(amoladora);

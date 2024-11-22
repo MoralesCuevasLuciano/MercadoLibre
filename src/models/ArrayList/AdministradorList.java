@@ -4,10 +4,11 @@ import models.Producto;
 import models.Ropa.Ropa;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 import java.util.*;
 
 public class AdministradorList <T extends Producto> {
-    List<Producto> productosList;
+    List<T> productosList;
 
     /**Constructores*/
     public AdministradorList(){
@@ -18,7 +19,7 @@ public class AdministradorList <T extends Producto> {
         this.productosList.get(i);
     }
 
-    public List<Producto> getProductos() {
+    public List<T> getProductos() {
         return this.productosList;
     }
 
@@ -33,16 +34,12 @@ public class AdministradorList <T extends Producto> {
     }
 
     /**Agregar producto modificando stock*/
-    public void add(Producto p, int stock){
+    public void add(T p, int stock){
         int newStock = p.getStock() + stock;
         p.stock(newStock);
         productosList.add(p);
     }
-    public void mostrareFrame (JTextArea textArea){
-        for (Producto producto : this.productosList) {
-            textArea.append(producto + "\n");
-        }
-    }
+
 
     /**Eliminar producto*/
     public void remove(T p){
@@ -206,5 +203,26 @@ public class AdministradorList <T extends Producto> {
     public void sort(){
         Collections.sort(productosList);
     }
+
+    public void mostrareFrame (JTextArea textArea){
+        for (Producto producto : this.productosList) {
+            textArea.append(producto + "\n");
+        }
+    }
+
+    public void recorrerAdmin(JPanel panel){
+        for (Producto producto : this.productosList) {
+            JButton botonProducto = new JButton(producto.getNombre()+ " Stock=" + producto.getStock());
+            botonProducto.setSize(20,10);
+            //botonProducto.addActionListener(e -> editAction());
+            panel.add(botonProducto);
+        }
+    }
+
+    private void editAction(){
+
+    }
 }
+
+
 
