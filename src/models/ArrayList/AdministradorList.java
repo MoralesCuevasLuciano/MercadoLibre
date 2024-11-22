@@ -1,11 +1,9 @@
 package models.ArrayList;
 
 import models.Producto;
-import models.Ropa.Ropa;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.List;
 
@@ -216,12 +214,12 @@ public class AdministradorList <T extends Producto> {
         for (Producto producto : this.productosList) {
             JButton botonProducto = new JButton(producto.getNombre()+ " Stock=" + producto.getStock());
             botonProducto.setSize(20,10);
-            botonProducto.addActionListener(e -> editAction());
+            botonProducto.addActionListener(e -> editAction(producto));
             panel.add(botonProducto);
         }
     }
 
-    private void editAction(){
+    private void editAction(Producto p){
         JFrame editFrame = new JFrame("Editar Producto");
         editFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         editFrame.setLayout(new GridLayout());
@@ -237,40 +235,117 @@ public class AdministradorList <T extends Producto> {
 
         JButton btnEditarNombre = new JButton("Editar Nombre");
         btnEditarNombre.setSize(20,10);
-        //btnEditarNombre.addActionListener(e -> );
+        btnEditarNombre.addActionListener(e -> editarOpcionFrame(p, "nombre"));
         panelBotones.add(btnEditarNombre);
 
         JButton btnEditarMarca = new JButton("Editar Marca");
         btnEditarMarca.setSize(20,10);
+        btnEditarMarca.addActionListener(e -> editarOpcionFrame(p, "marca"));
         panelBotones.add(btnEditarMarca);
 
         JButton btnEditarModelo = new JButton("Editar Modelo");
         btnEditarModelo.setSize(20,10);
+        btnEditarModelo.addActionListener(e -> editarOpcionFrame(p, "modelo"));
         panelBotones.add(btnEditarModelo);
 
         JButton btnEditarPrecio = new JButton("Editar Precio");
         btnEditarPrecio.setSize(20,10);
+        btnEditarPrecio.addActionListener(e -> editarOpcionFrame(p, "precio"));
         panelBotones.add(btnEditarPrecio);
 
         JButton btnEditarStock = new JButton("Editar Stock");
         btnEditarStock.setSize(20,10);
+        btnEditarStock.addActionListener(e -> editarOpcionFrame(p, "stock"));
         panelBotones.add(btnEditarStock);
 
 
     }
 
-    private void editarNombreFrame(){
+    private void editarNombreFrame(Producto p){
         JFrame editNombreFrame = new JFrame("Editar Nombre");
         editNombreFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         editNombreFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
         editNombreFrame.setLocationRelativeTo(null);
         editNombreFrame.setVisible(true);
-        editNombreFrame.setSize(200,175);
+        editNombreFrame.setSize(400,175);
         editNombreFrame.setResizable(false);
 
-        JTextField txtNombre = new JTextField("Ingrese nuevo nombre");
+        JPanel panel = new JPanel(new GridLayout(2,1));
+
+        JLabel label = new JLabel("Ingrese nuevo nombre");
+
+        JTextField txtNombre = new JTextField(20);
+        txtNombre.addActionListener(e -> {
+            p.nombre(txtNombre.getText());
+            JOptionPane.showMessageDialog(editNombreFrame, "El nombre fue reemplazado correctamente, los cambios estaran al volver abrir la lista");
+            editNombreFrame.setVisible(false);
+        });
+
+        panel.add(label);
+        panel.add(txtNombre);
+
+        editNombreFrame.add(panel);
+
+
+    }
+
+    private void editarOpcionFrame(Producto p, String opcion){
+        JFrame editOpcionFrame = new JFrame("Editar " + opcion);
+        editOpcionFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        editOpcionFrame.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 10));
+        editOpcionFrame.setLocationRelativeTo(null);
+        editOpcionFrame.setVisible(true);
+        editOpcionFrame.setSize(400,175);
+        editOpcionFrame.setResizable(false);
+
+        JPanel panel = new JPanel(new GridLayout(2,1));
+
+        JLabel label = new JLabel("Ingrese " + opcion);
+
+        JTextField txtNombre = new JTextField(20);
+        txtNombre.addActionListener(e -> {
+            String entrada = txtNombre.getText();
+            if (entrada.isEmpty()) {
+                JOptionPane.showMessageDialog(editOpcionFrame, "El campo no puede estar vacío.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            try {
+                switch (opcion.toLowerCase()) {
+                    case "nombre":
+                        p.nombre(entrada);
+                        break;
+                    case "marca":
+                        p.marca(entrada);
+                        break;
+                    case "stock":
+                        int stock = Integer.parseInt(entrada);
+                        p.stock(stock);
+                        break;
+                    case "precio":
+                        double precio = Double.parseDouble(entrada);
+                        p.precio(precio);
+                        break;
+                    default:
+                        JOptionPane.showMessageDialog(editOpcionFrame, "Opción no válida: " + opcion, "Error", JOptionPane.ERROR_MESSAGE);
+                        return;
+                }
+                JOptionPane.showMessageDialog(editOpcionFrame, "El " + opcion + " fue actualizado correctamente. Actualice para ver cambios");
+                editOpcionFrame.dispose(); // Cerrar la ventana
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(editOpcionFrame, "El valor ingresado no es válido para " + opcion + ".", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+
+        panel.add(label);
+        panel.add(txtNombre);
+
+        editOpcionFrame.add(panel);
+
+
     }
 }
+
 
 
 
