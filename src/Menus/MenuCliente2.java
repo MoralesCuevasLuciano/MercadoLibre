@@ -61,55 +61,70 @@ public class MenuCliente2 extends JFrame {
     // Método para mostrar los productos y permitir añadirlos al carrito
     private void verProductos() {
         // Crear el JFrame para "Ver Productos"
-        JFrame frameProductos = new JFrame("Ver Productos");
-        frameProductos.setSize(400, 300);
-        frameProductos.setLayout(new BorderLayout());
+        String[] nombresClases = productos.obtenerNombresClases();
+        JComboBox<String> comboBox = new JComboBox<>(nombresClases);
 
-        // Crear un área con los productos y un JScrollPane
-        JTextArea textAreaProductos = new JTextArea();
-        textAreaProductos.setEditable(false);
+        int result = JOptionPane.showConfirmDialog(this, comboBox, "Seleccionar clase", JOptionPane.OK_CANCEL_OPTION);
 
-        this.productos.mostrareFrame(textAreaProductos);
+        if (result == JOptionPane.OK_OPTION) {
 
-        JScrollPane scrollPane = new JScrollPane(textAreaProductos);
-        frameProductos.add(scrollPane, BorderLayout.CENTER);
+            String claseSeleccionada = (String) comboBox.getSelectedItem();
+            String[] arreglo = productos.mostrarProductosClases2(claseSeleccionada);
 
-        // Botón para añadir productos al carrito
-        JButton btnAgregarCarrito = new JButton("Añadir Producto al Carrito");
-        JButton salirButton = new JButton("Salir");
-        btnAgregarCarrito.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+            JFrame frameProductos = new JFrame("Ver Productos");
+            frameProductos.setSize(400, 300);
+            frameProductos.setLayout(new BorderLayout());
 
-                String nombreProducto = JOptionPane.showInputDialog(
-                        frameProductos,
-                        "Ingrese el nombre del producto a añadir:",
-                        "Añadir Producto",
-                        JOptionPane.PLAIN_MESSAGE
-                );
-                Producto p = productos.buscarProductoPorNombre(nombreProducto);
-                Prueba k = new Prueba(p.toString(),p,frameProductos,cliente);
-                k.mostrar();
-            }
-        });
+            // Crear un área con los productos y un JScrollPane
+            JTextArea textAreaProductos = new JTextArea();
+            textAreaProductos.setEditable(false);
 
-        salirButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frameProductos.dispose();// Cierra la ventana
-            }
-        });
+            this.productos.mostrareFrame1(textAreaProductos,claseSeleccionada);
 
-        JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new FlowLayout());
-        panelBotones.add(btnAgregarCarrito);
-        panelBotones.add(salirButton);
+            JScrollPane scrollPane = new JScrollPane(textAreaProductos);
+            frameProductos.add(scrollPane, BorderLayout.CENTER);
 
-       frameProductos.add(panelBotones, BorderLayout.SOUTH);
-       //* frameProductos.add(salirButton, BorderLayout.NORTH);
+            // Botón para añadir productos al carrito
+            JButton btnAgregarCarrito = new JButton("Añadir Producto al Carrito");
+            JButton salirButton = new JButton("Salir");
+            btnAgregarCarrito.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
 
-        frameProductos.setLocationRelativeTo(null);
-        frameProductos.setVisible(true);
+                    String nombreProducto = JOptionPane.showInputDialog(
+                            frameProductos,
+                            "Ingrese el nombre del producto a añadir:",
+                            "Añadir Producto",
+                            JOptionPane.PLAIN_MESSAGE
+                    );
+                    Producto p = productos.buscarProductoPorNombre(nombreProducto);
+                    if(p!=null) {
+                        Prueba k = new Prueba(p.toString(), p, frameProductos, cliente);
+                        k.mostrar();
+                    }else{
+                        JOptionPane.showMessageDialog(null,"El producto que buscas no existe en nuestra tienda");
+                    }
+                }
+            });
+
+            salirButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    frameProductos.dispose();// Cierra la ventana
+                }
+            });
+
+            JPanel panelBotones = new JPanel();
+            panelBotones.setLayout(new FlowLayout());
+            panelBotones.add(btnAgregarCarrito);
+            panelBotones.add(salirButton);
+
+            frameProductos.add(panelBotones, BorderLayout.SOUTH);
+            //* frameProductos.add(salirButton, BorderLayout.NORTH);
+
+            frameProductos.setLocationRelativeTo(null);
+            frameProductos.setVisible(true);
+        }
     }
 
     // Método para mostrar el carrito
@@ -213,8 +228,9 @@ public class MenuCliente2 extends JFrame {
             return;
         }
         // Realizar la compra (descontar saldo y vaciar el carrito)
-        cliente.getCarrito().comprarCarrito(cliente);
+        cliente.getCarrito().comprarCarrito1(cliente);
         cliente.getCarrito().eliminarCarrito();
+
         // Mostrar mensaje de éxito
         JOptionPane.showMessageDialog(this, "Su compra ha sido realizada con éxito. Total: $" + totalCompra + "\nMuchas gracias por su compra.");
     }

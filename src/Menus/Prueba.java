@@ -25,12 +25,13 @@ public class Prueba extends JFrame {
         }
 
         setTitle("Producto");
-        setSize(600, 400); // Ajusta el tamaño para visualizar correctamente
+        setSize(800, 400); // Ajusta el tamaño para visualizar correctamente
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
         // Contenedor para centrar panelMain
         JPanel contenedorCentrado = new JPanel(new GridBagLayout());
         contenedorCentrado.add(panelMain); // Añade el panel principal al centro
+        contenedorCentrado.setSize(200,600);
 
         setContentPane(contenedorCentrado); // Configura el contenedor como el contenido principal
 

@@ -229,6 +229,13 @@ public class AdministradorList <T extends Producto> {
         }
     }
 
+    public void mostrareFrame1 (JTextArea textArea,String clase){
+        for (Producto producto : this.productosList) {
+            if(producto.getClass().getSimpleName().equalsIgnoreCase(clase))
+            textArea.append(producto + "\n");
+        }
+    }
+
     public void recorrerAdmin(JPanel panel){
         for (Producto producto : this.productosList) {
             JButton botonProducto = new JButton(producto.getNombre()+ " Stock=" + producto.getStock());

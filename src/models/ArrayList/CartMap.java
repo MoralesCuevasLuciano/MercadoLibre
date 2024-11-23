@@ -109,5 +109,46 @@ public class CartMap{
         this.carrito.clear();
     }
 
+    public void comprarCarrito1(Cliente c) {
+        double total = totalPrecioCarrito();
+
+        // Comprobar si el cliente tiene saldo suficiente
+        if (c.getSaldo() >= total) {
+            // Verificar stock y restar la cantidad del stock
+            for (Map.Entry<Producto, Integer> entry : carrito.entrySet()) {
+                Producto p = entry.getKey();
+                int cantidades = entry.getValue();
+
+                if (p.getStock() >= cantidades) {
+                    // Descontar stock del producto
+                    p.stock(p.getStock() - cantidades);
+                } else {
+                    System.out.println("Se agotó el producto " + p.getNombre() + ". Por favor, busca otro.");
+                    carrito.remove(p);  // Eliminar producto agotado
+                }
+            }
+
+            // Restar el saldo del cliente y agregar la compra al historial
+            c.saldo(c.getSaldo() - total);
+            String detallesCompra = "Compra realizada:\n";
+            for (Map.Entry<Producto, Integer> entry : carrito.entrySet()) {
+                Producto p = entry.getKey();
+                detallesCompra += "Producto: " + p.getNombre() +
+                        ", Precio: $" + p.getPrecio() +
+                        ", Cantidad: " + entry.getValue() + "\n";
+            }
+            detallesCompra += "Total: $" + total;
+
+            // Agregar al historial de compras del cliente
+            c.getHistorialCompras().agregarCompra(detallesCompra);
+
+            // Vaciar el carrito después de la compra
+            eliminarCarrito();
+
+        } else {
+            JOptionPane.showMessageDialog(null, "Saldo insuficiente. No se puede completar la compra.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
 
 }
