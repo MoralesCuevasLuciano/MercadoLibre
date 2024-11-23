@@ -88,7 +88,7 @@ public class AdministradorList <T extends Producto> {
 
     public void show1(){
         for(Producto p : productosList){
-            p.imprimirCliente();
+            p.imprimir();
         }
     }
 

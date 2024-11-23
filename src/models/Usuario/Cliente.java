@@ -1,8 +1,16 @@
 package models.Usuario;
 
 import enums.Genero;
+import enums.TalleRemera;
 import models.ArrayList.CartMap;
 import models.HistorialCompras;
+import models.Ropa.Buzo;
+
+import static mocks.Mock.*;
+import static mocks.Mock.random;
+//import static mocks.MockCliente.random;
+
+
 
 public class Cliente extends Persona {
 
@@ -12,8 +20,8 @@ public class Cliente extends Persona {
 
     /** Constructores */
 
-    public Cliente(String nombre, String dni, Genero sexo, String telefono, String direccion, double saldo) {
-        super(nombre, dni, sexo, telefono, direccion);
+    public Cliente(String nombre,String apellido, String dni, Genero sexo, String telefono, String direccion, double saldo) {
+        super(nombre,apellido, dni, sexo, telefono, direccion);
         this.carrito = new CartMap();
         this.saldo = saldo;
         this.historialCompras = new HistorialCompras(); // Aquí inicializas el historial de compras
@@ -36,8 +44,6 @@ public class Cliente extends Persona {
         return this;
     }
 
-
-
     public HistorialCompras getHistorialCompras() {
         return historialCompras;
     }
@@ -53,6 +59,14 @@ public class Cliente extends Persona {
     public void setCarrito(CartMap carrito) {
         this.carrito = carrito;
     }
+
+    /*
+    public static Cliente clienteRandom(){
+        Cliente cliente = (Cliente) new Cliente();
+        cliente.MockCliente.getNombreCliente();
+        return cliente;
+    }
+     */
 
     /** IMPRIMIR */
     @Override

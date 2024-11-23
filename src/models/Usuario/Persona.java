@@ -13,6 +13,7 @@ import java.util.UUID;
 public abstract class Persona {
     private String id;
     private String nombre;
+    private String apellido;
     private String dni;
     private Genero sexo;
     private String telefono;
@@ -20,9 +21,10 @@ public abstract class Persona {
 
 
     /**Constructores*/
-    public Persona(String nombre, String dni, Genero sexo, String telefono, String direccion) {
+    public Persona(String nombre,String apellido, String dni, Genero sexo, String telefono, String direccion) {
         this.direccion = direccion;
         this.nombre = nombre;
+        this.apellido = apellido;
         this.dni = dni;
         this.sexo = sexo;
         this.telefono = telefono;
@@ -48,6 +50,11 @@ public abstract class Persona {
         this.nombre = nombre;
         return this;
     }
+
+    public String getApellido() {
+        return apellido;
+    }
+
     public String getDni() {
         return dni;
     }
@@ -74,6 +81,8 @@ public abstract class Persona {
         return direccion;
     }
 
+
+
     public Persona setDireccion(String direccion) {
         this.direccion = direccion;
         return this;
@@ -83,6 +92,7 @@ public abstract class Persona {
     public void imprimir() {
         System.out.println("ID:........................: " + id);
         System.out.println("Nombre:....................: " + nombre);
+        System.out.println("Apellido:....................: " + apellido);
         System.out.println("Dni:.......................: " + dni);
         System.out.println("Sexo:......................: " + sexo);
         System.out.println("Telefono:..................: " + telefono);
@@ -105,6 +115,7 @@ public abstract class Persona {
         return
                 "\nId:............................: " + id +
                 "\nNombre:.........................: " + nombre +
+                        "\nApellido:.........................: " + apellido +
                 "\nDNI:............................: " + dni +
                 "\nSexo:...........................: " + sexo +
                 "\nTelefono:.......................: " + telefono +

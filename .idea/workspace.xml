@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 21-11-24 version 2" />
+    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 21-11-24 version 2">
+      <change afterPath="$PROJECT_DIR$/src/mocks/MockCliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productos.json" beforeDir="false" afterPath="$PROJECT_DIR$/productos.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Hogar/Mueble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Hogar/Mueble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Persona.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,7 +58,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/PC/Desktop/tpFinal",
+    "last_opened_file_path": "C:/Users/pablo/OneDrive/Escritorio/Proyecto final programacion 2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
