@@ -87,13 +87,14 @@ public abstract class Ropa extends Producto {
         System.out.println("Material...................: " + getMaterial());
     }
 
+
     @Override
     public String toString() {
-        return "Ropa{" +
-                "color='" + color + '\'' +
-                ", genero=" + genero +
-                ", talle=" + talle +
-                ", material='" + material + '\'' +
-                "} " + super.toString();
+        return super.toString() +
+                "\nColor:..........................: " + color +
+                "\nGenero:.........................: " + genero +
+                "\nTalle:..........................: " + talle +
+                "\nMaterial:.......................: " + material +
+                "\n==============================================\n\n";
     }
 }

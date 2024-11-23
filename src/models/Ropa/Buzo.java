@@ -93,15 +93,16 @@ public class Buzo extends Ropa {
         System.out.println("");
     }
 
+
     @Override
     public String toString() {
-        return "Buzo{" +
-                "tieneCapucha=" + tieneCapucha +
-                ", tieneCierre=" + tieneCierre +
-                ", tieneBolsillos=" + tieneBolsillos +
-                ", tieneEstampado=" + tieneEstampado +
-                ", impermeable=" + impermeable +
-                '}';
+        return super.toString() +
+                "\nCapucha:........................: " + tieneCapucha +
+                "\nCierre:.........................: " + tieneCierre +
+                "\nBolsillos:......................: " + tieneBolsillos +
+                "\nEstampado:......................: " + tieneEstampado +
+                "\nImpermeable:....................: " + impermeable +
+                "\n==============================================\n\n";
     }
 
     public static Buzo buzoRandom(){

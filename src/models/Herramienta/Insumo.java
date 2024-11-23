@@ -76,12 +76,12 @@ public class Insumo extends Herramienta {
 
     @Override
     public String toString() {
-        return "Insumo{" +
-                "tipoDeMaterial=" + tipoDeMaterial +
-                ", largo=" + largo +
-                ", ancho=" + ancho +
-                ", diametro=" + diametro +
-                '}';
+        return super.toString() +
+                "\nTipo Material:..................: " + tipoDeMaterial +
+                "\nLargo:..........................: " + largo +
+                "\nAncho:..........................: " + ancho +
+                "\nDiametro:.......................: " + diametro +
+                "\n==============================================\n\n";
     }
 
 

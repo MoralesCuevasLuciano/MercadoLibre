@@ -4,32 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 21-11-24 version 2">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/AhorroEnergia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/CategoriaJuguete.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/CategoriaJuguete.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/TalleRemera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/TalleRemera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/mocks/Mock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/mocks/Mock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Hogar/Hogar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Hogar/Hogar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Hogar/Mueble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Hogar/Mueble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Hogar/Sillon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Hogar/Sillon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Juguete/JuegoDeMesa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Juguete/JuegoDeMesa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Juguete/JugueteElectrico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Juguete/JugueteElectrico.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Juguete/JugueteManual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Juguete/JugueteManual.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Ropa/Buzo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Ropa/Buzo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Ropa/Calzado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Ropa/Calzado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Ropa/Pantalon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Ropa/Pantalon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Ropa/Remera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Ropa/Remera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Ropa/Ropa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Ropa/Ropa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Tecnologia/Celular.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Tecnologia/Celular.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Tecnologia/Computadora.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Tecnologia/Computadora.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Tecnologia/Escritorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Tecnologia/PC_Escritorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Tecnologia/Portatil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Tecnologia/Portatil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Tecnologia/Televisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Tecnologia/Televisor.java" afterDir="false" />
-    </list>
+    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu 21-11-24 version 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -73,7 +48,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/richa/OneDrive/Escritorio/TP FINAL",
+    "last_opened_file_path": "C:/Users/PC/Desktop/tpFinal",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",

@@ -136,16 +136,16 @@ public abstract class Producto implements Comparable<Producto> {
         System.out.println("Precio:....................: " + getPrecio());
     }
 
+
     @Override
     public String toString() {
-        return "Producto{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", stock=" + stock +
-                ", precio=" + precio +
-                ", marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                '}';
+        return "\nid:............................: " + id +
+                "\nNombre:.........................: " + nombre +
+                "\nStock:..........................: " + stock +
+                "\nPrecio:.........................: " + precio +
+                "\nMarca:..........................: " +marca +
+                "\nModelo:.........................: " + modelo +
+                "\n==============================================\n\n";
     }
 
 

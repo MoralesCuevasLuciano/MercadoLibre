@@ -63,12 +63,13 @@ public class JugueteElectrico extends Juguete{
         System.out.println("Voltaje....................: " + getVoltaje());
     }
 
+
     @Override
     public String toString() {
-        return "JugueteElectrico{" +
-                "cantidadDePilas=" + cantidadDePilas +
-                ", voltaje=" + voltaje +
-                '}';
+        return super.toString() +
+                "\nCant. Pilas:....................: " + cantidadDePilas +
+                "\nVoltaje:........................: " + voltaje +
+                "\n==============================================\n\n";
     }
 
 

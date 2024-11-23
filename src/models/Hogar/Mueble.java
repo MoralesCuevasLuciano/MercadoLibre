@@ -57,4 +57,11 @@ public abstract class Mueble extends Hogar{
 
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nCapacidad:......................: " + capacidad +
+                "\nEstilo:.........................: " + estilo +
+                "\n==============================================\n\n";
+    }
 }

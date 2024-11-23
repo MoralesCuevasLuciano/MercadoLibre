@@ -98,16 +98,17 @@ public class Celular extends Tecnologia{
         System.out.println("");
     }
 
+
     @Override
     public String toString() {
-        return "Celular{" +
-                "so=" + so +
-                ", duracionBateria=" + duracionBateria +
-                ", tamanioPantalla=" + tamanioPantalla +
-                ", procesador='" + procesador + '\'' +
-                ", ram=" + ram +
-                ", capacidad=" + capacidad +
-                '}';
+        return super.toString() +
+                "\nSistema operativo:..............: " + so+
+                "\nDuracion Bateria:...............: " + duracionBateria +
+                "\nTamanio pantalla:...............: " + tamanioPantalla +
+                "\nProcesador:.....................: " + procesador +
+                "\nRam:............................: " + ram +
+                "\nCapacidad:......................: " + capacidad +
+                "\n==============================================\n\n";
     }
 
     public static Celular celularRandom(){

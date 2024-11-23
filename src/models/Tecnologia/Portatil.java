@@ -63,10 +63,11 @@ public class Portatil extends Computadora {
 
     @Override
     public String toString() {
-        return "Portatil{" +
-                "tamanio=" + tamanio +
-                ", duracionBateria=" + duracionBateria +
-                '}';
+        return super.toString() +
+                "\nTamanio:........................: " + tamanio +
+                "\nDuracion de bateria:............: " + duracionBateria +
+                "\nTamanio:........................: " + tamanio +
+                "\n==============================================\n\n";
     }
 
     public static Portatil portatilRandom(){

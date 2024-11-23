@@ -71,10 +71,10 @@ public class HerramientaElectrica extends Herramienta{
 
     @Override
     public String toString() {
-        return "HerramientaElectrica{" +
-                "voltaje=" + voltaje +
-                ", Inalambrico=" + inalambrico +
-                '}';
+        return super.toString() +
+                "\nVoltaje:........................: " + voltaje +
+                "\nInalambrico:....................: " + inalambrico +
+                "\n==============================================\n\n";
     }
 
     /**Equals y HashCode*/

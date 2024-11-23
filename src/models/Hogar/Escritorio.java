@@ -18,14 +18,12 @@ public class Escritorio extends Mueble {
         this.tieneCajones = tieneCajones;
     }
 
-    /***CONSTRUCTORES*/
-
 
     public Escritorio() {
     }
 
-    /***Getters and setters*/
 
+    /***Getters and setters*/
     public int getNumeroDePuertas() {
         return numeroDePuertas;
     }
@@ -76,5 +74,13 @@ public class Escritorio extends Mueble {
         escritorio.uso(UsoHogar.ORGANIZAR);
         escritorio.material(Mock.getMaterialMuebles());
         return escritorio;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nNum. Puertas:...................: " + numeroDePuertas +
+                "\nCajones:........................: " + tieneCajones +
+                "\n==============================================\n\n";
     }
 }

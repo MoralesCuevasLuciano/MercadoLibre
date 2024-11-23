@@ -21,16 +21,11 @@ public class Bazar extends Hogar{
         this.resistenteAlCalor = resistenteAlCalor;
     }
 
-    /**CONSTRUCTORES*/
-
-
-
-
     public Bazar() {
     }
 
-    /**Getters y Setters*/
 
+    /**Getters y Setters*/
     public boolean isResistenteAlCalor() { /*GETTER*/
         return resistenteAlCalor;
     }
@@ -50,7 +45,6 @@ public class Bazar extends Hogar{
     }
 
     /***IMPRIMIR*/
-
     @Override
     public void imprimirCliente() {
         super.imprimirCliente();
@@ -82,5 +76,13 @@ public class Bazar extends Hogar{
         bazar.uso(UsoHogar.values()[(int) (Math.random() * (UsoHogar.values().length))]);
         bazar.material(Mock.getMaterialBazar());
         return bazar;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nTamanio:........................: " + tamanio +
+                "\nResistencia Calor:..............: " + resistenteAlCalor +
+                "\n==============================================\n\n";
     }
 }

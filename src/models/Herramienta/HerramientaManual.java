@@ -55,11 +55,12 @@ public class HerramientaManual extends Herramienta {
         System.out.println("");
     }
 
+
     @Override
     public String toString() {
-        return "HerramientaManual{" +
-                "categorias=" + categorias +
-                '}';
+        return super.toString() +
+                "\nCategoria:......................: " + categorias +
+                "\n==============================================\n\n";
     }
 
 

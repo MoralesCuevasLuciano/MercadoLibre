@@ -60,10 +60,10 @@ public class Calzado extends Ropa {
 
     @Override
     public String toString() {
-        return "Calzado{" +
-                "tipo=" + tipo +
-                ", uso=" + uso +
-                '}';
+        return super.toString() +
+                "\nTipo:..........................: " + tipo +
+                "\nUso:............................: " + uso +
+                "\n==============================================\n\n";
     }
 
     public static Calzado calzadoRandom(){

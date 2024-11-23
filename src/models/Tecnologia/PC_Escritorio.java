@@ -52,11 +52,12 @@ public class PC_Escritorio extends Computadora {
 
     }
 
+
     @Override
     public String toString() {
-        return "Escritorio{" +
-                ", fuente=" + fuente +
-                '}';
+        return super.toString() +
+                "\nFuente:.........................: " + fuente +
+                "\n==============================================\n\n";
     }
 
     public static PC_Escritorio PC_EscritorioRandom(){

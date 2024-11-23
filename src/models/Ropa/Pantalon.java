@@ -82,12 +82,12 @@ public class Pantalon extends Ropa{
 
     @Override
     public String toString() {
-        return "Calzado{" +
-                "cantidadBolsillos=" + cantidadBolsillos +
-                ", estilo='" + estilo + '\'' +
-                ", usoDeCalzado=" + usoDeCalzado +
-                ", tieneCierre=" + tieneCierre +
-                '}';
+        return super.toString() +
+                "\nCant. Bolsillos:................: " + cantidadBolsillos +
+                "\nEstilo:.........................: " + estilo +
+                "\nUso:............................: " + usoDeCalzado +
+                "\nCierre:........................: " + tieneCierre +
+                "\n==============================================\n\n";
     }
 
     public static Pantalon pantalonRandom(){

@@ -70,6 +70,8 @@ public class Remera extends Ropa {
                 "\n==============================================\n\n";
     }
 
+
+
     public static Remera remeraRandom(){
         Remera remera = (Remera) new Remera();
         remera.tipoDeRemera = TipoDeRemera.values()[(int) (Math.random() * TipoDeRemera.values().length)];

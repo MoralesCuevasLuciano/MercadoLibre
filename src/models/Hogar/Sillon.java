@@ -44,6 +44,15 @@ public class Sillon extends Mueble{
 
     }
 
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nAncho:..........................: " + ancho +
+                "\nAlto:...........................: " + alto +
+                "\nColor:..........................: " + color +
+                "\n==============================================\n\n";
+    }
+
     public static Sillon sillonRandom(){
         Sillon sillon =(Sillon) new Sillon();
         sillon.alto = random.nextFloat(0.5f, 1.5f);

@@ -81,13 +81,14 @@ public abstract class Computadora extends Tecnologia{
         System.out.println("");
     }
 
+
     @Override
     public String toString() {
-        return "Computadora{" +
-                "so=" + so +
-                ", procesador='" + procesador + '\'' +
-                ", ram=" + ram +
-                ", capacidad=" + capacidad +
-                '}';
+        return super.toString() +
+                "\nSistema operativo:..............: " + so +
+                "\nProcesador:.....................: " + procesador +
+                "\nRam:............................: " + ram +
+                "\nCapacidad:......................: " + capacidad +
+                "\n==============================================\n\n";
     }
 }

@@ -71,14 +71,17 @@ public class Televisor extends Tecnologia{
     }
 
 
+
     @Override
     public String toString() {
-        return "Televisor{" +
-                "esSmart=" + esSmart +
-                ", tipoTV=" + tipoTV +
-                ", tamanio=" + tamanio +
-                '}';
+        return super.toString() +
+                "\nSmart::.........................: " + esSmart +
+                "\nTipo de TV:.....................: " + tipoTV +
+                "\nTamanio:........................: " + tamanio +
+                "\n==============================================\n\n";
     }
+
+
 
     public static Televisor televisorRandom(){
         Televisor televisor = (Televisor) new Televisor();

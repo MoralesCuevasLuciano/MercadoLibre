@@ -99,16 +99,17 @@ public abstract class Persona {
         System.out.println("Direccion:.................: " + direccion);
     }
 
+
     @Override
     public String toString() {
-        return "Persona{" +
-                "id='" + id + '\'' +
-                ", nombre='" + nombre + '\'' +
-                ", dni='" + dni + '\'' +
-                ", sexo=" + sexo +
-                ", telefono='" + telefono + '\'' +
-                ", direccion=" + direccion +
-                '}';
+        return
+                "\nId:............................: " + id +
+                "\nNombre:.........................: " + nombre +
+                "\nDNI:............................: " + dni +
+                "\nSexo:...........................: " + sexo +
+                "\nTelefono:.......................: " + telefono +
+                "\nDireccion:......................: " + direccion +
+                "\n==============================================\n\n";
     }
 
 

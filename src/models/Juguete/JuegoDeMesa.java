@@ -62,6 +62,13 @@ public class JuegoDeMesa extends  Juguete{
     }
 
 
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nCant. Jugadores:................: " + cantidadJugadores +
+                "\nDuracion:.......................: " + duracion +
+                "\n==============================================\n\n";
+    }
 
     /**Equals y HashCode*/
     @Override

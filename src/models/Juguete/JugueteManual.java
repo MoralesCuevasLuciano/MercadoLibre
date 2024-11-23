@@ -10,17 +10,13 @@ import static mocks.Mock.*;
 
 public class JugueteManual extends Juguete{
 
-
+    /**Constructores*/
     public JugueteManual(String nombre, String cdp, int stock, double precio, String marca, String modelo, int edad, CategoriaJuguete categoria, MaterialJuguete material) {
         super(nombre, cdp, stock, precio, marca, modelo, edad, categoria, material);
     }
 
     public JugueteManual() {
     }
-
-    /**Constructores*/
-
-
 
 
     @Override
@@ -56,5 +52,7 @@ public class JugueteManual extends Juguete{
                 .modelo(Mock.getModeloJuguetes());
         return jugueteManual;
     }
+
+
 
 }

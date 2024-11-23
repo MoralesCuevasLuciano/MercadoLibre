@@ -6,7 +6,6 @@ import models.Herramienta.HerramientaElectrica;
 import models.Producto;
 import models.Ropa.Remera;
 import models.Usuario.Cliente;
-import models.Usuario.Direccion;
 
 import javax.swing.*;
 import java.util.Scanner;
@@ -22,7 +21,7 @@ public class Main {
 
         // Inicializar el hilo de eventos de Swing
         SwingUtilities.invokeLater(() -> {
-            /*AdministradorList<Producto> t = new AdministradorList<>();
+            AdministradorList<Producto> t = new AdministradorList<>();
             //Direccion s = new Direccion();
             Cliente r = new Cliente("Richard", "w323232", Genero.MASCULINO, "23232323", "s", 3000000);
 
@@ -59,7 +58,7 @@ public class Main {
             System.out.println("La opcion es " + menuPpal.getOpcion());
 
             //menuPpal.mostrar();
-            //j.mostrar();*/
+            //j.mostrar();
             AdministradorList<Producto> productos = new AdministradorList<>();
             productos.cargarProductosRandom2(5);
             productos.show1();

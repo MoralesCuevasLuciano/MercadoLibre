@@ -85,12 +85,14 @@ public abstract class Tecnologia extends Producto{
         return super.equals(o);
     }
 
+
     @Override
     public String toString() {
-        return "Tecnologia{" +
-                "peso=" + peso +
-                ", color='" + color + '\'' +
-                ", anio=" + anio +
-                "} " + super.toString();
+        return super.toString() +
+                "\nPeso:...........................: " + peso +
+                "\nColor:..........................: " + color +
+                "\nAnio:...........................: " + anio +
+                "\n==============================================\n\n";
     }
+
 }

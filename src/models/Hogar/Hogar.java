@@ -13,13 +13,7 @@ public abstract class Hogar extends Producto {
     private String material;
 
 
-
-
-
-
-
     /**CONSTRUCTORES*/
-
 
     public Hogar() {
     }
@@ -54,7 +48,6 @@ public abstract class Hogar extends Producto {
 
 
     /**IMPRIMIR*/
-
     @Override
     public void imprimir() {
         super.imprimir();
@@ -74,10 +67,10 @@ public abstract class Hogar extends Producto {
 
     @Override
     public String toString() {
-        return "Hogar{" +
-                "categoria=" + categoria +
-                ", uso=" + uso +
-                ", material='" + material + '\'' +
-                '}';
+        return super.toString() +
+                "\nCategoria:......................: " + categoria +
+                "\nUso:............................: " + uso +
+                "\nMaterial:.......................: " + material +
+                "\n==============================================\n\n";
     }
 }
