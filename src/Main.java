@@ -108,16 +108,12 @@ public class Main {
             t.add(portatil);
             t.add(televisor);
 
-            //MenuCliente2 j = new MenuCliente2(t,r);
+
             MenuPpal menuPpal = new MenuPpal(t, r);
 
             r.imprimirCliente();
 
 
-            System.out.println("La opcion es " + menuPpal.getOpcion());
-
-            //menuPpal.mostrar();
-            //j.mostrar();
             AdministradorList<Producto> productos = new AdministradorList<>();
             productos.cargarProductosRandom2(5);
             productos.show1();
