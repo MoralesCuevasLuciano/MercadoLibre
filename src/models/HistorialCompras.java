@@ -1,7 +1,10 @@
 package models;
 
+import models.ArrayList.CartMap;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class HistorialCompras {
 
@@ -33,5 +36,7 @@ public class HistorialCompras {
     public List<String> getCompras() {
         return compras;
     }
+
+
 }
 

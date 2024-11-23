@@ -76,6 +76,7 @@ public class MenuCliente2 extends JFrame {
 
         // Botón para añadir productos al carrito
         JButton btnAgregarCarrito = new JButton("Añadir Producto al Carrito");
+        JButton salirButton = new JButton("Salir");
         btnAgregarCarrito.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -87,22 +88,25 @@ public class MenuCliente2 extends JFrame {
                         JOptionPane.PLAIN_MESSAGE
                 );
                 Producto p = productos.buscarProductoPorNombre(nombreProducto);
-                if (p != null) {
-                    String cantidadStr = JOptionPane.showInputDialog("Ingrese la cantidad:");
-                    int cantidad = Integer.parseInt(cantidadStr);
-                    try {
-                        carrito.agregarAlCarrito(p, cantidad);  // Usando CartMap
-                    } catch (Exception ex) {
-                        System.out.println(ex.getMessage());
-                    }
-                    JOptionPane.showMessageDialog(frameProductos, "Producto añadido al carrito.");
-                } else {
-                    JOptionPane.showMessageDialog(frameProductos, "Producto no encontrado.", "Error", JOptionPane.ERROR_MESSAGE);
-                }
+                Prueba k = new Prueba(p.toString(),p,frameProductos,cliente);
+                k.mostrar();
             }
         });
 
-        frameProductos.add(btnAgregarCarrito, BorderLayout.SOUTH);
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frameProductos.dispose();// Cierra la ventana
+            }
+        });
+
+        JPanel panelBotones = new JPanel();
+        panelBotones.setLayout(new FlowLayout());
+        panelBotones.add(btnAgregarCarrito);
+        panelBotones.add(salirButton);
+
+       frameProductos.add(panelBotones, BorderLayout.SOUTH);
+       //* frameProductos.add(salirButton, BorderLayout.NORTH);
 
         frameProductos.setLocationRelativeTo(null);
         frameProductos.setVisible(true);
@@ -119,10 +123,20 @@ public class MenuCliente2 extends JFrame {
         JTextArea textAreaCarrito = new JTextArea();
         textAreaCarrito.setEditable(false);
 
-        if (carrito.isEmpty()) {
+        JButton salirButton = new JButton("Salir");
+        salirButton.setPreferredSize(new Dimension(80, 30)); // Ajusta el tamaño del botón
+
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frameCarrito.dispose(); // Cierra la ventana
+            }
+        });
+
+        if (cliente.getCarrito().isEmpty()) {
             textAreaCarrito.setText("El carrito está vacío.");
         } else {
-            for (Map.Entry<Producto, Integer> entry : carrito.entrySet()) {
+            for (Map.Entry<Producto, Integer> entry : cliente.getCarrito().entrySet()) {
                 Producto producto = entry.getKey();
                 int cantidad = entry.getValue();
                 textAreaCarrito.append(
@@ -134,10 +148,16 @@ public class MenuCliente2 extends JFrame {
         }
         JScrollPane scrollPane = new JScrollPane(textAreaCarrito);
         frameCarrito.add(scrollPane, BorderLayout.CENTER);
+        // Crear un JPanel para el botón Salir y añadirlo al sur
+        JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelBoton.add(salirButton);
+
+        frameCarrito.add(panelBoton, BorderLayout.SOUTH);
 
         frameCarrito.setLocationRelativeTo(null);
         frameCarrito.setVisible(true);
     }
+
 
     // Método para mostrar el historial de compras
     private void verHistorial() {
@@ -148,6 +168,16 @@ public class MenuCliente2 extends JFrame {
 
         JTextArea textAreaHistorial = new JTextArea();
         textAreaHistorial.setEditable(false);
+
+        JButton salirButton = new JButton("Salir");
+        salirButton.setPreferredSize(new Dimension(80, 30)); // Ajusta el tamaño del botón
+
+        salirButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frameHistorial.dispose(); // Cierra la ventana
+            }
+        });
 
         // Obtener las compras del historial y mostrarlas
         if (cliente.getHistorialCompras().getCompras().isEmpty()) {
@@ -161,6 +191,11 @@ public class MenuCliente2 extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textAreaHistorial);
         frameHistorial.add(scrollPane, BorderLayout.CENTER);
 
+        JPanel panelBoton = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        panelBoton.add(salirButton);
+
+        frameHistorial.add(panelBoton, BorderLayout.SOUTH);
+
         frameHistorial.setLocationRelativeTo(null);
         frameHistorial.setVisible(true);
     }
@@ -168,25 +203,21 @@ public class MenuCliente2 extends JFrame {
     // Método para realizar la compra del carrito
     private void comprarCarrito() {
         // Comprobar si el carrito está vacío
-        if (carrito.isEmpty()) {
+        if (this.cliente.getCarrito().isEmpty()) {
             JOptionPane.showMessageDialog(this, "El carrito está vacío. No se puede realizar la compra.", "Error", JOptionPane.ERROR_MESSAGE);
-            return;
         }
-
         // Comprobar si el cliente tiene saldo suficiente
-        double totalCompra = carrito.totalPrecioCarrito();
+        double totalCompra = cliente.getCarrito().totalPrecioCarrito();
         if (totalCompra > cliente.getSaldo()) {
             JOptionPane.showMessageDialog(this, "No tienes suficiente saldo para realizar la compra.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
         // Realizar la compra (descontar saldo y vaciar el carrito)
-        carrito.comprarCarrito(cliente);
-
+        cliente.getCarrito().comprarCarrito(cliente);
+        cliente.getCarrito().eliminarCarrito();
         // Mostrar mensaje de éxito
         JOptionPane.showMessageDialog(this, "Su compra ha sido realizada con éxito. Total: $" + totalCompra + "\nMuchas gracias por su compra.");
     }
-
     public void mostrar() {
         setVisible(true);
     }

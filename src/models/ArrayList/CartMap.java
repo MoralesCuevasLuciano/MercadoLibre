@@ -9,92 +9,73 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class CartMap {
+public class CartMap{
 
-    private Map<Producto, Integer> carrito = new HashMap<>();
+    Map<Producto,Integer> carrito = new HashMap<>();
 
-    /** CONSTRUCTOR */
+
+    /**CONSTRUCTORES*/
     public CartMap() {
         this.carrito = new HashMap<>();
     }
 
-    /** MÉTODOS */
+    public Map<Producto, Integer> getCarrito() {
+        return carrito;
+    }
 
-    // Agregar un producto al carrito
+    /**METODOS*/
     public void agregarAlCarrito(Producto p, int cantidad) throws NoHayStock {
-        if (p.getStock() < cantidad) {
-            throw new NoHayStock("La cantidad de productos que deseas no están disponibles.");
-        } else {
-            carrito.put(p, cantidad);
+        if(p.getStock()<cantidad){
+            throw new NoHayStock("La cantidad de productos que deseas no estan disponibles ");
+        }else{
+            carrito.put(p,cantidad);
             System.out.println("Has agregado al carrito " + p.getNombre());
         }
     }
 
-    // Eliminar todos los productos del carrito
-    public void eliminarCarrito() {
+    public void eliminarCarrito(){
         this.carrito.clear();
     }
 
-    // Comprar el carrito
-    public void comprarCarrito(Cliente c) {
+    public void comprarCarrito(Cliente c){
         double total = totalPrecioCarrito();
 
-        // Comprobar si el cliente tiene saldo suficiente
-        if (c.getSaldo() >= total) {
-            // Verificar stock y restar la cantidad del stock
-            for (Map.Entry<Producto, Integer> entry : carrito.entrySet()) {
-                Producto p = entry.getKey();
-                int cantidades = entry.getValue();
+        if(c.getSaldo()>=total){
+            for(Map.Entry<Producto,Integer> entry : carrito.entrySet()){
+                Producto p= entry.getKey();
+                int cantidades= entry.getValue();
 
-                if (p.getStock() >= cantidades) {
-                    // Descontar stock del producto
-                    p.stock(p.getStock() - cantidades);
-                } else {
-                    System.out.println("Se agotó el producto " + p.getNombre() + ". Por favor, busca otro.");
-                    carrito.remove(p);  // Eliminar producto agotado
+                if(p.getStock()>=cantidades){
+                    p.stock(p.getStock()-cantidades);
+                }else{
+                    System.out.println("Se agoto este producto" + p.getNombre() + "Por favor buscar otro");
+                    this.carrito.remove(p);
+
                 }
             }
-
-            // Restar el saldo del cliente y agregar la compra al historial
-            c.saldo(c.getSaldo() - total);  // Descontar saldo
-            String detallesCompra = "Compra realizada:\n";
-            for (Map.Entry<Producto, Integer> entry : carrito.entrySet()) {
-                Producto p = entry.getKey();
-                detallesCompra += "Producto: " + p.getNombre() +
-                        ", Precio: $" + p.getPrecio() +
-                        ", Cantidad: " + entry.getValue() + "\n";
-            }
-            detallesCompra += "Total: $" + total;
-
-            // Agregar al historial de compras del cliente
-            c.getHistorialCompras().agregarCompra(detallesCompra);
-
-            // Vaciar el carrito después de la compra
+            total = totalPrecioCarrito();
+            c.saldo(c.getSaldo()-total);
             eliminarCarrito();
-
-            JOptionPane.showMessageDialog(null, "Tu compra ha sido realizada con éxito. Muchas gracias por tu compra.");
-            System.out.println("Tu compra ha sido realizada con éxito.");
-        } else {
-            JOptionPane.showMessageDialog(null, "Saldo insuficiente. No se puede completar la compra.", "Error", JOptionPane.ERROR_MESSAGE);
+        }else{
+            System.out.println("Saldo insuficiente. ");
         }
+
+
     }
 
-    // Calcular el total del precio de los productos en el carrito
-    public double totalPrecioCarrito() {
-        double total = 0;
+    public double totalPrecioCarrito(){
+        double total=0;
 
-        for (Map.Entry<Producto, Integer> entry : carrito.entrySet()) {
+        for(Map.Entry<Producto,Integer> entry: carrito.entrySet()){
             Producto p = entry.getKey();
-            int cantidades = entry.getValue();
-            total += (p.getPrecio() * cantidades);
+            int cantidades= entry.getValue();
+            total = total + (p.getPrecio()*cantidades);
         }
-
         return total;
     }
 
-    // Mostrar los productos en el carrito
     public void mostrarCarrito() {
-        double total = totalPrecioCarrito();
+        double total= totalPrecioCarrito();
         if (carrito.isEmpty()) {
             System.out.println("El carrito está vacío.");
         } else {
@@ -111,19 +92,22 @@ public class CartMap {
         }
     }
 
-    // Método que devuelve un valor predeterminado si el producto no está en el carrito
-    public Integer getOrDefault(Producto p, Integer i) {
-        return this.carrito.getOrDefault(p, i);
+    public void getOrDefault(Producto p, Integer i){
+        this.carrito.getOrDefault(p,i);
     }
 
-    // Verificar si el carrito está vacío
-    public boolean isEmpty() {
-        return this.carrito.isEmpty();
+    public boolean isEmpty(){
+        this.carrito.isEmpty();
+        return false;
     }
 
-    // Obtener el conjunto de entradas del carrito
     public Set<Map.Entry<Producto, Integer>> entrySet() {
         return carrito.entrySet();
     }
-}
 
+    public void vaciarCarrito(){
+        this.carrito.clear();
+    }
+
+
+}
