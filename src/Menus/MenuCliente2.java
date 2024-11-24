@@ -3,7 +3,7 @@ package Menus;
 import models.ArrayList.AdministradorList;
 import models.Producto;
 import models.Usuario.Cliente;
-import models.ArrayList.CartMap;  // Importa la clase CartMap
+import models.ArrayList.CartMap;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,50 +13,95 @@ import java.util.Map;
 
 public class MenuCliente2 extends JFrame {
 
-    // Simular las listas de productos y carrito
     private AdministradorList productos;
     private Cliente cliente;
-    private CartMap carrito;  // Usa CartMap en lugar de la lista de carrito
+    private CartMap carrito;
 
     public MenuCliente2(AdministradorList productos, Cliente cliente) {
-        this.productos = productos; // Inicializar productos
-        this.cliente = cliente;     // Inicializar cliente
-        this.carrito = new CartMap();  // Inicializar el carrito como un CartMap
+        this.productos = productos;
+        this.cliente = cliente;
+        this.carrito = new CartMap();
 
-        // Resto del código para configurar el JFrame principal...
         JFrame frame = new JFrame("Menu Cliente");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 300);
+        frame.setSize(600, 500); // Tamaño más amplio para mayor elegancia
         frame.setLayout(new BorderLayout());
 
-        JLabel titulo = new JLabel("Menu Cliente", SwingConstants.CENTER);
-        titulo.setFont(new Font("Arial", Font.BOLD, 20));
-        frame.add(titulo, BorderLayout.NORTH);
+        // Fondo degradado
+        JPanel fondo = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(240, 240, 255), 0, getHeight(), new Color(200, 200, 255));
+                g2d.setPaint(gradient);
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        fondo.setLayout(new BorderLayout());
+
+        // Título con fuente moderna y elegante
+        JLabel titulo = new JLabel("Menú Cliente", SwingConstants.CENTER);
+        titulo.setFont(new Font("Roboto", Font.BOLD, 40)); // Fuente moderna, grande y profesional
+        titulo.setForeground(new Color(50, 0, 100)); // Violeta oscuro
+        fondo.add(titulo, BorderLayout.NORTH);
+
+        // Mover el título hacia abajo con un margen
+        titulo.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0));
 
         JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(4, 1, 10, 10)); // Ahora hay 4 botones
+        panelBotones.setLayout(new GridBagLayout());
+        panelBotones.setOpaque(false); // Fondo transparente
 
-        JButton btnVerProductos = new JButton("Ver Productos");
-        btnVerProductos.addActionListener(e -> verProductos());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 20, 10, 20); // Márgenes entre botones
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        JButton btnVerCarrito = new JButton("Ver Carrito");
-        btnVerCarrito.addActionListener(e -> verCarrito());
+        // Crear los botones con expresiones lambda
+        JButton btnVerProductos = crearBotonPersonalizado("Ver Productos", e -> verProductos());
+        JButton btnVerCarrito = crearBotonPersonalizado("Ver Carrito", e -> verCarrito());
+        JButton btnVerHistorial = crearBotonPersonalizado("Ver Historial de Compras", e -> verHistorial());
+        JButton btnComprarCarrito = crearBotonPersonalizado("Comprar Carrito", e -> comprarCarrito());
 
-        JButton btnVerHistorial = new JButton("Ver Historial de Compras");
-        btnVerHistorial.addActionListener(e -> verHistorial());
+        // Agregar los botones al panel
+        gbc.gridy = 0;
+        panelBotones.add(btnVerProductos, gbc);
+        gbc.gridy = 1;
+        panelBotones.add(btnVerCarrito, gbc);
+        gbc.gridy = 2;
+        panelBotones.add(btnVerHistorial, gbc);
+        gbc.gridy = 3;
+        panelBotones.add(btnComprarCarrito, gbc);
 
-        JButton btnComprarCarrito = new JButton("Comprar Carrito");
-        btnComprarCarrito.addActionListener(e -> comprarCarrito());
+        fondo.add(panelBotones, BorderLayout.CENTER);
 
-        panelBotones.add(btnVerProductos);
-        panelBotones.add(btnVerCarrito);
-        panelBotones.add(btnVerHistorial);
-        panelBotones.add(btnComprarCarrito); // Agregado el botón para comprar el carrito
-
-        frame.add(panelBotones, BorderLayout.CENTER);
+        frame.add(fondo);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
+    private JButton crearBotonPersonalizado(String texto, ActionListener actionListener) {
+        JButton boton = new JButton(texto) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                // Degradado entre violeta y rojo
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(200, 180, 255), getWidth(), getHeight(), new Color(255, 100, 100));
+                g2.setPaint(gradient);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
+                super.paintComponent(g);
+            }
+        };
+
+        boton.setFont(new Font("Arial", Font.BOLD, 16)); // Fuente sans-serif moderna
+        boton.setForeground(Color.BLACK); // Texto negro
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        boton.setPreferredSize(new Dimension(300, 50)); // Máximo ancho de 10 cm
+        boton.setContentAreaFilled(false);
+        boton.addActionListener(actionListener);
+        return boton;
+    }
+
 
     // Método para mostrar los productos y permitir añadirlos al carrito
     private void verProductos() {
@@ -237,7 +282,5 @@ public class MenuCliente2 extends JFrame {
     public void mostrar() {
         setVisible(true);
     }
+
 }
-
-
-
