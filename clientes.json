@@ -1,84 +1,16 @@
 {
   "clientes" : [ {
     "@class" : "Cliente",
-    "id" : "1ce0b693-c352-46aa-b007-931f871e4355",
-    "nombre" : "Tomás",
+    "id" : "6a99bda0-cc11-4b00-b385-313151d71aec",
+    "nombre" : "Verónica",
     "apellido" : "López",
-    "dni" : "75539816",
-    "sexo" : "f",
-    "telefono" : "(0351) 9647-7633",
-    "direccion" : {
-      "calle" : "Avenida Arturo Alió",
-      "numero" : "9",
-      "address" : "Avenida Arturo Alió 9"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "a551c891-ab7e-4a90-89b5-d46db7ac39f0",
-    "nombre" : "Néstor",
-    "apellido" : "Santiago",
-    "dni" : "59578306",
-    "sexo" : "f",
-    "telefono" : "(0341) 7462-10701",
-    "direccion" : {
-      "calle" : "Ruta Nacional 226",
-      "numero" : "6",
-      "address" : "Ruta Nacional 226 6"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "d1b2697e-79e4-428e-bb79-1e7e2599d152",
-    "nombre" : "Margarita",
-    "apellido" : "Acevedo",
-    "dni" : "42457448",
-    "sexo" : "f",
-    "telefono" : "(011) 9937-1677",
-    "direccion" : {
-      "calle" : "Catamarca",
-      "numero" : "02192",
-      "address" : "Catamarca 02192"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "c970926b-e132-4430-8ed8-5335d6f58def",
-    "nombre" : "Horacio",
-    "apellido" : "Rodrigo",
-    "dni" : "73042506",
-    "sexo" : "f",
-    "telefono" : "(0236) 3434-8897",
-    "direccion" : {
-      "calle" : "9 de Julio",
-      "numero" : "0",
-      "address" : "9 de Julio 0"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "ade370c3-d1e5-41b9-af47-96465b3e2743",
-    "nombre" : "Marcela",
-    "apellido" : "Guerrero",
-    "dni" : "82492258",
+    "dni" : "71017001",
     "sexo" : "m",
-    "telefono" : "(0223) 1947-2919",
+    "telefono" : "(0351) 9340-2488",
     "direccion" : {
-      "calle" : "Avenida Champagnat",
-      "numero" : "5684",
-      "address" : "Avenida Champagnat 5684"
+      "calle" : "Jujuy",
+      "numero" : "83177",
+      "address" : "Jujuy 83177"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -86,16 +18,16 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "d296e436-7377-4988-a7f9-cdb6968ef00d",
-    "nombre" : "Alicia",
-    "apellido" : "Medina",
-    "dni" : "52126214",
+    "id" : "0e71d967-7b8d-4c77-a292-33e0a4dceb86",
+    "nombre" : "Rosa",
+    "apellido" : "Padilla",
+    "dni" : "74985999",
     "sexo" : "f",
-    "telefono" : "(0351) 4194-7698",
+    "telefono" : "(0351) 10115-2377",
     "direccion" : {
-      "calle" : "Avenida Juan José Paso",
-      "numero" : "9",
-      "address" : "Avenida Juan José Paso 9"
+      "calle" : "San Luis",
+      "numero" : "140",
+      "address" : "San Luis 140"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -103,33 +35,16 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "25716a2a-f3f7-4b0d-b3d5-651faf6a63b7",
-    "nombre" : "Rodolfo",
-    "apellido" : "Pérez",
-    "dni" : "54152712",
-    "sexo" : "f",
-    "telefono" : "(0221) 5090-4338",
-    "direccion" : {
-      "calle" : "Avenida Fortunato de la Plaza",
-      "numero" : "2163",
-      "address" : "Avenida Fortunato de la Plaza 2163"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "3d182eda-25e1-479c-833c-f334618ed1cf",
-    "nombre" : "Gabriel",
-    "apellido" : "García",
-    "dni" : "83733947",
+    "id" : "e143ed3b-892c-465f-b700-d0f70c3d908c",
+    "nombre" : "Catalina",
+    "apellido" : "Suárez",
+    "dni" : "35965021",
     "sexo" : "m",
-    "telefono" : "(0223) 2363-9874",
+    "telefono" : "(0221) 3618-9698",
     "direccion" : {
-      "calle" : "Güemes",
-      "numero" : "9",
-      "address" : "Güemes 9"
+      "calle" : "Primera Junta",
+      "numero" : "699",
+      "address" : "Primera Junta 699"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -137,16 +52,16 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "5cd0f707-20ef-428a-84ca-069d8b4d2350",
-    "nombre" : "Horacio",
-    "apellido" : "Marín",
-    "dni" : "63410543",
+    "id" : "afd34caf-e016-4874-af0c-dc8c6c14b186",
+    "nombre" : "Ana",
+    "apellido" : "Carrizo",
+    "dni" : "62548143",
     "sexo" : "m",
-    "telefono" : "(0223) 5970-7073",
+    "telefono" : "(0351) 8541-2204",
     "direccion" : {
-      "calle" : "España",
+      "calle" : "Peña",
       "numero" : "5",
-      "address" : "España 5"
+      "address" : "Peña 5"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -154,16 +69,101 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "0b9e6a95-17c3-4568-8ef1-fe2036a113d0",
-    "nombre" : "César",
-    "apellido" : "Romero",
-    "dni" : "84168565",
+    "id" : "3c2e17f0-1d7c-42a6-8a15-d43763e85d75",
+    "nombre" : "Rocío",
+    "apellido" : "Solís",
+    "dni" : "53254429",
     "sexo" : "f",
-    "telefono" : "(0223) 6894-5970",
+    "telefono" : "(0341) 5367-10691",
     "direccion" : {
-      "calle" : "San Martín",
-      "numero" : "3228",
-      "address" : "San Martín 3228"
+      "calle" : "Avenida Polonia",
+      "numero" : "52",
+      "address" : "Avenida Polonia 52"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "7a62579c-2625-4336-b1db-249194db2434",
+    "nombre" : "Raúl",
+    "apellido" : "Fuentes",
+    "dni" : "85266026",
+    "sexo" : "m",
+    "telefono" : "(011) 3205-3730",
+    "direccion" : {
+      "calle" : "Moreno",
+      "numero" : "583",
+      "address" : "Moreno 583"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "1af8a94f-d2aa-4082-8a59-c91f342f29d5",
+    "nombre" : "Pablo",
+    "apellido" : "Vega",
+    "dni" : "40043798",
+    "sexo" : "m",
+    "telefono" : "(0221) 7118-5307",
+    "direccion" : {
+      "calle" : "Mitre",
+      "numero" : "3004",
+      "address" : "Mitre 3004"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "4fb1fe7f-4f13-49b8-8716-aae97432971e",
+    "nombre" : "Sofía",
+    "apellido" : "Gómez",
+    "dni" : "50633885",
+    "sexo" : "m",
+    "telefono" : "(0221) 5499-10938",
+    "direccion" : {
+      "calle" : "Independencia",
+      "numero" : "0",
+      "address" : "Independencia 0"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "0313389f-8a15-47a7-a568-48e571aec3a6",
+    "nombre" : "Margarita",
+    "apellido" : "Figueroa",
+    "dni" : "72928579",
+    "sexo" : "f",
+    "telefono" : "(0223) 4133-5992",
+    "direccion" : {
+      "calle" : "12 de Octubre",
+      "numero" : "886",
+      "address" : "12 de Octubre 886"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "bca6eecb-947d-45d6-8c1c-29e6c9a212df",
+    "nombre" : "Sebastián",
+    "apellido" : "Carreño",
+    "dni" : "47338392",
+    "sexo" : "f",
+    "telefono" : "(011) 5964-4590",
+    "direccion" : {
+      "calle" : "Alem",
+      "numero" : "768",
+      "address" : "Alem 768"
     },
     "saldo" : 0.0,
     "historialCompras" : {

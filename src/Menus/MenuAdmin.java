@@ -8,9 +8,14 @@ import models.Herramienta.Insumo;
 import models.Hogar.Bazar;
 import models.Hogar.Escritorio;
 import models.Hogar.Sillon;
+import models.Juguete.JuegoDeMesa;
 import models.Juguete.JugueteElectrico;
 import models.Juguete.JugueteManual;
 import models.Producto;
+import models.Ropa.Buzo;
+import models.Ropa.Calzado;
+import models.Ropa.Pantalon;
+import models.Ropa.Remera;
 
 import javax.swing.*;
 import java.awt.*;
@@ -833,12 +838,510 @@ public class MenuAdmin extends JFrame {
 
 
                 }
-                case "Buzo"-> {
+                case "Juego De Mesa"-> {
+                    JLabel edad = new JLabel("Edad");
+                    panelBotones.add(edad);
+
+                    JTextField edadTexto = new JTextField();
+                    panelBotones.add(edadTexto);
+
+                    JLabel categoria = new JLabel("Categoria");
+                    panelBotones.add(categoria);
+
+                    JComboBox<CategoriaJuguete> comboBox1 = new JComboBox<>(new CategoriaJuguete[]{CategoriaJuguete.EDUCATIVO,
+                            CategoriaJuguete.CONSTRUCCION,
+                            CategoriaJuguete.PELUCHES,
+                            CategoriaJuguete.VEHICULOS,
+                            CategoriaJuguete.DEPORTIVO,
+                            CategoriaJuguete.MUÑECAS,
+                            CategoriaJuguete.MUSICAL,
+                            CategoriaJuguete.JUEGOS_DE_MESA});
+                    panelBotones.add(comboBox1);
+
+                    JLabel material = new JLabel("Material");
+                    panelBotones.add(material);
+
+                    JComboBox<MaterialJuguete> comboBox2 = new JComboBox<>(new MaterialJuguete[]{MaterialJuguete.MADERA,
+                            MaterialJuguete.METAL,
+                            MaterialJuguete.PLASTICO,
+                            MaterialJuguete.TELA,
+                            MaterialJuguete.GOMA,
+                            MaterialJuguete.CARTON,
+                            MaterialJuguete.PAPEL,
+                            MaterialJuguete.ESPUMA});
+                    panelBotones.add(comboBox2);
+
+                    JLabel cantJugadores = new JLabel("Cantidad de jugadores");
+                    panelBotones.add(cantJugadores);
+
+                    JTextField cantJugadoresTexto = new JTextField();
+                    panelBotones.add(cantJugadoresTexto);
+
+                    JLabel duracion = new JLabel("Duración");
+                    panelBotones.add(duracion);
+
+                    JTextField duracionTexto = new JTextField();
+                    panelBotones.add(duracionTexto);
+
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || comboBox1.getSelectedItem()==null ||
+                                comboBox.getSelectedItem()==null || comboBox2.getSelectedItem()==null ||
+                                edadTexto.getText().isEmpty() || cantJugadoresTexto.getText().isEmpty() ||
+                                duracionTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            JuegoDeMesa juegoDeMesa = new JuegoDeMesa(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Integer.parseInt(edadTexto.getText()),
+                                    (CategoriaJuguete) comboBox1.getSelectedItem(),
+                                    (MaterialJuguete) comboBox2.getSelectedItem(),
+                                    Integer.parseInt(cantJugadoresTexto.getText()),
+                                    Integer.parseInt(duracionTexto.getText()));
+                            administrador.add(juegoDeMesa);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
 
                 }
-                case "Calzado"-> {}
-                case "Pantalon"-> {}
-                case "Remera"-> {}
+                case "Buzo"-> {
+                    final boolean[] capucha = {false};
+                    final boolean[] cierre = {false};
+                    final boolean[] bolsillos = {false};
+                    final boolean[] estampado = {false};
+                    final boolean[] impermeable = {false};
+
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel genero = new JLabel("Genero");
+                    panelBotones.add(genero);
+
+                    JComboBox<Genero> comboBox1 = new JComboBox<>(new Genero[]{Genero.MASCULINO,
+                            Genero.FEMENINO,
+                            Genero.UNISEX});
+                    panelBotones.add(comboBox1);
+
+                    JLabel talle = new JLabel("Talle");
+                    panelBotones.add(talle);
+
+                    JComboBox<TalleRemera> comboBox2 = new JComboBox<>(new TalleRemera[]{TalleRemera.XS,
+                            TalleRemera.S,
+                            TalleRemera.M,
+                            TalleRemera.L,
+                            TalleRemera.XL,
+                            TalleRemera.XXL});
+                    panelBotones.add(comboBox2);
+
+                    JLabel material = new JLabel("Material");
+                    panelBotones.add(material);
+
+                    JTextField materialTexto = new JTextField();
+                    panelBotones.add(materialTexto);
+
+                    JButton tieneCapucha = new JButton("Tiene capucha");
+                    tieneCapucha.setBackground(Color.RED);
+                    tieneCapucha.addActionListener(e->{
+                        capucha[0] = !capucha[0];
+                        if (capucha[0]){
+                            tieneCapucha.setBackground(Color.GREEN);
+                        }else {
+                            tieneCapucha.setBackground(Color.RED);
+                        }
+                    });
+
+                    panelBotones.add(tieneCapucha);
+
+                    JButton tieneCierre = new JButton("Tiene cierre");
+                    tieneCierre.setBackground(Color.RED);
+                    tieneCierre.addActionListener(e->{
+                        cierre[0] = !cierre[0];
+                        if (cierre[0]){
+                            tieneCierre.setBackground(Color.GREEN);
+                        }else {
+                            tieneCierre.setBackground(Color.RED);
+                        }
+                    });
+                    panelBotones.add(tieneCierre);
+
+                    JButton tieneBolsillos = new JButton("Tiene bolsillos");
+                    tieneBolsillos.setBackground(Color.RED);
+                    tieneBolsillos.addActionListener(e->{
+                        bolsillos[0] = !bolsillos[0];
+                        if (bolsillos[0]){
+                            tieneBolsillos.setBackground(Color.GREEN);
+                        }else {
+                            tieneBolsillos.setBackground(Color.RED);
+                        }
+                    });
+                    panelBotones.add(tieneBolsillos);
+
+                    JButton tieneEstampado = new JButton("Tiene estampado");
+                    tieneEstampado.setBackground(Color.RED);
+                    tieneEstampado.addActionListener(e->{
+                        estampado[0] = !estampado[0];
+                        if (estampado[0]){
+                            tieneEstampado.setBackground(Color.GREEN);
+                        }else {
+                            tieneEstampado.setBackground(Color.RED);
+                        }
+                    });
+                    panelBotones.add(tieneEstampado);
+
+                    JButton esImpermeable = new JButton("Es impermeable");
+                    esImpermeable.setBackground(Color.RED);
+                    esImpermeable.addActionListener(e->{
+                        impermeable[0] = !impermeable[0];
+                        if (impermeable[0]){
+                            esImpermeable.setBackground(Color.GREEN);
+                        }else {
+                            esImpermeable.setBackground(Color.RED);
+                        }
+                    });
+                    panelBotones.add(esImpermeable);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || comboBox1.getSelectedItem()==null ||
+                                comboBox.getSelectedItem()==null || comboBox2.getSelectedItem()==null ||
+                                colorTexto.getText().isEmpty() || materialTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Buzo buzo = new Buzo(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    colorTexto.getText(),
+                                    (Genero) comboBox1.getSelectedItem(),
+                                    (TalleRemera) comboBox2.getSelectedItem(),
+                                    materialTexto.getText(),
+                                    capucha[0],
+                                    cierre[0],
+                                    bolsillos[0],
+                                    estampado[0],
+                                    impermeable[0]);
+                            administrador.add(buzo);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+
+
+                }
+                case "Calzado"-> {
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel genero = new JLabel("Genero");
+                    panelBotones.add(genero);
+
+                    JComboBox<Genero> comboBox1 = new JComboBox<>(new Genero[]{Genero.MASCULINO,
+                            Genero.FEMENINO,
+                            Genero.UNISEX});
+                    panelBotones.add(comboBox1);
+
+                    JLabel talle = new JLabel("Talle");
+                    panelBotones.add(talle);
+
+                    JComboBox<TalleRemera> comboBox2 = new JComboBox<>(new TalleRemera[]{TalleRemera.XS,
+                            TalleRemera.S,
+                            TalleRemera.M,
+                            TalleRemera.L,
+                            TalleRemera.XL,
+                            TalleRemera.XXL});
+                    panelBotones.add(comboBox2);
+
+                    JLabel material = new JLabel("Material");
+                    panelBotones.add(material);
+
+                    JTextField materialTexto = new JTextField();
+                    panelBotones.add(materialTexto);
+
+                    JLabel tipo = new JLabel("Tipo");
+                    panelBotones.add(tipo);
+
+                    JComboBox<TipoCalzado> comboBox3 = new JComboBox<>(new TipoCalzado[]{TipoCalzado.ZAPATILLA,
+                            TipoCalzado.BOTIN,
+                            TipoCalzado.BOTA,
+                            TipoCalzado.SANDALIA,
+                            TipoCalzado.OJOTA,
+                            TipoCalzado.ZAPATO,
+                            TipoCalzado.MOCASIN,
+                            TipoCalzado.ZAPATILLA,
+                            TipoCalzado.CROCS,
+                            TipoCalzado.CHINELA,
+                            TipoCalzado.BORCEGO,
+                            TipoCalzado.CHINELA,
+                            TipoCalzado.ALPARGATA,
+                            TipoCalzado.CHATITA,
+                            TipoCalzado.PANCHAS,
+                            TipoCalzado.ZUECO,
+                            TipoCalzado.BAILARINA,
+                            TipoCalzado.NÁUTICO,
+                            TipoCalzado.ROLLERS,
+                            TipoCalzado.PATINES}
+                    );
+                    panelBotones.add(comboBox3);
+
+                    JLabel uso = new JLabel("Uso");
+                    panelBotones.add(uso);
+
+                    JComboBox<UsoCalzadoPantalon> comboBox4 = new JComboBox<>(new UsoCalzadoPantalon[]{UsoCalzadoPantalon.CASUAL,
+                            UsoCalzadoPantalon.DEPORTIVO,
+                            UsoCalzadoPantalon.FORMAL,
+                            UsoCalzadoPantalon.CASUAL});
+                    panelBotones.add(comboBox4);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || comboBox1.getSelectedItem()==null ||
+                                comboBox.getSelectedItem()==null || comboBox2.getSelectedItem()==null ||
+                                colorTexto.getText().isEmpty() || materialTexto.getText().isEmpty() ||
+                                comboBox3.getSelectedItem()==null || comboBox4.getSelectedItem()==null) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Calzado calzado = new Calzado(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    colorTexto.getText(),
+                                    (Genero) comboBox1.getSelectedItem(),
+                                    (TalleRemera) comboBox2.getSelectedItem(),
+                                    materialTexto.getText(),
+                                    (TipoCalzado) comboBox3.getSelectedItem(),
+                                    (UsoCalzadoPantalon) comboBox4.getSelectedItem());
+                            administrador.add(calzado);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+                }
+                case "Pantalon"-> {
+                    final boolean[] cierre = {false};
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel genero = new JLabel("Genero");
+                    panelBotones.add(genero);
+
+                    JComboBox<Genero> comboBox1 = new JComboBox<>(new Genero[]{Genero.MASCULINO,
+                            Genero.FEMENINO,
+                            Genero.UNISEX});
+                    panelBotones.add(comboBox1);
+
+                    JLabel talle = new JLabel("Talle");
+                    panelBotones.add(talle);
+
+                    JComboBox<TalleRemera> comboBox2 = new JComboBox<>(new TalleRemera[]{TalleRemera.XS,
+                            TalleRemera.S,
+                            TalleRemera.M,
+                            TalleRemera.L,
+                            TalleRemera.XL,
+                            TalleRemera.XXL});
+                    panelBotones.add(comboBox2);
+
+                    JLabel material = new JLabel("Material");
+                    panelBotones.add(material);
+
+                    JTextField materialTexto = new JTextField();
+                    panelBotones.add(materialTexto);
+
+                    JLabel cantidadBolsillos = new JLabel("Cantidad de bolsillos");
+                    panelBotones.add(cantidadBolsillos);
+
+                    JTextField cantidadBolsillosTexto = new JTextField();
+                    panelBotones.add(cantidadBolsillosTexto);
+
+                    JLabel estilo = new JLabel("Estilo");
+                    panelBotones.add(estilo);
+
+                    JTextField estiloTexto = new JTextField();
+                    panelBotones.add(estiloTexto);
+
+                    JLabel uso = new JLabel("Uso");
+                    panelBotones.add(uso);
+
+                    JComboBox<UsoCalzadoPantalon> comboBox4 = new JComboBox<>(new UsoCalzadoPantalon[]{UsoCalzadoPantalon.CASUAL,
+                            UsoCalzadoPantalon.DEPORTIVO,
+                            UsoCalzadoPantalon.FORMAL,
+                            UsoCalzadoPantalon.CASUAL});
+                    panelBotones.add(comboBox4);
+
+                    JButton tieneCierre = new JButton("Tiene cierre");
+                    tieneCierre.setBackground(Color.RED);
+                    tieneCierre.addActionListener(e->{
+                        cierre[0] = !cierre[0];
+                        if (cierre[0]){
+                            tieneCierre.setBackground(Color.GREEN);
+                        }else {
+                            tieneCierre.setBackground(Color.RED);
+                        }
+                    });
+                    panelBotones.add(tieneCierre);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || comboBox1.getSelectedItem()==null ||
+                                comboBox.getSelectedItem()==null || comboBox2.getSelectedItem()==null ||
+                                colorTexto.getText().isEmpty() || materialTexto.getText().isEmpty() ||
+                                cantidadBolsillosTexto.getText().isEmpty() || estiloTexto.getText().isEmpty() ||
+                                comboBox4.getSelectedItem()==null) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Pantalon pantalon = new Pantalon(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    colorTexto.getText(),
+                                    (Genero) comboBox1.getSelectedItem(),
+                                    (TalleRemera) comboBox2.getSelectedItem(),
+                                    materialTexto.getText(),
+                                    Integer.parseInt(cantidadBolsillosTexto.getText()),
+                                    estiloTexto.getText(),
+                                    (UsoCalzadoPantalon) comboBox4.getSelectedItem(),
+                                    cierre[0]);
+                            administrador.add(pantalon);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+                }
+                case "Remera"-> {
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel genero = new JLabel("Genero");
+                    panelBotones.add(genero);
+
+                    JComboBox<Genero> comboBox1 = new JComboBox<>(new Genero[]{Genero.MASCULINO,
+                            Genero.FEMENINO,
+                            Genero.UNISEX});
+                    panelBotones.add(comboBox1);
+
+                    JLabel talle = new JLabel("Talle");
+                    panelBotones.add(talle);
+
+                    JComboBox<TalleRemera> comboBox2 = new JComboBox<>(new TalleRemera[]{TalleRemera.XS,
+                            TalleRemera.S,
+                            TalleRemera.M,
+                            TalleRemera.L,
+                            TalleRemera.XL,
+                            TalleRemera.XXL});
+                    panelBotones.add(comboBox2);
+
+                    JLabel material = new JLabel("Material");
+                    panelBotones.add(material);
+
+                    JTextField materialTexto = new JTextField();
+                    panelBotones.add(materialTexto);
+
+                    JLabel tipoDeRemera = new JLabel("Tipo de remera");
+                    panelBotones.add(tipoDeRemera);
+
+                    JComboBox<TipoDeRemera> comboBox3 = new JComboBox<>(new TipoDeRemera[]{TipoDeRemera.MANGACORTA,
+                            TipoDeRemera.MANGALARGA,
+                            TipoDeRemera.MANGA3_4});
+                    panelBotones.add(comboBox3);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || comboBox1.getSelectedItem()==null ||
+                                comboBox.getSelectedItem()==null || comboBox2.getSelectedItem()==null ||
+                                colorTexto.getText().isEmpty() || materialTexto.getText().isEmpty() ||
+                                comboBox3.getSelectedItem()==null) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Remera remera = new Remera(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    colorTexto.getText(),
+                                    (Genero) comboBox1.getSelectedItem(),
+                                    (TalleRemera) comboBox2.getSelectedItem(),
+                                    materialTexto.getText(),
+                                    (TipoDeRemera) comboBox3.getSelectedItem(),
+                                    (TalleRemera) comboBox2.getSelectedItem());
+                            administrador.add(remera);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+                }
                 case "Celular"-> {}
                 case "Computadora"-> {}
                 case "PC de escritorio"-> {}
