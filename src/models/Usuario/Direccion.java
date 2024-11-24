@@ -1,7 +1,10 @@
 package models.Usuario;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.Random;
 
+@JsonIgnoreProperties(ignoreUnknown = true) // Ignorar campos desconocidos
 public class Direccion {
 
     private String calle;
@@ -13,7 +16,23 @@ public class Direccion {
         this.numero = getRandomNumber();
     }
 
+    public String getCalle() {
+        return calle;
+    }
 
+    public Direccion calle(String calle) {
+        this.calle = calle;
+        return this;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public Direccion numero(String numero) {
+        this.numero = numero;
+        return this;
+    }
 
     // Genera un nombre de calle aleatorio de Mar del Plata y Balcarce
     private String getRandomAddress() {

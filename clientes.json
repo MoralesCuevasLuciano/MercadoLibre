@@ -1,0 +1,173 @@
+{
+  "clientes" : [ {
+    "@class" : "Cliente",
+    "id" : "199e2579-6a0a-4e54-9694-fc64c28ae557",
+    "nombre" : "Mariana",
+    "apellido" : "Salazar",
+    "dni" : "38172354",
+    "sexo" : "f",
+    "telefono" : "(0351) 2017-10804",
+    "direccion" : {
+      "calle" : "San Martín",
+      "numero" : "499",
+      "address" : "San Martín 499"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "59e2b0a2-c12e-4b8b-9e1d-3f28120d4b5b",
+    "nombre" : "Esteban",
+    "apellido" : "Cortés",
+    "dni" : "93422406",
+    "sexo" : "f",
+    "telefono" : "(0223) 3214-1081",
+    "direccion" : {
+      "calle" : "Primera Junta",
+      "numero" : "742",
+      "address" : "Primera Junta 742"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "a9fbd40d-9b75-4062-a9bf-9294d583c6d4",
+    "nombre" : "Cecilia",
+    "apellido" : "Córdoba",
+    "dni" : "67003777",
+    "sexo" : "m",
+    "telefono" : "(0351) 4732-5707",
+    "direccion" : {
+      "calle" : "Avenida Juan José Paso",
+      "numero" : "6",
+      "address" : "Avenida Juan José Paso 6"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "b3374422-d31b-4988-a879-6ecadd4a7ae2",
+    "nombre" : "Alejandra",
+    "apellido" : "Santana",
+    "dni" : "40433837",
+    "sexo" : "m",
+    "telefono" : "(0341) 2313-1132",
+    "direccion" : {
+      "calle" : "Dorrego",
+      "numero" : "94",
+      "address" : "Dorrego 94"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "eed994e0-338a-439f-ae37-4eedd11cd2aa",
+    "nombre" : "Sebastián",
+    "apellido" : "Cáceres",
+    "dni" : "97441457",
+    "sexo" : "f",
+    "telefono" : "(0221) 7574-6975",
+    "direccion" : {
+      "calle" : "Alem",
+      "numero" : "47",
+      "address" : "Alem 47"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "b3a8d09a-047f-4164-a0d4-f65bd6c49ab0",
+    "nombre" : "Gisela",
+    "apellido" : "Bermúdez",
+    "dni" : "38986526",
+    "sexo" : "m",
+    "telefono" : "(0221) 8474-1242",
+    "direccion" : {
+      "calle" : "Avenida Luro",
+      "numero" : "1236",
+      "address" : "Avenida Luro 1236"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "ca6efec6-4a5a-461d-bb23-9c5a5935ae38",
+    "nombre" : "Felipe",
+    "apellido" : "Marín",
+    "dni" : "94969124",
+    "sexo" : "f",
+    "telefono" : "(0236) 6262-8857",
+    "direccion" : {
+      "calle" : "España",
+      "numero" : "3377",
+      "address" : "España 3377"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "31ba8637-904f-49b4-a7af-6e3dfa6a642f",
+    "nombre" : "Gabriel",
+    "apellido" : "Vargas",
+    "dni" : "32970786",
+    "sexo" : "m",
+    "telefono" : "(011) 3922-1378",
+    "direccion" : {
+      "calle" : "Avenida Fortunato de la Plaza",
+      "numero" : "83",
+      "address" : "Avenida Fortunato de la Plaza 83"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "5b4edfc9-78b8-47e5-9afb-31ff65bf7b98",
+    "nombre" : "Violeta",
+    "apellido" : "Guerra",
+    "dni" : "63731227",
+    "sexo" : "m",
+    "telefono" : "(0223) 4371-8771",
+    "direccion" : {
+      "calle" : "Jujuy",
+      "numero" : "370",
+      "address" : "Jujuy 370"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "2532bc81-1a52-427f-8bc8-20586aea0d32",
+    "nombre" : "Adrián",
+    "apellido" : "Salazar",
+    "dni" : "61798691",
+    "sexo" : "m",
+    "telefono" : "(0236) 4382-8744",
+    "direccion" : {
+      "calle" : "Juan B. Justo",
+      "numero" : "3459",
+      "address" : "Juan B. Justo 3459"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  } ]
+}

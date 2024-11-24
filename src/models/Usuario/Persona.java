@@ -106,7 +106,7 @@ public abstract class Persona {
         System.out.println("Dni:.......................: " + dni);
         System.out.println("Sexo:......................: " + sexo);
         System.out.println("Telefono:..................: " + telefono);
-        System.out.println("Direccion:.................: " + direccion.toString());
+        System.out.println("Direccion:.................: " + direccion.getAddress());
     }
 
 
@@ -123,14 +123,14 @@ public abstract class Persona {
     @Override
     public String toString() {
         return
-                "\nId:............................: " + id +
-                "\nNombre:.........................: " + nombre +
-                        "\nApellido:.........................: " + apellido +
-                "\nDNI:............................: " + dni +
-                "\nSexo:...........................: " + sexo +
-                "\nTelefono:.......................: " + telefono +
-                "\nDireccion:......................: " + direccion +
-                "\n==============================================\n\n";
+                "\nId:.............................: " + id +
+                        "\nNombre:.........................: " + nombre +
+                        "\nApellido:.......................: " + apellido +
+                        "\nDNI:............................: " + dni +
+                        "\nSexo:...........................: " + sexo +
+                        "\nTelefono:.......................: " + telefono +
+                        "\nDireccion:......................: " + direccion;
+
     }
 
 

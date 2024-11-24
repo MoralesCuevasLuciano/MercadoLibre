@@ -1,5 +1,7 @@
 package models.Usuario;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import enums.Genero;
 import enums.TalleRemera;
 import models.ArrayList.CartMap;
@@ -7,11 +9,29 @@ import models.HistorialCompras;
 import models.Ropa.Buzo;
 
 import static mocks.MockCliente.*;
+import static models.Herramienta.HerramientaElectrica.herramientaElectricaRandom;
+import static models.Herramienta.HerramientaManual.herramientaManualRandom;
+import static models.Herramienta.Insumo.insumoRandom;
+import static models.Hogar.Bazar.bazarRandom;
+import static models.Hogar.Escritorio.escritorioRandom;
+import static models.Hogar.Sillon.sillonRandom;
+import static models.Juguete.JuegoDeMesa.juegoDeMesaRandom;
+import static models.Juguete.JugueteElectrico.jugueteElectricoRandom;
+import static models.Juguete.JugueteManual.jugueteManualRandom;
+import static models.Ropa.Buzo.buzoRandom;
+import static models.Ropa.Calzado.calzadoRandom;
+import static models.Ropa.Pantalon.pantalonRandom;
+import static models.Ropa.Remera.remeraRandom;
+import static models.Tecnologia.Celular.celularRandom;
+import static models.Tecnologia.PC_Escritorio.PC_EscritorioRandom;
+import static models.Tecnologia.Portatil.portatilRandom;
+import static models.Tecnologia.Televisor.televisorRandom;
 
-
+@JsonIgnoreProperties(ignoreUnknown = true) // Ignorar campos desconocidos
 public class Cliente extends Persona {
 
     private double saldo;
+    @JsonIgnore
     private CartMap carrito;
     private HistorialCompras historialCompras; // Asegúrate de tener esta clase
 
@@ -71,6 +91,7 @@ public class Cliente extends Persona {
     }
 
 
+
     /** IMPRIMIR */
     @Override
     public void imprimir() {
@@ -84,6 +105,13 @@ public class Cliente extends Persona {
         super.imprimirCliente();
         System.out.println("Saldo:.....................: " + saldo);
         System.out.println("");
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nSaldo...........................: $" + saldo +
+                "\n==============================================\n\n";
     }
 }
 
