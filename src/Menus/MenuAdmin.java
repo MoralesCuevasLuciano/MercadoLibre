@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
+import static json.JsonProductos.serializarProductos;
+
 public class MenuAdmin extends JFrame {
     private AdministradorList administrador = new AdministradorList();
     private boolean ventanaProductos = false;
@@ -57,7 +59,7 @@ public class MenuAdmin extends JFrame {
         //btnConsultar.addActionListener(new ActionListener() {});
 
         JButton btnAgregar = new JButton("Agregar Producto");
-        btnAgregar.addActionListener(e -> agregarProducto());
+        btnAgregar.addActionListener(e -> agregarProducto1());
 
         JButton btnEditar = new JButton("Editar Producto");
         //btnEditar.addActionListener(new ActionListener() {});
@@ -176,6 +178,143 @@ public class MenuAdmin extends JFrame {
 
     }
 
+    private void agregarProducto1(){
+        String[] nombresClases = {"Herramienta Electrica", "Herramienta Manual", "Insumo",
+        "Bazar", "Escritorio", "Mueble", "Sillon",
+        "Juego De Mesa", "Juguete Electrico", "Juguete Manual",
+        "Buzo", "Calzado", "Pantalon", "Remera",
+        "Celular", "Computadora", "PC de escritorio", "Portatil", "Televisor"};
+        JComboBox<String> comboBox = new JComboBox<>(nombresClases);
+
+        int result = JOptionPane.showConfirmDialog(this, comboBox, "Seleccionar clase", JOptionPane.OK_CANCEL_OPTION);
+
+        if (result == JOptionPane.OK_OPTION){
+            String claseSeleccionado = comboBox.getSelectedItem().toString();
+            JFrame frame = new JFrame("Crear Producto");
+            frame.setSize(650,600);
+            frame.setLocationRelativeTo(null);
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setLayout(new BorderLayout());
+            frame.setVisible(true);
+
+            JPanel panelVacioOeste = new JPanel();
+            panelVacioOeste.setPreferredSize(new Dimension(50, 600));
+            frame.add(panelVacioOeste, BorderLayout.WEST);
+
+            JPanel panelVacioEste = new JPanel();
+            panelVacioEste.setPreferredSize(new Dimension(50, 600));
+            frame.add(panelVacioEste, BorderLayout.EAST);
+
+            JPanel panelVacioSur = new JPanel();
+            panelVacioSur.setPreferredSize(new Dimension(650, 30));
+            frame.add(panelVacioSur, BorderLayout.SOUTH);
+
+            JPanel panelBotones = new JPanel();
+            panelBotones.setLayout(new GridLayout(10,1,30,20));
+            frame.add(panelBotones, BorderLayout.CENTER);
+
+            JLabel nombre = new JLabel("Nombre");
+            panelBotones.add(nombre);
+
+            JTextField nombreTexto = new JTextField();
+            panelBotones.add(nombreTexto);
+
+            JLabel stock = new JLabel("Stock");
+            panelBotones.add(stock);
+
+            JTextField stockTexto = new JTextField();
+            panelBotones.add(stockTexto);
+
+            JLabel precio = new JLabel("Precio");
+            panelBotones.add(precio);
+
+            JTextField precioTexto = new JTextField();
+            panelBotones.add(precioTexto);
+
+            JLabel marca  = new JLabel("Marca");
+            panelBotones.add(marca);
+
+            JTextField marcaTexto = new JTextField();
+            panelBotones.add(marcaTexto);
+
+            JLabel modelo = new JLabel("Modelo");
+            panelBotones.add(modelo);
+
+            JTextField modeloTexto = new JTextField();
+            panelBotones.add(modeloTexto);
+
+
+
+
+
+            switch (claseSeleccionado){
+                case "Herramienta Electrica"-> {
+                    final boolean[] esInalambrico = {false};
+                    JLabel voltaje = new JLabel("Voltaje");
+                    panelBotones.add(voltaje);
+
+                    JTextField voltajeTexto = new JTextField();
+                    panelBotones.add(voltajeTexto);
+
+                    JButton inalambrico = new JButton("Inalambrico");
+                    inalambrico.addActionListener(e-> esInalambrico[0] = true);
+                    panelBotones.add(inalambrico);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || voltajeTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            HerramientaElectrica hE = new HerramientaElectrica(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Float.parseFloat(voltajeTexto.getText()),
+                                    esInalambrico[0]);
+                            administrador.add(hE);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+
+
+                }
+                case "Herramienta Manual"-> {}
+                case "Insumo"-> {}
+                case "Bazar"-> {}
+                case "Escritorio"-> {}
+                case "Mueble"-> {}
+                case "Sillon"-> {}
+                case "Juguetes"-> {}
+                case "Juguete Electrico"-> {}
+                case "Juguete Manual"-> {}
+                case "Buzo"-> {}
+                case "Calzado"-> {}
+                case "Pantalon"-> {}
+                case "Remera"-> {}
+                case "Celular"-> {}
+                case "Computadora"-> {}
+                case "PC de escritorio"-> {}
+                case "Portatil"-> {}
+                case "Televisor"-> {}
+
+
+            }
+        }
+
+    }
     private void agregarHerramienta(){
         JFrame frame = new JFrame("Seleccione tipo");
         frame.setSize(350,300);
