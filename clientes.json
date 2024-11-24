@@ -1,16 +1,16 @@
 {
   "clientes" : [ {
     "@class" : "Cliente",
-    "id" : "a9edcc18-4d09-4c32-b35f-b4519b1d11f6",
-    "nombre" : "Elba",
-    "apellido" : "Linares",
-    "dni" : "53472446",
+    "id" : "1ce0b693-c352-46aa-b007-931f871e4355",
+    "nombre" : "Tomás",
+    "apellido" : "López",
+    "dni" : "75539816",
     "sexo" : "f",
-    "telefono" : "(0351) 7259-9613",
+    "telefono" : "(0351) 9647-7633",
     "direccion" : {
-      "calle" : "Italia",
-      "numero" : "0",
-      "address" : "Italia 0"
+      "calle" : "Avenida Arturo Alió",
+      "numero" : "9",
+      "address" : "Avenida Arturo Alió 9"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -18,118 +18,16 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "b6d6d08b-ad26-49c6-acfc-fbd606509b69",
-    "nombre" : "Diego",
-    "apellido" : "Vázquez",
-    "dni" : "82118531",
+    "id" : "a551c891-ab7e-4a90-89b5-d46db7ac39f0",
+    "nombre" : "Néstor",
+    "apellido" : "Santiago",
+    "dni" : "59578306",
     "sexo" : "f",
-    "telefono" : "(0341) 10918-6138",
-    "direccion" : {
-      "calle" : "Balcarce",
-      "numero" : "82",
-      "address" : "Balcarce 82"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "454ae9c4-0a1e-4def-9f58-4ef0603ec4ca",
-    "nombre" : "Ricardo",
-    "apellido" : "Vázquez",
-    "dni" : "53672296",
-    "sexo" : "m",
-    "telefono" : "(0221) 6070-7267",
-    "direccion" : {
-      "calle" : "Juan B. Justo",
-      "numero" : "0961",
-      "address" : "Juan B. Justo 0961"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "fd649c42-2baf-4555-9b4a-54faadc2df92",
-    "nombre" : "Alicia",
-    "apellido" : "Vega",
-    "dni" : "65347765",
-    "sexo" : "m",
-    "telefono" : "(0223) 2580-8054",
-    "direccion" : {
-      "calle" : "Dorrego",
-      "numero" : "0",
-      "address" : "Dorrego 0"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "14b3c99a-e0fb-4dbe-a4d8-a7067fed7618",
-    "nombre" : "René",
-    "apellido" : "Alvarado",
-    "dni" : "40140312",
-    "sexo" : "m",
-    "telefono" : "(011) 10941-1822",
-    "direccion" : {
-      "calle" : "Colón",
-      "numero" : "7617",
-      "address" : "Colón 7617"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "6b6cccb1-e8ba-4bc3-a761-23bd738bd47b",
-    "nombre" : "Raquel",
-    "apellido" : "Rodríguez",
-    "dni" : "44632803",
-    "sexo" : "m",
-    "telefono" : "(0223) 7743-7469",
-    "direccion" : {
-      "calle" : "Avenida Luro",
-      "numero" : "602",
-      "address" : "Avenida Luro 602"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "4abd729e-2c39-432e-b6e4-a86da4931e2a",
-    "nombre" : "Luz",
-    "apellido" : "Alvarado",
-    "dni" : "54606885",
-    "sexo" : "m",
-    "telefono" : "(0341) 3932-10353",
-    "direccion" : {
-      "calle" : "Juan B. Justo",
-      "numero" : "83",
-      "address" : "Juan B. Justo 83"
-    },
-    "saldo" : 0.0,
-    "historialCompras" : {
-      "compras" : [ ]
-    }
-  }, {
-    "@class" : "Cliente",
-    "id" : "9ed41158-7156-40a4-8e74-a813fdb885b9",
-    "nombre" : "Lidia",
-    "apellido" : "Vázquez",
-    "dni" : "79533004",
-    "sexo" : "f",
-    "telefono" : "(0223) 1054-7008",
+    "telefono" : "(0341) 7462-10701",
     "direccion" : {
       "calle" : "Ruta Nacional 226",
-      "numero" : "28",
-      "address" : "Ruta Nacional 226 28"
+      "numero" : "6",
+      "address" : "Ruta Nacional 226 6"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -137,16 +35,101 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "4eff17bb-be39-4caf-8cb8-f199353b030e",
-    "nombre" : "Daniela",
+    "id" : "d1b2697e-79e4-428e-bb79-1e7e2599d152",
+    "nombre" : "Margarita",
+    "apellido" : "Acevedo",
+    "dni" : "42457448",
+    "sexo" : "f",
+    "telefono" : "(011) 9937-1677",
+    "direccion" : {
+      "calle" : "Catamarca",
+      "numero" : "02192",
+      "address" : "Catamarca 02192"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "c970926b-e132-4430-8ed8-5335d6f58def",
+    "nombre" : "Horacio",
+    "apellido" : "Rodrigo",
+    "dni" : "73042506",
+    "sexo" : "f",
+    "telefono" : "(0236) 3434-8897",
+    "direccion" : {
+      "calle" : "9 de Julio",
+      "numero" : "0",
+      "address" : "9 de Julio 0"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "ade370c3-d1e5-41b9-af47-96465b3e2743",
+    "nombre" : "Marcela",
+    "apellido" : "Guerrero",
+    "dni" : "82492258",
+    "sexo" : "m",
+    "telefono" : "(0223) 1947-2919",
+    "direccion" : {
+      "calle" : "Avenida Champagnat",
+      "numero" : "5684",
+      "address" : "Avenida Champagnat 5684"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "d296e436-7377-4988-a7f9-cdb6968ef00d",
+    "nombre" : "Alicia",
+    "apellido" : "Medina",
+    "dni" : "52126214",
+    "sexo" : "f",
+    "telefono" : "(0351) 4194-7698",
+    "direccion" : {
+      "calle" : "Avenida Juan José Paso",
+      "numero" : "9",
+      "address" : "Avenida Juan José Paso 9"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "25716a2a-f3f7-4b0d-b3d5-651faf6a63b7",
+    "nombre" : "Rodolfo",
+    "apellido" : "Pérez",
+    "dni" : "54152712",
+    "sexo" : "f",
+    "telefono" : "(0221) 5090-4338",
+    "direccion" : {
+      "calle" : "Avenida Fortunato de la Plaza",
+      "numero" : "2163",
+      "address" : "Avenida Fortunato de la Plaza 2163"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "3d182eda-25e1-479c-833c-f334618ed1cf",
+    "nombre" : "Gabriel",
     "apellido" : "García",
-    "dni" : "41183192",
+    "dni" : "83733947",
     "sexo" : "m",
-    "telefono" : "(0236) 7500-9405",
+    "telefono" : "(0223) 2363-9874",
     "direccion" : {
-      "calle" : "Juan B. Justo",
-      "numero" : "450",
-      "address" : "Juan B. Justo 450"
+      "calle" : "Güemes",
+      "numero" : "9",
+      "address" : "Güemes 9"
     },
     "saldo" : 0.0,
     "historialCompras" : {
@@ -154,16 +137,33 @@
     }
   }, {
     "@class" : "Cliente",
-    "id" : "958ab32d-eba4-4d33-bd64-a94bab9ac26a",
-    "nombre" : "Alejandra",
-    "apellido" : "Mendoza",
-    "dni" : "48028538",
+    "id" : "5cd0f707-20ef-428a-84ca-069d8b4d2350",
+    "nombre" : "Horacio",
+    "apellido" : "Marín",
+    "dni" : "63410543",
     "sexo" : "m",
-    "telefono" : "(0381) 6777-4723",
+    "telefono" : "(0223) 5970-7073",
     "direccion" : {
-      "calle" : "Rodríguez Peña",
-      "numero" : "8",
-      "address" : "Rodríguez Peña 8"
+      "calle" : "España",
+      "numero" : "5",
+      "address" : "España 5"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    }
+  }, {
+    "@class" : "Cliente",
+    "id" : "0b9e6a95-17c3-4568-8ef1-fe2036a113d0",
+    "nombre" : "César",
+    "apellido" : "Romero",
+    "dni" : "84168565",
+    "sexo" : "f",
+    "telefono" : "(0223) 6894-5970",
+    "direccion" : {
+      "calle" : "San Martín",
+      "numero" : "3228",
+      "address" : "San Martín 3228"
     },
     "saldo" : 0.0,
     "historialCompras" : {
