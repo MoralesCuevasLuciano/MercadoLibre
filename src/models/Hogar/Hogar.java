@@ -70,7 +70,6 @@ public abstract class Hogar extends Producto {
         return super.toString() +
                 "\nCategoria:......................: " + categoria +
                 "\nUso:............................: " + uso +
-                "\nMaterial:.......................: " + material +
-                "\n==============================================\n\n";
+                "\nMaterial:.......................: " + material;
     }
 }

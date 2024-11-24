@@ -1,5 +1,6 @@
 package models.ArrayList;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import models.Producto;
 import models.Tecnologia.Portatil;
 
@@ -25,7 +26,7 @@ import static models.Tecnologia.Celular.celularRandom;
 import static models.Tecnologia.PC_Escritorio.PC_EscritorioRandom;
 import static models.Tecnologia.Portatil.portatilRandom;
 import static models.Tecnologia.Televisor.televisorRandom;
-
+@JsonIgnoreProperties(ignoreUnknown = true) // Ignorar campos desconocidos
 public class AdministradorList <T extends Producto> {
     List<T> productosList;
 

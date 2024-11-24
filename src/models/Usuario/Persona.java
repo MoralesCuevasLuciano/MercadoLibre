@@ -15,13 +15,14 @@ public abstract class Persona {
     private String nombre;
     private String apellido;
     private String dni;
-    private Genero sexo;
+    private Character sexo;
     private String telefono;
-    private String direccion;
+    private Direccion direccion;
 
 
     /**Constructores*/
-    public Persona(String nombre,String apellido, String dni, Genero sexo, String telefono, String direccion) {
+    public Persona(String nombre,String apellido, String dni, Character sexo, String telefono, Direccion direccion) {
+        this.id = UUID.randomUUID().toString();
         this.direccion = direccion;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -31,21 +32,22 @@ public abstract class Persona {
     }
 
     public Persona() {
+        this.id = UUID.randomUUID().toString();
     }
 
 
 
     /**Getters y Setters*/
+
     public String getId() {
         return id;
     }
-    public Persona id(String id) {
-        this.id = UUID.randomUUID().toString();
-        return this;
-    }
+
+
     public String getNombre() {
         return nombre;
     }
+
     public Persona nombre(String nombre) {
         this.nombre = nombre;
         return this;
@@ -55,35 +57,43 @@ public abstract class Persona {
         return apellido;
     }
 
+    public Persona apellido(String apellido) {
+        this.apellido = apellido;
+        return this;
+    }
+
     public String getDni() {
         return dni;
     }
+
     public Persona dni(String dni) {
         this.dni = dni;
         return this;
     }
-    public Genero getSexo() {
+
+    public Character getSexo() {
         return sexo;
     }
-    public Persona sexo(Genero sexo) {
+
+    public Persona sexo(Character sexo) {
         this.sexo = sexo;
         return this;
     }
+
     public String getTelefono() {
         return telefono;
     }
+
     public Persona telefono(String telefono) {
         this.telefono = telefono;
         return this;
     }
 
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-
-
-    public Persona setDireccion(String direccion) {
+    public Persona direccion(Direccion direccion) {
         this.direccion = direccion;
         return this;
     }
@@ -96,7 +106,7 @@ public abstract class Persona {
         System.out.println("Dni:.......................: " + dni);
         System.out.println("Sexo:......................: " + sexo);
         System.out.println("Telefono:..................: " + telefono);
-        System.out.println("Direccion:.................: " + direccion);
+        System.out.println("Direccion:.................: " + direccion.toString());
     }
 
 

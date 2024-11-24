@@ -6,10 +6,7 @@ import models.ArrayList.CartMap;
 import models.HistorialCompras;
 import models.Ropa.Buzo;
 
-import static mocks.Mock.*;
-import static mocks.Mock.random;
-//import static mocks.MockCliente.random;
-
+import static mocks.MockCliente.*;
 
 
 public class Cliente extends Persona {
@@ -20,7 +17,7 @@ public class Cliente extends Persona {
 
     /** Constructores */
 
-    public Cliente(String nombre,String apellido, String dni, Genero sexo, String telefono, String direccion, double saldo) {
+    public Cliente(String nombre,String apellido, String dni, Character sexo, String telefono, Direccion direccion, double saldo) {
         super(nombre,apellido, dni, sexo, telefono, direccion);
         this.carrito = new CartMap();
         this.saldo = saldo;
@@ -60,13 +57,19 @@ public class Cliente extends Persona {
         this.carrito = carrito;
     }
 
-    /*
+
     public static Cliente clienteRandom(){
         Cliente cliente = (Cliente) new Cliente();
-        cliente.MockCliente.getNombreCliente();
+        cliente.nombre(getNombreClientes());
+        cliente.apellido(getApellidoCliente());
+        cliente.dni(getNumeroDocumento());
+        cliente.sexo(getSexoRandom());
+        cliente.telefono(getTelefonoRandom());
+        Direccion direccion = (Direccion)new Direccion();
+        cliente.direccion(direccion);
         return cliente;
     }
-     */
+
 
     /** IMPRIMIR */
     @Override

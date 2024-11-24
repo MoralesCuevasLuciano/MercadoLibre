@@ -69,8 +69,7 @@ public abstract class Juguete extends Producto {
         return super.toString() +
                 "\nEdad:...........................: " + edad +
                 "\nCategoria:......................: " + categoria +
-                "\nMaterial:.......................: " + material +
-                "\n==============================================\n\n";
+                "\nMaterial:.......................: " + material;
     }
 
     /**Equals y HashCode*/

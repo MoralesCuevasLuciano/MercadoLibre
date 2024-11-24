@@ -1,5 +1,6 @@
 package json;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import models.ArrayList.AdministradorList;
 import models.Producto;
@@ -21,13 +22,14 @@ public class JsonProductos {
 
     public static AdministradorList<Producto> deserializarProductos() {
         ObjectMapper objectMapper = new ObjectMapper();
-        try{
+        try {
             File file = new File("productos.json");
-            AdministradorList<Producto> productos = objectMapper.readValue(file, AdministradorList.class);
-            return productos;
+            // Usa TypeReference para manejar tipos genéricos correctamente
+            return objectMapper.readValue(file, new TypeReference<AdministradorList<Producto>>() {});
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
+            return null; // Retorna null en caso de error
         }
     }
+
 }

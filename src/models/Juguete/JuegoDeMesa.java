@@ -7,6 +7,8 @@ import mocks.Mock;
 import models.Herramienta.Insumo;
 import models.Producto;
 
+import static mocks.Mock.random;
+
 public class JuegoDeMesa extends  Juguete{
     int cantidadJugadores;
     int duracion;
@@ -83,9 +85,9 @@ public class JuegoDeMesa extends  Juguete{
 
     public static JuegoDeMesa juegoDeMesaRandom() {
         JuegoDeMesa juegoDeMesa = (JuegoDeMesa) new JuegoDeMesa()
-                .cantidadJugadores((int) Math.random() *5)
-                .duracion((int)Math.random() * 120)
-                .edad((int) Math.random() * 18)
+                .cantidadJugadores(random.nextInt(12))
+                .duracion(random.nextInt(120))
+                .edad(random.nextInt(18))
                 .categoria(CategoriaJuguete.JUEGOS_DE_MESA)
                 .material(MaterialJuguete.valueOf(MaterialInsumo.values()[(int) Math.random() * MaterialInsumo.values().length].name()))
                 .stock(Mock.getStock())

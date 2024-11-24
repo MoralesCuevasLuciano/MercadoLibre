@@ -49,13 +49,13 @@ public class MockCliente {
         return String.valueOf(numero);
     }
 
-    public static char getSexo() {
+    public static Character getSexoRandom() {
         Random random = new Random();
         int valor = random.nextInt(2); // 0 o 1
         return valor == 0 ? 'm' : 'f';
     }
 
-    public static String getTelefono() {
+    public static String getTelefonoRandom() {
         Random random = new Random();
 
         String[] codigosArea = {"011", "0351", "0221", "0236", "0341", "0381", "0223"};

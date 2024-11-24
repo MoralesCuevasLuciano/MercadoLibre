@@ -86,7 +86,7 @@ public class JugueteElectrico extends Juguete{
 
     public static JugueteElectrico jugueteElectricoRandom(){
         JugueteElectrico jugueteElectrico = (JugueteElectrico) new JugueteElectrico()
-                .cantidadDePilas((int) Math.random() *6)
+                .cantidadDePilas(random.nextInt(8))
                 .voltaje(12)
                 .edad(random.nextInt(18))
                 .material(MaterialJuguete.valueOf(MaterialInsumo.values()[(int) Math.random() * MaterialInsumo.values().length].name()))

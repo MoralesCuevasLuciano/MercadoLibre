@@ -144,8 +144,7 @@ public abstract class Producto implements Comparable<Producto> {
                 "\nStock:..........................: " + stock +
                 "\nPrecio:.........................: " + precio +
                 "\nMarca:..........................: " +marca +
-                "\nModelo:.........................: " + modelo +
-                "\n==============================================\n\n";
+                "\nModelo:.........................: " + modelo;
     }
 
 

@@ -12,11 +12,13 @@ public abstract class Herramienta extends Producto {
     public Herramienta() {
     }
 
+
+
     /**Imprimir*/
 
     @Override
     public String toString() {
-        return "Herramienta{}";
+        return super.toString();
     }
 
     /**Equals y HashCode*/
