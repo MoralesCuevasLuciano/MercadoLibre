@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import java.util.Random;
 
-@JsonIgnoreProperties(ignoreUnknown = true) // Ignorar campos desconocidos
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Direccion {
 
     private String calle;

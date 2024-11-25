@@ -11,7 +11,7 @@ import models.Usuario.ClientesList;
 import java.io.File;
 import java.io.IOException;
 
-@JsonIgnoreProperties(ignoreUnknown = true) // Ignorar campos desconocidos
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class JsonClientes {
     public static void serializarClientes(ClientesList<Cliente> clientes) {
         ObjectMapper objectMapper = new ObjectMapper();

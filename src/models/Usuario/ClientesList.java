@@ -27,7 +27,7 @@ import static models.Tecnologia.Portatil.portatilRandom;
 import static models.Tecnologia.Televisor.televisorRandom;
 import static models.Usuario.Cliente.clienteRandom;
 
-@JsonIgnoreProperties(ignoreUnknown = true) // Ignorar campos desconocidos
+@JsonIgnoreProperties(ignoreUnknown = true)
 
 public class ClientesList <T extends Cliente>{
     List<T> clientesList;

@@ -19,15 +19,18 @@ import models.Ropa.Remera;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 import static json.JsonProductos.serializarProductos;
 
 public class MenuAdmin extends JFrame {
     private AdministradorList administrador = new AdministradorList();
     private boolean ventanaProductos = false;
+    private JComponent MenuPpal;
 
     public MenuAdmin(AdministradorList administrador) throws HeadlessException {
         this.administrador = administrador;
+        this.MenuPpal = MenuPpal;
 
         setTitle("Mercado Libre Administrador");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,51 +40,89 @@ public class MenuAdmin extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        // Panel vacío para la región WEST
-        JPanel panelVacioOeste = new JPanel();
-        panelVacioOeste.setPreferredSize(new Dimension(50, 300)); // Ancho de 150px
-        add(panelVacioOeste, BorderLayout.WEST);
 
-        // Panel vacío para la región EAST
-        JPanel panelVacioEste = new JPanel();
-        panelVacioEste.setPreferredSize(new Dimension(50, 300)); // Ancho de 150px
-        add(panelVacioEste, BorderLayout.EAST);
-
-        // Panel vacío para la región SOUTH
-
-        JPanel panelVacioSur = new JPanel();
-        panelVacioSur.setPreferredSize(new Dimension(650, 30));
-        add(panelVacioSur, BorderLayout.SOUTH);
+        // Fondo degradado
+        JPanel fondo = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(240, 240, 255), 0, getHeight(), new Color(200, 200, 255));
+                g2d.setPaint(gradient);
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        fondo.setLayout(new BorderLayout());
 
 
-        JLabel titulo = new JLabel("Menu Administrador", JLabel.CENTER);
-        titulo.setFont(new Font("Arial", Font.BOLD, 30));
-        add(titulo, BorderLayout.NORTH);
+        // Título
+        JLabel titulo = new JLabel("Menú Administrador", SwingConstants.CENTER);
+        titulo.setFont(new Font("Roboto", Font.BOLD, 40)); // Fuente moderna, grande y profesional
+        titulo.setForeground(new Color(50, 0, 100)); // Violeta oscuro
+        fondo.add(titulo, BorderLayout.NORTH);
+        titulo.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0));
 
-
+        // Panel de botones
         JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(4,1,10,20));
+        panelBotones.setLayout(new GridBagLayout());
+        panelBotones.setOpaque(false);
 
-        JButton btnVerProductos = new JButton("Ver Productos");
-        btnVerProductos.addActionListener(e -> verProductos());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.insets = new Insets(10, 20, 10, 20);
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        JButton btnConsultar = new JButton("Consultar");
-        //btnConsultar.addActionListener(new ActionListener() {});
+        // Crear botones con expresiones lambda
+        JButton btnVerProductos = crearBotonPersonalizado("Ver Productos", e -> verProductos());
+        //JButton btnConsultar = crearBotonPersonalizado("Consultar", e -> consultar());
+        JButton btnAgregar = crearBotonPersonalizado("Agregar Producto", e -> agregarProducto1());
+        JButton btnEditar = crearBotonPersonalizado("Editar Producto", e -> editarProducto());
+        JButton btnVolver = crearBotonPersonalizado("Volver", e -> volverAlMenuPrincipal());
 
-        JButton btnAgregar = new JButton("Agregar Producto");
-        btnAgregar.addActionListener(e -> agregarProducto1());
+        // Agregar botones al panel
+        gbc.gridy = 0;
+        panelBotones.add(btnVerProductos, gbc);
+        gbc.gridy = 1;
+        //panelBotones.add(btnConsultar, gbc);
+        gbc.gridy = 2;
+        panelBotones.add(btnAgregar, gbc);
+        gbc.gridy = 3;
+        panelBotones.add(btnEditar, gbc);
+        gbc.gridy = 4;
+        panelBotones.add(btnVolver, gbc);
 
-        JButton btnEditar = new JButton("Editar Producto");
-        //btnEditar.addActionListener(new ActionListener() {});
-
-        panelBotones.add(btnVerProductos);
-        panelBotones.add(btnConsultar);
-        panelBotones.add(btnAgregar);
-        panelBotones.add(btnEditar);
-
-        add(panelBotones, BorderLayout.CENTER);
-
+        fondo.add(panelBotones, BorderLayout.CENTER);
+        add(fondo);
+        setVisible(true);
     }
+
+    private void volverAlMenuPrincipal() {
+        this.MenuPpal.setVisible(true); // Muestra el menú principal
+    }
+
+    // Método para crear botones personalizados con degradado
+    private JButton crearBotonPersonalizado(String texto, java.awt.event.ActionListener actionListener) {
+        JButton boton = new JButton(texto) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                // Degradado entre violeta y rojo
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(200, 180, 255), getWidth(), getHeight(), new Color(255, 100, 100));
+                g2.setPaint(gradient);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
+                super.paintComponent(g);
+            }
+        };
+
+        boton.setFont(new Font("Arial", Font.BOLD, 16)); // Fuente moderna
+        boton.setForeground(Color.BLACK); // Texto negro
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        boton.setPreferredSize(new Dimension(300, 50));
+        boton.setContentAreaFilled(false);
+        boton.addActionListener(actionListener);
+        return boton;
+    }
+
+
 
     private <T extends Producto> void verProductos(){
 
@@ -96,7 +137,7 @@ public class MenuAdmin extends JFrame {
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         frame.setLayout(new BorderLayout());
         frame.setVisible(true);
-//        frame.setResizable(false);
+        //frame.setResizable(false);
 
         // Panel vacío para la región WEST
         JPanel panelVacioOeste = new JPanel();
@@ -143,8 +184,9 @@ public class MenuAdmin extends JFrame {
 
     }
 
-    private void agregarProducto(){
-        JFrame frame = new JFrame("Agregar Producto");
+    /**CLASE DE EDITAR PRODUCTO DE PRUEBA. CREO QUE FUNCIONAAAAAAAAAA*/
+    private void editarProducto(){
+        JFrame frame = new JFrame("Editar Producto");
         frame.setSize(650,600);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -164,28 +206,48 @@ public class MenuAdmin extends JFrame {
         frame.add(panelVacioSur, BorderLayout.SOUTH);
 
         JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(6,1,30,20));
+        panelBotones.setLayout(new GridLayout(14,1,30,20));
         frame.add(panelBotones, BorderLayout.CENTER);
 
-        JLabel titulo = new JLabel("Seleccione categoria", JLabel.CENTER);
-        panelBotones.add(titulo);
+        JLabel nombre = new JLabel("Nombre");
+        panelBotones.add(nombre);
 
-        JButton herramientas = new JButton("Herramientas");
-        herramientas.addActionListener(e -> agregarHerramienta());
-        panelBotones.add(herramientas);
+        JTextField nombreTexto = new JTextField();
+        panelBotones.add(nombreTexto);
 
-        JButton hogar = new JButton("Hogar");
-        panelBotones.add(hogar);
+        JLabel stock = new JLabel("Stock");
+        panelBotones.add(stock);
 
-        JButton Juguetes = new JButton("Juguetes");
-        panelBotones.add(Juguetes);
+        JTextField stockTexto = new JTextField();
+        panelBotones.add(stockTexto);
 
-        JButton ropa = new JButton("Ropa");
-        panelBotones.add(ropa);
+        JLabel precio = new JLabel("Precio");
+        panelBotones.add(precio);
 
-        JButton tecnologia = new JButton("Tecnología");
-        panelBotones.add(tecnologia);
+        JTextField precioTexto = new JTextField();
+        panelBotones.add(precioTexto);
 
+        JLabel marca  = new JLabel("Marca");
+        panelBotones.add(marca);
+
+        JTextField marcaTexto = new JTextField();
+        panelBotones.add(marcaTexto);
+
+        JLabel modelo = new JLabel("Modelo");
+        panelBotones.add(modelo);
+
+        JTextField modeloTexto = new JTextField();
+        panelBotones.add(modeloTexto);
+
+        JLabel categoria = new JLabel("Categoria");
+        panelBotones.add(categoria);
+
+        JComboBox<String> comboBox = new JComboBox<>(new String[]{"Herramienta Electrica", "Herramienta Manual", "Insumo",
+                "Bazar", "Escritorio", "Sillon",
+                "Juego De Mesa", "Juguete Electrico", "Juguete Manual",
+                "Buzo", "Calzado", "Pantalon", "Remera",
+                "Celular", "Computadora", "PC de escritorio", "Portatil", "Televisor"});
+        panelBotones.add(comboBox);
     }
 
     private void agregarProducto1(){
@@ -1353,6 +1415,7 @@ public class MenuAdmin extends JFrame {
         }
 
     }
+
     private void agregarHerramienta(){
         JFrame frame = new JFrame("Seleccione tipo");
         frame.setSize(350,300);

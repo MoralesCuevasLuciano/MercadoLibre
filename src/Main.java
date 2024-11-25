@@ -26,14 +26,14 @@ public class Main {
         serializarClientes(clientes);
         // Inicializar el hilo de eventos de Swing
         SwingUtilities.invokeLater(() -> {
-            AdministradorList<Producto> productos = deserializarProductos();
+            AdministradorList<Producto> productos = new AdministradorList<>();
+            productos.cargarProductosRandom2(500);
+            serializarProductos(productos);
+            deserializarProductos();
             Cliente cliente = Cliente.clienteRandom();
             MenuPpal menuPpal = new MenuPpal(productos, cliente);
 
             compareCollections(10000);
-
-
-
 
         });
     }

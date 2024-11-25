@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class HistorialCompras {
 
-    /** Lista que almacena las compras del cliente*/
     private List<String> compras;
 
     public HistorialCompras() {

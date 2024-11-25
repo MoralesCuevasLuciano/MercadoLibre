@@ -29,46 +29,87 @@ public class MenuPpal {
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         menu.setSize(700, 400);
         menu.setLocationRelativeTo(null);
-        menu.setLayout(new BorderLayout());//Indico que quiero la disposicion de los elementos en 5 regiones
+        menu.setLayout(new BorderLayout());
         menu.setResizable(false);
         menu.setVisible(true);
 
-        JLabel titulo = new JLabel("Menu Principal", JLabel.CENTER); //quiero que el label este en el centro
-        titulo.setFont(new Font("Serif", Font.BOLD, 30));
-        menu.add(titulo, BorderLayout.NORTH);//quiero que me añada el titulo en la parte de arriba
+        // Fondo degradado
+        JPanel fondo = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(240, 240, 255), 0, getHeight(), new Color(200, 200, 255));
+                g2d.setPaint(gradient);
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        fondo.setLayout(new BorderLayout());
 
+        // Título
+        JLabel titulo = new JLabel("Menú Principal", SwingConstants.CENTER);
+        titulo.setFont(new Font("Roboto", Font.BOLD, 40)); // Fuente moderna, grande y profesional
+        titulo.setForeground(new Color(50, 0, 100)); // Violeta oscuro
+        fondo.add(titulo, BorderLayout.NORTH);
+        titulo.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0));
+
+        // Panel de botones
         JPanel panelOpciones = new JPanel();
-        panelOpciones.setLayout(new GridLayout(3,1,10,10));//Que me añada las cosas una al lado de la otra
-        menu.add(panelOpciones, BorderLayout.CENTER);
+        panelOpciones.setLayout(new GridLayout(3, 1, 10, 10)); // Que los botones estén uno debajo del otro
+        panelOpciones.setOpaque(false);
 
-        JButton btnIngresarAdmin = new JButton("Ingresar como Admin");
-        btnIngresarAdmin.addActionListener(e -> ingresoAdmin2(menu));
+        // Botones con estilo personalizado
+        JButton btnIngresarAdmin = crearBotonPersonalizado("Ingresar como Admin", e -> ingresoAdmin2(menu));
+        JButton btnIngresarCliente = crearBotonPersonalizado("Ingresar como Cliente", e -> ingresoCliente(menu));
+
+        // Agregar botones al panel
         panelOpciones.add(btnIngresarAdmin);
-
-        JButton btnIngresarCliente = new JButton("Ingresar como Cliente");
-        btnIngresarCliente.addActionListener(e -> ingresoCliente(menu));
         panelOpciones.add(btnIngresarCliente);
 
+        fondo.add(panelOpciones, BorderLayout.CENTER);
+
+        // Información de autor
         JLabel lblNombre = new JLabel("- Lima Keila Ayelen" +
                 " - Morales Luciano" +
                 " - Llopart Manuel" +
                 " - Moreno Richard Jesus" +
                 " - Oviedo German -", JLabel.CENTER);
-        menu.add(lblNombre, BorderLayout.SOUTH);
+        fondo.add(lblNombre, BorderLayout.SOUTH);
+
+        // Agregar el fondo al JFrame
+        menu.add(fondo);
+    }
+
+    // Método para crear botones personalizados
+    private JButton crearBotonPersonalizado(String texto, java.awt.event.ActionListener actionListener) {
+        JButton boton = new JButton(texto) {
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2 = (Graphics2D) g;
+                // Degradado entre violeta y rojo
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(200, 180, 255), getWidth(), getHeight(), new Color(255, 100, 100));
+                g2.setPaint(gradient);
+                g2.fillRoundRect(0, 0, getWidth(), getHeight(), 20, 20);
+                super.paintComponent(g);
+            }
+        };
+
+        boton.setFont(new Font("Arial", Font.BOLD, 16));
+        boton.setForeground(Color.BLACK); // Texto negro
+        boton.setFocusPainted(false);
+        boton.setBorder(BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        boton.setPreferredSize(new Dimension(375, 50));
+        boton.setMaximumSize(new Dimension(375, 50));
+        boton.setContentAreaFilled(false);
+        boton.addActionListener(actionListener);
+        return boton;
+    }
 
 
-        // Panel vacío para la región WEST
-        JPanel panelVacioOeste = new JPanel();
-        panelVacioOeste.setPreferredSize(new Dimension(150, 400)); // Ancho de 150px
-        menu.add(panelVacioOeste, BorderLayout.WEST);
+    public MenuPpal(AdministradorList administrador) {
+    }
 
-        // Panel vacío para la región EAST
-        JPanel panelVacioEste = new JPanel();
-        panelVacioEste.setPreferredSize(new Dimension(150, 400)); // Ancho de 150px
-        menu.add(panelVacioEste, BorderLayout.EAST);
-
-
-
+    public static JFrame getMenuPpal() {
+        return new JFrame();
     }
 
     private void ingresoCliente(JFrame menuppal){
@@ -76,11 +117,11 @@ public class MenuPpal {
         MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente);
 
     }
+
     private void ingresoAdmin2(JFrame menuppal){
         menuppal.setVisible(false);
 
         MenuAdmin mAdmin = new MenuAdmin(this.productos);
-
     }
 
     private void ingresoAdmin(JFrame frame){//OPCION SI LLEGAMOS A HACER LOGEO
@@ -114,3 +155,4 @@ public class MenuPpal {
         return opcion;
     }
 }
+

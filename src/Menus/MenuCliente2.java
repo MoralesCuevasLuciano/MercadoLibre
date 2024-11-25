@@ -61,6 +61,8 @@ public class MenuCliente2 extends JFrame {
         JButton btnVerCarrito = crearBotonPersonalizado("Ver Carrito", e -> verCarrito());
         JButton btnVerHistorial = crearBotonPersonalizado("Ver Historial de Compras", e -> verHistorial());
         JButton btnComprarCarrito = crearBotonPersonalizado("Comprar Carrito", e -> comprarCarrito());
+        JButton btnVolver = crearBotonPersonalizado("Volver", e -> volver(this, MenuPpal.getMenuPpal()));
+
 
         // Agregar los botones al panel
         gbc.gridy = 0;
@@ -71,6 +73,8 @@ public class MenuCliente2 extends JFrame {
         panelBotones.add(btnVerHistorial, gbc);
         gbc.gridy = 3;
         panelBotones.add(btnComprarCarrito, gbc);
+        gbc.gridy = 4;
+        panelBotones.add(btnVolver, gbc);
 
         fondo.add(panelBotones, BorderLayout.CENTER);
 
@@ -100,6 +104,11 @@ public class MenuCliente2 extends JFrame {
         boton.setContentAreaFilled(false);
         boton.addActionListener(actionListener);
         return boton;
+    }
+
+    private void volver(JFrame frameActual, JFrame menuPrincipal) {
+        frameActual.dispose(); // Cierra la ventana actual
+        menuPrincipal.setVisible(true); // Vuelve a mostrar el menú principal
     }
 
 
@@ -218,7 +227,6 @@ public class MenuCliente2 extends JFrame {
         frameCarrito.setVisible(true);
     }
 
-
     // Método para mostrar el historial de compras
     private void verHistorial() {
         // Crear el JFrame para "Ver Historial de Compras"
@@ -279,6 +287,7 @@ public class MenuCliente2 extends JFrame {
         // Mostrar mensaje de éxito
         JOptionPane.showMessageDialog(this, "Su compra ha sido realizada con éxito. Total: $" + totalCompra + "\nMuchas gracias por su compra.");
     }
+
     public void mostrar() {
         setVisible(true);
     }
