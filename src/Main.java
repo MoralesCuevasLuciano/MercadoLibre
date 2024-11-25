@@ -9,8 +9,11 @@ import models.Usuario.Cliente;
 import models.Usuario.ClientesList;
 
 import javax.swing.*;
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
+import static json.JsonClientes.deserializarClientes;
 import static json.JsonClientes.serializarClientes;
 import static json.JsonProductos.deserializarProductos;
 import static json.JsonProductos.serializarProductos;
@@ -21,7 +24,7 @@ public class Main {
     private static int opcion;
     public static void main(String[] args) {
 
-        ClientesList<Cliente> clientes = new ClientesList<>();
+        ClientesList<Cliente> clientes = deserializarClientes();
         clientes.cargarClientesRandom(10);
         serializarClientes(clientes);
         // Inicializar el hilo de eventos de Swing
@@ -30,9 +33,9 @@ public class Main {
             //productos.cargarProductosRandom2(500);
             serializarProductos(productos);
 
-            Cliente cliente = Cliente.clienteRandom();
-            MenuPpal menuPpal = new MenuPpal(productos, cliente);
-
+            Cliente cliente = seleccionarCliente(clientes);
+            MenuPpal menuPpal = new MenuPpal(productos, cliente,clientes);
+            clientes.showAllClients();
             compareCollections(10000);
 
         });
@@ -201,6 +204,63 @@ public class Main {
         Producto lastElementTreeMap = treeMap.get(createProducto(numProductos - 1).getId());
         endTime = System.nanoTime();
         System.out.println("TreeMap: Tiempo de búsqueda del último elemento: " + (endTime - startTime) / 1e6 + " ms");
+    }
+    private static Cliente seleccionarCliente(ClientesList<Cliente> clientesList) {
+        // Crear un frame para la selección
+        JFrame frame = new JFrame("Seleccionar Cliente");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+
+        // Panel para la lista de clientes
+        JPanel panel = new JPanel(new BorderLayout());
+
+        // Crear un modelo para la lista
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (Cliente cliente : clientesList.getClientes()) {
+            listModel.addElement(cliente.getNombre() + " " + cliente.getApellido());
+        }
+
+        // Crear la lista y añadirla a un JScrollPane
+        JList<String> list = new JList<>(listModel);
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane scrollPane = new JScrollPane(list);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        // Crear un diálogo modal para manejar la selección
+        JDialog dialog = new JDialog(frame, "Seleccionar Cliente", true);
+        dialog.setSize(400, 300);
+        dialog.setLocationRelativeTo(null);
+        dialog.add(panel);
+
+        // Botón para confirmar la selección
+        JButton selectButton = new JButton("Seleccionar");
+        panel.add(selectButton, BorderLayout.SOUTH);
+
+        // Crear una referencia mutable para guardar el cliente seleccionado
+        final Cliente[] selectedCliente = {null};
+
+        // Acción al presionar el botón
+        selectButton.addActionListener(e -> {
+            int selectedIndex = list.getSelectedIndex();
+            if (selectedIndex != -1) {
+                selectedCliente[0] = clientesList.getClientes().get(selectedIndex);
+                dialog.dispose(); // Cerrar el diálogo
+            } else {
+                JOptionPane.showMessageDialog(
+                        dialog,
+                        "Por favor, seleccione un cliente.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            }
+        });
+
+        // Mostrar el diálogo
+        dialog.setVisible(true);
+
+        // Retornar el cliente seleccionado
+        return selectedCliente[0];
     }
 
 }

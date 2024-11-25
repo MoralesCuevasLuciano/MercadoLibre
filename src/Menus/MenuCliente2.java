@@ -4,6 +4,7 @@ import models.ArrayList.AdministradorList;
 import models.Producto;
 import models.Usuario.Cliente;
 import models.ArrayList.CartMap;
+import models.Usuario.ClientesList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
+import static json.JsonClientes.serializarClientes;
 import static json.JsonProductos.serializarProductos;
 
 public class MenuCliente2 extends JFrame {
@@ -20,13 +22,15 @@ public class MenuCliente2 extends JFrame {
     private CartMap carrito;
     private JFrame menuPpal;
     private  JLabel clientFooter;
+    private ClientesList clientes;
 
 
-    public MenuCliente2(AdministradorList productos, Cliente cliente, JFrame menuPpal) {
+    public MenuCliente2(AdministradorList productos, Cliente cliente, JFrame menuPpal, ClientesList clientes) {
         this.productos = productos;
         this.cliente = cliente;
         this.carrito = new CartMap();
         this.menuPpal = menuPpal;
+        this.clientes = clientes;
 
         JFrame frame = new JFrame("Menu Cliente");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -300,6 +304,7 @@ public class MenuCliente2 extends JFrame {
         cliente.getCarrito().comprarCarrito1(cliente);
         cliente.getCarrito().eliminarCarrito();
         serializarProductos(this.productos);
+        serializarClientes(clientes);
 
         // Mostrar mensaje de éxito
         JOptionPane.showMessageDialog(this, "Su compra ha sido realizada con éxito. Total: $" + totalCompra + "\nMuchas gracias por su compra.");

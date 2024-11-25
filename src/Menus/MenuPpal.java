@@ -2,6 +2,7 @@ package Menus;
 
 import models.ArrayList.AdministradorList;
 import models.Usuario.Cliente;
+import models.Usuario.ClientesList;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,13 +18,14 @@ public class MenuPpal {
     private String contraseña;
     private AdministradorList productos;
     private Cliente cliente;
+    private ClientesList clientes;
 
 
-    public MenuPpal(AdministradorList productos, Cliente cliente)  {
+    public MenuPpal(AdministradorList productos, Cliente cliente, ClientesList clientes)  {
 
         this.productos = productos;
         this.cliente = cliente;
-
+        this.clientes = clientes;
 
         JFrame menu = new JFrame("Mercado Libre");
         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -140,7 +142,7 @@ public class MenuPpal {
 
     private void ingresoCliente(JFrame menuppal){
         menuppal.setVisible(false);
-        MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente, menuppal);
+        MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente, menuppal,this.clientes);
 
     }
 
