@@ -16,6 +16,7 @@ import models.Ropa.Buzo;
 import models.Ropa.Calzado;
 import models.Ropa.Pantalon;
 import models.Ropa.Remera;
+import models.Tecnologia.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,15 +27,15 @@ import static json.JsonProductos.serializarProductos;
 public class MenuAdmin extends JFrame {
     private AdministradorList administrador = new AdministradorList();
     private boolean ventanaProductos = false;
-    private JComponent MenuPpal;
+    private JFrame MenuPpal;
 
-    public MenuAdmin(AdministradorList administrador) throws HeadlessException {
+    public MenuAdmin(AdministradorList administrador, JFrame menuPpal) throws HeadlessException {
         this.administrador = administrador;
-        this.MenuPpal = MenuPpal;
+        this.MenuPpal = menuPpal;
 
         setTitle("Mercado Libre Administrador");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(650,400);
+        setSize(650,450);
         setLayout(new BorderLayout());
         setVisible(true);
         setLocationRelativeTo(null);
@@ -61,6 +62,8 @@ public class MenuAdmin extends JFrame {
         fondo.add(titulo, BorderLayout.NORTH);
         titulo.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0));
 
+
+
         // Panel de botones
         JPanel panelBotones = new JPanel();
         panelBotones.setLayout(new GridBagLayout());
@@ -72,20 +75,20 @@ public class MenuAdmin extends JFrame {
 
         // Crear botones con expresiones lambda
         JButton btnVerProductos = crearBotonPersonalizado("Ver Productos", e -> verProductos());
-        //JButton btnConsultar = crearBotonPersonalizado("Consultar", e -> consultar());
+        JButton btnConsultar = crearBotonPersonalizado("Consultar", e -> buscarYeditarProducto()); //, e -> consultar()
         JButton btnAgregar = crearBotonPersonalizado("Agregar Producto", e -> agregarProducto1());
-        JButton btnEditar = crearBotonPersonalizado("Editar Producto", e -> editarProducto());
+        JButton btnEliminar = crearBotonPersonalizado("Dar de baja Producto", e -> buscarYeliminarProducto());
         JButton btnVolver = crearBotonPersonalizado("Volver", e -> volverAlMenuPrincipal());
 
         // Agregar botones al panel
         gbc.gridy = 0;
         panelBotones.add(btnVerProductos, gbc);
         gbc.gridy = 1;
-        //panelBotones.add(btnConsultar, gbc);
+        panelBotones.add(btnConsultar, gbc);
         gbc.gridy = 2;
         panelBotones.add(btnAgregar, gbc);
         gbc.gridy = 3;
-        panelBotones.add(btnEditar, gbc);
+        panelBotones.add(btnEliminar, gbc);
         gbc.gridy = 4;
         panelBotones.add(btnVolver, gbc);
 
@@ -96,6 +99,7 @@ public class MenuAdmin extends JFrame {
 
     private void volverAlMenuPrincipal() {
         this.MenuPpal.setVisible(true); // Muestra el menú principal
+        setVisible(false);
     }
 
     // Método para crear botones personalizados con degradado
@@ -169,6 +173,7 @@ public class MenuAdmin extends JFrame {
             panelBotones.add(mensajeVacio);
         }else {
             administrador.recorrerAdmin(panelBotones);
+            serializarProductos(administrador);
         }
 
         ventanaProductos = true;
@@ -185,71 +190,108 @@ public class MenuAdmin extends JFrame {
     }
 
     /**CLASE DE EDITAR PRODUCTO DE PRUEBA. CREO QUE FUNCIONAAAAAAAAAA*/
-    private void editarProducto(){
-        JFrame frame = new JFrame("Editar Producto");
-        frame.setSize(650,600);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
-        frame.setVisible(true);
+    private void buscarYeditarProducto(){
 
-        JPanel panelVacioOeste = new JPanel();
-        panelVacioOeste.setPreferredSize(new Dimension(50, 600));
-        frame.add(panelVacioOeste, BorderLayout.WEST);
+        String nombreProducto = JOptionPane.showInputDialog(
+                this,
+                "Ingrese el nombre del producto:",
+                "Buscar Producto",
+                JOptionPane.PLAIN_MESSAGE
+        );
+        Producto p = administrador.buscarProductoPorNombre(nombreProducto);
+        if(p!=null) {
+            JFrame frame = new JFrame("Producto");
+            frame.setSize(650,400);
+            frame.setLocationRelativeTo(null);
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setLayout(new BorderLayout());
+            frame.setVisible(true);
 
-        JPanel panelVacioEste = new JPanel();
-        panelVacioEste.setPreferredSize(new Dimension(50, 600));
-        frame.add(panelVacioEste, BorderLayout.EAST);
+            JPanel panelVacioOeste = new JPanel();
+            panelVacioOeste.setPreferredSize(new Dimension(50, 400));
+            frame.add(panelVacioOeste, BorderLayout.WEST);
 
-        JPanel panelVacioSur = new JPanel();
-        panelVacioSur.setPreferredSize(new Dimension(650, 30));
-        frame.add(panelVacioSur, BorderLayout.SOUTH);
+            JPanel panelVacioEste = new JPanel();
+            panelVacioEste.setPreferredSize(new Dimension(50, 400));
+            frame.add(panelVacioEste, BorderLayout.EAST);
 
-        JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(14,1,30,20));
-        frame.add(panelBotones, BorderLayout.CENTER);
+            JPanel panelVacioSur = new JPanel();
+            panelVacioSur.setPreferredSize(new Dimension(650, 45));
+            frame.add(panelVacioSur, BorderLayout.SOUTH);
 
-        JLabel nombre = new JLabel("Nombre");
-        panelBotones.add(nombre);
+            JPanel panelBotones = new JPanel();
+            panelBotones.setLayout(new GridLayout(1,1,30,20));
 
-        JTextField nombreTexto = new JTextField();
-        panelBotones.add(nombreTexto);
+            JTextArea producto = new JTextArea();
+            producto.setEditable(false);
+            producto.setText(p.toString());
+            panelBotones.add(producto);
 
-        JLabel stock = new JLabel("Stock");
-        panelBotones.add(stock);
+            JScrollPane scrollPane = new JScrollPane(panelBotones);
+            frame.add(scrollPane, BorderLayout.CENTER);
 
-        JTextField stockTexto = new JTextField();
-        panelBotones.add(stockTexto);
+            JButton editar = new JButton("Editar");
+            editar.setFont(new Font("Arial", Font.BOLD, 20));
+            editar.addActionListener(e->administrador.editAction(p));
+            serializarProductos(administrador);
+            panelVacioSur.add(editar);
 
-        JLabel precio = new JLabel("Precio");
-        panelBotones.add(precio);
+        }else{
+            JOptionPane.showMessageDialog(null,"El producto que buscas no existe en nuestra tienda");
+        }
 
-        JTextField precioTexto = new JTextField();
-        panelBotones.add(precioTexto);
-
-        JLabel marca  = new JLabel("Marca");
-        panelBotones.add(marca);
-
-        JTextField marcaTexto = new JTextField();
-        panelBotones.add(marcaTexto);
-
-        JLabel modelo = new JLabel("Modelo");
-        panelBotones.add(modelo);
-
-        JTextField modeloTexto = new JTextField();
-        panelBotones.add(modeloTexto);
-
-        JLabel categoria = new JLabel("Categoria");
-        panelBotones.add(categoria);
-
-        JComboBox<String> comboBox = new JComboBox<>(new String[]{"Herramienta Electrica", "Herramienta Manual", "Insumo",
-                "Bazar", "Escritorio", "Sillon",
-                "Juego De Mesa", "Juguete Electrico", "Juguete Manual",
-                "Buzo", "Calzado", "Pantalon", "Remera",
-                "Celular", "Computadora", "PC de escritorio", "Portatil", "Televisor"});
-        panelBotones.add(comboBox);
     }
+    
+    private void buscarYeliminarProducto(){
+        String nombreProducto = JOptionPane.showInputDialog(
+                this,
+                "Ingrese el nombre del producto:",
+                "Buscar Producto",
+                JOptionPane.PLAIN_MESSAGE
+        );
+        Producto p = administrador.buscarProductoPorNombre(nombreProducto);
+        if(p!=null) {
+            JFrame frame = new JFrame("Producto");
+            frame.setSize(650,400);
+            frame.setLocationRelativeTo(null);
+            frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+            frame.setLayout(new BorderLayout());
+            frame.setVisible(true);
 
+            JPanel panelVacioOeste = new JPanel();
+            panelVacioOeste.setPreferredSize(new Dimension(50, 400));
+            frame.add(panelVacioOeste, BorderLayout.WEST);
+
+            JPanel panelVacioEste = new JPanel();
+            panelVacioEste.setPreferredSize(new Dimension(50, 400));
+            frame.add(panelVacioEste, BorderLayout.EAST);
+
+            JPanel panelVacioSur = new JPanel();
+            panelVacioSur.setPreferredSize(new Dimension(650, 45));
+            frame.add(panelVacioSur, BorderLayout.SOUTH);
+
+            JPanel panelBotones = new JPanel();
+            panelBotones.setLayout(new GridLayout(1,1,30,20));
+
+            JTextArea producto = new JTextArea();
+            producto.setEditable(false);
+            producto.setText(p.toString());
+            panelBotones.add(producto);
+
+            JScrollPane scrollPane = new JScrollPane(panelBotones);
+            frame.add(scrollPane, BorderLayout.CENTER);
+
+            JButton borrar = new JButton("Borrar");
+            borrar.setFont(new Font("Arial", Font.BOLD, 20));
+            borrar.addActionListener(e->{administrador.remove(p);
+            frame.dispose();});
+            serializarProductos(administrador);
+            panelVacioSur.add(borrar);
+
+        }else{
+            JOptionPane.showMessageDialog(null,"El producto que buscas no existe en nuestra tienda");
+        }
+    }
     private void agregarProducto1(){
         String[] nombresClases = {"Herramienta Electrica", "Herramienta Manual", "Insumo",
         "Bazar", "Escritorio", "Sillon",
@@ -282,7 +324,7 @@ public class MenuAdmin extends JFrame {
             frame.add(panelVacioSur, BorderLayout.SOUTH);
 
             JPanel panelBotones = new JPanel();
-            panelBotones.setLayout(new GridLayout(14,1,30,20));
+            panelBotones.setLayout(new GridLayout(15,1,30,20));
             frame.add(panelBotones, BorderLayout.CENTER);
 
             JLabel nombre = new JLabel("Nombre");
@@ -329,8 +371,21 @@ public class MenuAdmin extends JFrame {
                     panelBotones.add(voltajeTexto);
 
                     JButton inalambrico = new JButton("Inalambrico");
-                    inalambrico.addActionListener(e-> esInalambrico[0] = true);
+                    inalambrico.setBackground(Color.RED);
+                    inalambrico.addActionListener(e->{
+                        esInalambrico[0] = !esInalambrico[0];
+                        if (esInalambrico[0]){
+                            inalambrico.setBackground(Color.GREEN);
+                        }else {
+                            inalambrico.setBackground(Color.RED);
+                        }
+                    });
                     panelBotones.add(inalambrico);
+
+
+
+
+
 
                     JButton guardar = new JButton("Guardar");
                     panelBotones.add(guardar);
@@ -1404,139 +1459,485 @@ public class MenuAdmin extends JFrame {
                     });
 
                 }
-                case "Celular"-> {}
-                case "Computadora"-> {}
-                case "PC de escritorio"-> {}
-                case "Portatil"-> {}
-                case "Televisor"-> {}
+                case "Celular"-> {
+                    JLabel peso = new JLabel("Peso");
+                    panelBotones.add(peso);
+
+                    JTextField pesoTexto = new JTextField();
+                    panelBotones.add(pesoTexto);
+
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel anio = new JLabel("Año");
+                    panelBotones.add(anio);
+
+                    JTextField anioTexto = new JTextField();
+                    panelBotones.add(anioTexto);
+
+                    JLabel sOCelular = new JLabel("Sistema Operativo");
+                    panelBotones.add(sOCelular);
+
+                    JComboBox<SOCelular> soCelularJComboBox = new JComboBox<>(new SOCelular[]{SOCelular.ANDROID,
+                    SOCelular.IOS,
+                    SOCelular.BLACKBERRY,
+                    SOCelular.SYMBIAN,
+                    SOCelular.WINDOWS_PHONE});
+                    panelBotones.add(soCelularJComboBox);
+
+                    JLabel duracionBateria = new JLabel("Duracion de la bateria");
+                    panelBotones.add(duracionBateria);
+
+                    JTextField duracionBateriaTexto = new JTextField();
+                    panelBotones.add(duracionBateriaTexto);
+
+                    JLabel tamanioPantalla = new JLabel("Tamaño de Pantalla");
+                    panelBotones.add(tamanioPantalla);
+
+                    JTextField tamanioPantallaTexto = new JTextField();
+                    panelBotones.add(tamanioPantallaTexto);
+
+                    JLabel procesador = new JLabel("Procesador");
+                    panelBotones.add(procesador);
+
+                    JTextField procesadorTexto = new JTextField();
+                    panelBotones.add(procesadorTexto);
+
+                    JLabel ram = new JLabel("Ram");
+                    panelBotones.add(ram);
+
+                    JTextField ramTexto = new JTextField();
+                    panelBotones.add(ramTexto);
+
+                    JLabel capacidad = new JLabel("Capacidad");
+                    panelBotones.add(capacidad);
+
+                    JTextField capacidadTexto = new JTextField();
+                    panelBotones.add(capacidadTexto);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || soCelularJComboBox.getSelectedItem()==null ||
+                                colorTexto.getText().isEmpty() || pesoTexto.getText().isEmpty() ||
+                                anioTexto.getText().isEmpty() || duracionBateriaTexto.getText().isEmpty()||
+                                tamanioPantallaTexto.getText().isEmpty() || procesadorTexto.getText().isEmpty() ||
+                                ramTexto.getText().isEmpty() || capacidadTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Celular celular = new Celular(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Float.parseFloat(pesoTexto.getText()),
+                                    colorTexto.getText(),
+                                    Integer.parseInt(anioTexto.getText()),
+                                    (SOCelular) soCelularJComboBox.getSelectedItem(),
+                                    Integer.parseInt(duracionBateriaTexto.getText()),
+                                    Float.parseFloat(tamanioPantallaTexto.getText()),
+                                    procesadorTexto.getText(),
+                                    Integer.parseInt(ramTexto.getText()),
+                                    Integer.parseInt(capacidadTexto.getText())
+                                    );
+                            administrador.add(celular);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+
+                    });
+
+
+
+                }
+                case "Computadora"-> {
+                    JLabel peso = new JLabel("Peso");
+                    panelBotones.add(peso);
+
+                    JTextField pesoTexto = new JTextField();
+                    panelBotones.add(pesoTexto);
+
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel anio = new JLabel("Año");
+                    panelBotones.add(anio);
+
+                    JTextField anioTexto = new JTextField();
+                    panelBotones.add(anioTexto);
+
+                    JLabel soComputadora = new JLabel("Sistema operativo");
+                    panelBotones.add(soComputadora);
+
+                    JComboBox<SOComputadora> soComputadoraJComboBox = new JComboBox<SOComputadora>(new SOComputadora[]{
+                            SOComputadora.LINUX,
+                            SOComputadora.MACOS,
+                            SOComputadora.WINDOWS,
+                            SOComputadora.UBUNTU
+                    });
+                    panelBotones.add(soComputadoraJComboBox);
+
+                    JLabel procesador = new JLabel("Procesador");
+                    panelBotones.add(procesador);
+
+                    JTextField procesadorTexto = new JTextField();
+                    panelBotones.add(procesadorTexto);
+
+                    JLabel ram = new JLabel("Ram");
+                    panelBotones.add(ram);
+
+                    JTextField ramTexto = new JTextField();
+                    panelBotones.add(ramTexto);
+
+                    JLabel capacidad = new JLabel("Capacidad");
+                    panelBotones.add(capacidad);
+
+                    JTextField capacidadTexto = new JTextField();
+                    panelBotones.add(capacidadTexto);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || colorTexto.getText().isEmpty() ||
+                                pesoTexto.getText().isEmpty() || (SOComputadora)soComputadoraJComboBox.getSelectedItem()==null||
+                                anioTexto.getText().isEmpty() ||procesadorTexto.getText().isEmpty() ||
+                                ramTexto.getText().isEmpty() || capacidadTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Computadora computadora = new Computadora(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Float.parseFloat(pesoTexto.getText()),
+                                    colorTexto.getText(),
+                                    Integer.parseInt(anioTexto.getText()),
+                                    (SOComputadora) soComputadoraJComboBox.getSelectedItem(),
+                                    procesadorTexto.getText(),
+                                    Integer.parseInt(ramTexto.getText()),
+                                    Integer.parseInt(capacidadTexto.getText())
+                            ) {
+                            };
+                            administrador.add(computadora);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+
+                }
+                case "PC de escritorio"-> {
+                    JLabel peso = new JLabel("Peso");
+                    panelBotones.add(peso);
+
+                    JTextField pesoTexto = new JTextField();
+                    panelBotones.add(pesoTexto);
+
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel anio = new JLabel("Año");
+                    panelBotones.add(anio);
+
+                    JTextField anioTexto = new JTextField();
+                    panelBotones.add(anioTexto);
+
+                    JLabel soComputadora = new JLabel("Sistema operativo");
+                    panelBotones.add(soComputadora);
+
+                    JComboBox<SOComputadora> soComputadoraJComboBox = new JComboBox<SOComputadora>(new SOComputadora[]{
+                            SOComputadora.LINUX,
+                            SOComputadora.MACOS,
+                            SOComputadora.WINDOWS,
+                            SOComputadora.UBUNTU
+                    });
+                    panelBotones.add(soComputadoraJComboBox);
+
+                    JLabel procesador = new JLabel("Procesador");
+                    panelBotones.add(procesador);
+
+                    JTextField procesadorTexto = new JTextField();
+                    panelBotones.add(procesadorTexto);
+
+                    JLabel ram = new JLabel("Ram");
+                    panelBotones.add(ram);
+
+                    JTextField ramTexto = new JTextField();
+                    panelBotones.add(ramTexto);
+
+                    JLabel capacidad = new JLabel("Capacidad");
+                    panelBotones.add(capacidad);
+
+                    JTextField capacidadTexto = new JTextField();
+                    panelBotones.add(capacidadTexto);
+
+                    JLabel fuente = new JLabel("Fuente");
+                    panelBotones.add(fuente);
+
+                    JTextField fuenteTexto = new JTextField();
+                    panelBotones.add(fuenteTexto);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || colorTexto.getText().isEmpty() ||
+                                pesoTexto.getText().isEmpty() || (SOComputadora)soComputadoraJComboBox.getSelectedItem()==null||
+                                anioTexto.getText().isEmpty() ||procesadorTexto.getText().isEmpty() ||
+                                ramTexto.getText().isEmpty() || capacidadTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            PC_Escritorio pcEscritorio = new PC_Escritorio(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Float.parseFloat(pesoTexto.getText()),
+                                    colorTexto.getText(),
+                                    Integer.parseInt(anioTexto.getText()),
+                                    (SOComputadora) soComputadoraJComboBox.getSelectedItem(),
+                                    procesadorTexto.getText(),
+                                    Integer.parseInt(ramTexto.getText()),
+                                    Integer.parseInt(capacidadTexto.getText()),
+                                    "Gabinete",
+                                    Float.parseFloat(fuenteTexto.getText())
+                            ) {
+                            };
+                            administrador.add(pcEscritorio);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+                }
+                case "Portatil"-> {
+                    JLabel peso = new JLabel("Peso");
+                    panelBotones.add(peso);
+
+                    JTextField pesoTexto = new JTextField();
+                    panelBotones.add(pesoTexto);
+
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel anio = new JLabel("Año");
+                    panelBotones.add(anio);
+
+                    JTextField anioTexto = new JTextField();
+                    panelBotones.add(anioTexto);
+
+                    JLabel soComputadora = new JLabel("Sistema operativo");
+                    panelBotones.add(soComputadora);
+
+                    JComboBox<SOComputadora> soComputadoraJComboBox = new JComboBox<SOComputadora>(new SOComputadora[]{
+                            SOComputadora.LINUX,
+                            SOComputadora.MACOS,
+                            SOComputadora.WINDOWS,
+                            SOComputadora.UBUNTU
+                    });
+                    panelBotones.add(soComputadoraJComboBox);
+
+                    JLabel procesador = new JLabel("Procesador");
+                    panelBotones.add(procesador);
+
+                    JTextField procesadorTexto = new JTextField();
+                    panelBotones.add(procesadorTexto);
+
+                    JLabel ram = new JLabel("Ram");
+                    panelBotones.add(ram);
+
+                    JTextField ramTexto = new JTextField();
+                    panelBotones.add(ramTexto);
+
+                    JLabel capacidad = new JLabel("Capacidad");
+                    panelBotones.add(capacidad);
+
+                    JTextField capacidadTexto = new JTextField();
+                    panelBotones.add(capacidadTexto);
+
+                    JLabel tamanio = new JLabel("Tamaño");
+                    panelBotones.add(tamanio);
+
+                    JTextField tamanioText = new JTextField();
+                    panelBotones.add(tamanioText);
+
+                    JLabel duracionBateria = new JLabel("Duracion Bateria");
+                    panelBotones.add(duracionBateria);
+
+                    JTextField duracionBateriaTexto = new JTextField();
+                    panelBotones.add(duracionBateriaTexto);
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || colorTexto.getText().isEmpty() ||
+                                pesoTexto.getText().isEmpty() || (SOComputadora)soComputadoraJComboBox.getSelectedItem()==null||
+                                anioTexto.getText().isEmpty() ||procesadorTexto.getText().isEmpty() ||
+                                ramTexto.getText().isEmpty() || capacidadTexto.getText().isEmpty() ||
+                                tamanioText.getText().isEmpty() || duracionBateriaTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Portatil portatil = new Portatil(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Float.parseFloat(pesoTexto.getText()),
+                                    colorTexto.getText(),
+                                    Integer.parseInt(anioTexto.getText()),
+                                    (SOComputadora) soComputadoraJComboBox.getSelectedItem(),
+                                    procesadorTexto.getText(),
+                                    Integer.parseInt(ramTexto.getText()),
+                                    Integer.parseInt(capacidadTexto.getText()),
+                                    Integer.parseInt(tamanioText.getText()),
+                                    Float.parseFloat(duracionBateriaTexto.getText())
+                            ) {
+                            };
+                            administrador.add(portatil);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+                }
+                case "Televisor"-> {
+                    final boolean[] smart = {false};
+                    JLabel peso = new JLabel("Peso");
+                    panelBotones.add(peso);
+
+                    JTextField pesoTexto = new JTextField();
+                    panelBotones.add(pesoTexto);
+
+                    JLabel color = new JLabel("Color");
+                    panelBotones.add(color);
+
+                    JTextField colorTexto = new JTextField();
+                    panelBotones.add(colorTexto);
+
+                    JLabel anio = new JLabel("Año");
+                    panelBotones.add(anio);
+
+                    JTextField anioTexto = new JTextField();
+                    panelBotones.add(anioTexto);
+
+                    JLabel tipoTelevisor = new JLabel("Tipo Televisor");
+                    panelBotones.add(tipoTelevisor);
+
+                    JComboBox<TipoTelevisor> tipoTelevisorJComboBox = new JComboBox<>(new TipoTelevisor[]{
+                            TipoTelevisor.LCD,
+                            TipoTelevisor.LED,
+                            TipoTelevisor.OLED,
+                            TipoTelevisor.AMOLED,
+                            TipoTelevisor.QLED
+                    });
+                    panelBotones.add(tipoTelevisorJComboBox);
+
+                    JLabel tamanio = new JLabel("Tamaño");
+                    panelBotones.add(tamanio);
+
+                    JTextField tamanioTexto = new JTextField();
+                    panelBotones.add(tamanioTexto);
+
+                    JButton tieneCajones = new JButton("Es smart");
+                    tieneCajones.setBackground(Color.RED);
+                    tieneCajones.addActionListener(e->{
+                        smart[0] = !smart[0];
+                        if (smart[0]){
+                            tieneCajones.setBackground(Color.GREEN);
+                        }else {
+                            tieneCajones.setBackground(Color.RED);
+                        }
+                    });
+                    panelBotones.add(tieneCajones);
+
+
+                    JButton guardar = new JButton("Guardar");
+                    panelBotones.add(guardar);
+                    guardar.addActionListener(e ->{
+                        if (nombreTexto.getText().isEmpty() || stockTexto.getText().isEmpty() ||
+                                precioTexto.getText().isEmpty() || marcaTexto.getText().isEmpty() ||
+                                modeloTexto.getText().isEmpty() || colorTexto.getText().isEmpty() ||
+                                pesoTexto.getText().isEmpty() || tipoTelevisorJComboBox.getSelectedItem()==null||
+                                anioTexto.getText().isEmpty() ||tamanioTexto.getText().isEmpty()) {
+                            JOptionPane.showMessageDialog(frame, "Todos los campos son obligatorios.", "Error", JOptionPane.WARNING_MESSAGE);
+                            return;
+                        }
+                        try{
+                            Televisor televisor = new Televisor(
+                                    nombreTexto.getText(),
+                                    "codigornd",
+                                    Integer.parseInt(stockTexto.getText()),
+                                    Double.parseDouble(precioTexto.getText()),
+                                    marcaTexto.getText(),
+                                    modeloTexto.getText(),
+                                    Float.parseFloat(pesoTexto.getText()),
+                                    colorTexto.getText(),
+                                    Integer.parseInt(anioTexto.getText()),
+                                    smart[0],
+                                    (TipoTelevisor) tipoTelevisorJComboBox.getSelectedItem(),
+                                    Integer.parseInt(tamanioTexto.getText())
+                                    );
+
+                            administrador.add(televisor);
+                            serializarProductos(administrador);
+                            JOptionPane.showMessageDialog(frame, "Producto guardado exitosamente");
+                            frame.dispose();
+                        }catch (NumberFormatException ex){
+                            JOptionPane.showMessageDialog(frame, "Datos inválidos. Intente nuevamente", "Error", JOptionPane.ERROR_MESSAGE);
+                        }
+                    });
+
+                }
 
 
             }
         }
 
-    }
-
-    private void agregarHerramienta(){
-        JFrame frame = new JFrame("Seleccione tipo");
-        frame.setSize(350,300);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
-        frame.setVisible(true);
-
-        JPanel panelVacioOeste = new JPanel();
-        panelVacioOeste.setPreferredSize(new Dimension(50, 300));
-        frame.add(panelVacioOeste, BorderLayout.WEST);
-
-        JPanel panelVacioEste = new JPanel();
-        panelVacioEste.setPreferredSize(new Dimension(50, 300));
-        frame.add(panelVacioEste, BorderLayout.EAST);
-
-        JPanel panelVacioSur = new JPanel();
-        panelVacioSur.setPreferredSize(new Dimension(350, 30));
-        frame.add(panelVacioSur, BorderLayout.SOUTH);
-
-        JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(3,1,30,20));
-        frame.add(panelBotones, BorderLayout.CENTER);
-
-        JButton electrica = new JButton("Electrica");
-        electrica.addActionListener(e->crearProducto("Electrica"));
-        panelBotones.add(electrica);
-
-        JButton manual = new JButton("Manual");
-        panelBotones.add(manual);
-
-        JButton insumo = new JButton("Insumo");
-        panelBotones.add(insumo);
-
-
-
-    }
-
-    private void crearProducto(String tipo){
-        JFrame frame = new JFrame("Crear Producto");
-        frame.setSize(650,600);
-        frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        frame.setLayout(new BorderLayout());
-        frame.setVisible(true);
-
-        JPanel panelVacioOeste = new JPanel();
-        panelVacioOeste.setPreferredSize(new Dimension(50, 600));
-        frame.add(panelVacioOeste, BorderLayout.WEST);
-
-        JPanel panelVacioEste = new JPanel();
-        panelVacioEste.setPreferredSize(new Dimension(50, 600));
-        frame.add(panelVacioEste, BorderLayout.EAST);
-
-        JPanel panelVacioSur = new JPanel();
-        panelVacioSur.setPreferredSize(new Dimension(650, 30));
-        frame.add(panelVacioSur, BorderLayout.SOUTH);
-
-        JPanel panelBotones = new JPanel();
-        panelBotones.setLayout(new GridLayout(10,1,30,20));
-        frame.add(panelBotones, BorderLayout.CENTER);
-
-        JLabel nombre = new JLabel("Nombre");
-        panelBotones.add(nombre);
-
-        JTextField nombreTexto = new JTextField();
-        panelBotones.add(nombreTexto);
-
-        JLabel stock = new JLabel("Stock");
-        panelBotones.add(stock);
-
-        JTextField stockTexto = new JTextField();
-        panelBotones.add(stockTexto);
-
-        JLabel precio = new JLabel("Precio");
-        panelBotones.add(precio);
-
-        JTextField precioTexto = new JTextField();
-        panelBotones.add(precioTexto);
-
-        JLabel marca  = new JLabel("Marca");
-        panelBotones.add(marca);
-
-        JTextField marcaTexto = new JTextField();
-        panelBotones.add(marcaTexto);
-
-        JLabel modelo = new JLabel("Modelo");
-        panelBotones.add(modelo);
-
-        JTextField modeloTexto = new JTextField();
-        panelBotones.add(modeloTexto);
-
-
-
-
-
-        switch (tipo){
-            case "Electrica"-> {
-                String esIn;
-                JLabel voltaje = new JLabel("Voltaje");
-                panelBotones.add(voltaje);
-
-                JTextField voltajeTexto = new JTextField();
-                panelBotones.add(voltajeTexto);
-
-                JButton inalambrico = new JButton("Inalambrico");
-
-
-                HerramientaElectrica hE = new HerramientaElectrica(
-                        nombreTexto.getText(),
-                        "codigornd",
-                        Integer.parseInt(stockTexto.getText()),
-                        Double.parseDouble(precioTexto.getText()),
-                        marcaTexto.getText(),
-                        modeloTexto.getText(),
-                        Float.parseFloat(voltajeTexto.getText()),
-                        true);
-
-
-            }
-
-        }
     }
 }

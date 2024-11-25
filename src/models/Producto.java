@@ -148,6 +148,8 @@ public abstract class Producto implements Comparable<Producto> {
     }
 
 
+
+
     /**Equals y HashCode*/
     @Override
     public boolean equals(Object o) {

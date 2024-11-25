@@ -72,7 +72,10 @@ public class Cliente extends Persona {
         return cliente;
     }
 
-
+    public String getNameClient(){
+        String nombre = getNombre();
+        return nombre;
+    }
 
     /** IMPRIMIR */
     @Override

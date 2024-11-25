@@ -9,6 +9,7 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
+import static json.JsonProductos.serializarProductos;
 import static models.Herramienta.HerramientaElectrica.herramientaElectricaRandom;
 import static models.Herramienta.HerramientaManual.herramientaManualRandom;
 import static models.Herramienta.Insumo.insumoRandom;
@@ -246,7 +247,7 @@ public class AdministradorList <T extends Producto> {
         }
     }
 
-    private void editAction(Producto p){
+    public void editAction(Producto p){
         JFrame editFrame = new JFrame("Editar Producto");
         editFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         editFrame.setLayout(new GridLayout());
@@ -348,6 +349,7 @@ public class AdministradorList <T extends Producto> {
                     case "stock":
                         int stock = Integer.parseInt(entrada);
                         p.stock(stock);
+
                         break;
                     case "precio":
                         double precio = Double.parseDouble(entrada);

@@ -77,6 +77,32 @@ public class MenuPpal {
 
         // Agregar el fondo al JFrame
         menu.add(fondo);
+
+        // Panel vacío para la región WEST
+        JPanel panelVacioOeste = new JPanel(){
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(240, 240, 255), 0, getHeight(), new Color(200, 200, 255));
+                g2d.setPaint(gradient);
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        panelVacioOeste.setPreferredSize(new Dimension(100, 400)); // Ancho de 150px
+        menu.add(panelVacioOeste, BorderLayout.WEST);
+
+        // Panel vacío para la región EAST
+        JPanel panelVacioEste = new JPanel(){
+            @Override
+            protected void paintComponent(Graphics g) {
+                Graphics2D g2d = (Graphics2D) g;
+                GradientPaint gradient = new GradientPaint(0, 0, new Color(240, 240, 255), 0, getHeight(), new Color(200, 200, 255));
+                g2d.setPaint(gradient);
+                g2d.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        panelVacioEste.setPreferredSize(new Dimension(100, 400)); // Ancho de 150px
+        menu.add(panelVacioEste, BorderLayout.EAST);
     }
 
     // Método para crear botones personalizados
@@ -114,14 +140,14 @@ public class MenuPpal {
 
     private void ingresoCliente(JFrame menuppal){
         menuppal.setVisible(false);
-        MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente);
+        MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente, menuppal);
 
     }
 
     private void ingresoAdmin2(JFrame menuppal){
         menuppal.setVisible(false);
 
-        MenuAdmin mAdmin = new MenuAdmin(this.productos);
+        MenuAdmin mAdmin = new MenuAdmin(this.productos, menuppal);
     }
 
     private void ingresoAdmin(JFrame frame){//OPCION SI LLEGAMOS A HACER LOGEO

@@ -26,10 +26,10 @@ public class Main {
         serializarClientes(clientes);
         // Inicializar el hilo de eventos de Swing
         SwingUtilities.invokeLater(() -> {
-            AdministradorList<Producto> productos = new AdministradorList<>();
-            productos.cargarProductosRandom2(500);
+            AdministradorList<Producto> productos = deserializarProductos();
+            //productos.cargarProductosRandom2(500);
             serializarProductos(productos);
-            deserializarProductos();
+
             Cliente cliente = Cliente.clienteRandom();
             MenuPpal menuPpal = new MenuPpal(productos, cliente);
 
@@ -41,7 +41,6 @@ public class Main {
     private static void compareCollections(int numProductos) {
         // Comparar List: ArrayList vs Vector vs Deque
 
-        
         System.out.println("Comparación de List:");
         compareList(numProductos);
 

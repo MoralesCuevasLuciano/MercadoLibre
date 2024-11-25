@@ -11,16 +11,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
+import static json.JsonProductos.serializarProductos;
+
 public class MenuCliente2 extends JFrame {
 
     private AdministradorList productos;
     private Cliente cliente;
     private CartMap carrito;
+    private JFrame menuPpal;
+    private  JLabel clientFooter;
 
-    public MenuCliente2(AdministradorList productos, Cliente cliente) {
+
+    public MenuCliente2(AdministradorList productos, Cliente cliente, JFrame menuPpal) {
         this.productos = productos;
         this.cliente = cliente;
         this.carrito = new CartMap();
+        this.menuPpal = menuPpal;
 
         JFrame frame = new JFrame("Menu Cliente");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,6 +51,9 @@ public class MenuCliente2 extends JFrame {
         titulo.setForeground(new Color(50, 0, 100)); // Violeta oscuro
         fondo.add(titulo, BorderLayout.NORTH);
 
+        clientFooter = new JLabel("Bienvenido   " + cliente.getNameClient() + "Saldo:    "  +cliente.getSaldo(), JLabel.CENTER);
+        fondo.add(clientFooter, BorderLayout.SOUTH);
+
         // Mover el título hacia abajo con un margen
         titulo.setBorder(BorderFactory.createEmptyBorder(30, 0, 0, 0));
 
@@ -61,10 +70,12 @@ public class MenuCliente2 extends JFrame {
         JButton btnVerCarrito = crearBotonPersonalizado("Ver Carrito", e -> verCarrito());
         JButton btnVerHistorial = crearBotonPersonalizado("Ver Historial de Compras", e -> verHistorial());
         JButton btnComprarCarrito = crearBotonPersonalizado("Comprar Carrito", e -> comprarCarrito());
-        JButton btnVolver = crearBotonPersonalizado("Volver", e -> volver(this, MenuPpal.getMenuPpal()));
+        JButton btnAgregarSaldo =crearBotonPersonalizado("Agregar Saldo", e -> agregarSaldo());
 
 
-        // Agregar los botones al panel
+        JButton btnVolver = crearBotonPersonalizado("Volver", e -> volver(frame));
+
+
         gbc.gridy = 0;
         panelBotones.add(btnVerProductos, gbc);
         gbc.gridy = 1;
@@ -74,7 +85,11 @@ public class MenuCliente2 extends JFrame {
         gbc.gridy = 3;
         panelBotones.add(btnComprarCarrito, gbc);
         gbc.gridy = 4;
+        panelBotones.add(btnAgregarSaldo, gbc);
+        gbc.gridy = 5;
         panelBotones.add(btnVolver, gbc);
+
+
 
         fondo.add(panelBotones, BorderLayout.CENTER);
 
@@ -106,9 +121,9 @@ public class MenuCliente2 extends JFrame {
         return boton;
     }
 
-    private void volver(JFrame frameActual, JFrame menuPrincipal) {
+    private void volver(JFrame frameActual) {
         frameActual.dispose(); // Cierra la ventana actual
-        menuPrincipal.setVisible(true); // Vuelve a mostrar el menú principal
+        menuPpal.setVisible(true); // Vuelve a mostrar el menú principal
     }
 
 
@@ -160,6 +175,7 @@ public class MenuCliente2 extends JFrame {
                     }
                 }
             });
+
 
             salirButton.addActionListener(new ActionListener() {
                 @Override
@@ -283,11 +299,85 @@ public class MenuCliente2 extends JFrame {
         // Realizar la compra (descontar saldo y vaciar el carrito)
         cliente.getCarrito().comprarCarrito1(cliente);
         cliente.getCarrito().eliminarCarrito();
+        serializarProductos(this.productos);
 
         // Mostrar mensaje de éxito
         JOptionPane.showMessageDialog(this, "Su compra ha sido realizada con éxito. Total: $" + totalCompra + "\nMuchas gracias por su compra.");
     }
 
+
+    public void agregarSaldo(){
+        try {
+            // Solicitar el monto a agregar
+            String saldoStr = JOptionPane.showInputDialog(this, "Ingresa el monto a agregar a tu saldo:");
+
+            // Validar entrada
+            if (saldoStr == null || saldoStr.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Operación cancelada.");
+                return;
+            }
+
+            mostrarVentanaTarjeta();
+
+            double nuevoSaldo = Double.parseDouble(saldoStr);
+
+            if (nuevoSaldo < 0) {
+                JOptionPane.showMessageDialog(this, "El monto no puede ser negativo.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            // Actualizar el saldo del cliente
+            cliente.saldo(cliente.getSaldo() + nuevoSaldo);
+            clientFooter.setText("Bienvenido " + cliente.getNameClient() + "Saldo: "  +cliente.getSaldo());
+
+
+            // Confirmación al usuario
+            JOptionPane.showMessageDialog(this, "Saldo actualizado. Nuevo saldo: $" + cliente.getSaldo(), "Saldo Actualizado", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Por favor, ingresa un número válido.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void mostrarVentanaTarjeta() {
+        // Crear el JDialog
+        JDialog dialog = new JDialog(this, "Datos de la Tarjeta", true);
+        dialog.setLayout(new GridLayout(4, 2));
+        dialog.setSize(300, 150);
+        dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+
+        // Campos para datos de la tarjeta
+        JLabel lblNumeroTarjeta = new JLabel("Número de tarjeta:");
+        JTextField txtNumeroTarjeta = new JTextField();
+
+        JLabel lblFechaExpiracion = new JLabel("Fecha de expiración (MM/AA):");
+        JTextField txtFechaExpiracion = new JTextField();
+
+        JLabel lblCVV = new JLabel("CVV:");
+        JTextField txtCVV = new JTextField();
+
+        JButton btnAceptar = new JButton("Aceptar");
+
+        // Añadir componentes al JDialog
+        dialog.add(lblNumeroTarjeta);
+        dialog.add(txtNumeroTarjeta);
+
+        dialog.add(lblFechaExpiracion);
+        dialog.add(txtFechaExpiracion);
+
+        dialog.add(lblCVV);
+        dialog.add(txtCVV);
+
+        dialog.add(new JLabel()); // Espacio vacío
+        dialog.add(btnAceptar);
+
+        // Acción del botón Aceptar
+        btnAceptar.addActionListener(e -> dialog.dispose());
+
+        // Mostrar el diálogo
+        dialog.setLocationRelativeTo(this); // Centrar en la ventana principal
+        dialog.setVisible(true);
+    }
     public void mostrar() {
         setVisible(true);
     }

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu avances menuAdmin agregar producto v2">
+    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Manu y richard 25-11-24">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/productos.json" beforeDir="false" afterPath="$PROJECT_DIR$/productos.json" afterDir="false" />
@@ -12,11 +12,15 @@
       <change beforePath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menus/MenuCliente2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuCliente2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menus/MenuPpal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuPpal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/json/JsonClientes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/json/JsonClientes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/HistorialCompras.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/HistorialCompras.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" afterDir="false" />
+    </list>
+    <list id="0b1b4cb2-7d90-4066-a891-9e134e628fa4" name="Changes by Richa" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuAdmin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menus/MenuCliente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menus/MenuCliente2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuCliente2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Producto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Producto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/ClientesList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/ClientesList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Direccion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Direccion.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,9 +46,77 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/keilaayelen/MercadoLibre.git&quot;,
-    &quot;accountId&quot;: &quot;c3a102f6-c299-46a8-ab21-8913fde549be&quot;
+    &quot;accountId&quot;: &quot;8691a52d-771b-4a6e-a14e-82aaadb316c3&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Menus/MenuAdmin.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Menus/MenuCliente2.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Menus/MenuPpal.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/models/ArrayList/AdministradorList.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/models/Tecnologia/Computadora.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/models/Tecnologia/Tecnologia.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Main.java">
+      <ranges>
+        <range start1="28" end1="30" start2="28" end2="30" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="31" end1="32" start2="31" end2="32" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="43" end1="44" start2="43" end2="43" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Menus/MenuAdmin.java">
+      <ranges>
+        <range start1="18" end1="18" start2="18" end2="19" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="28" end1="29" start2="29" end2="30" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="30" end1="31" start2="31" end2="32" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="32" end1="33" start2="33" end2="34" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="36" end1="37" start2="37" end2="38" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="62" end1="62" start2="63" end2="65" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="74" end1="75" start2="77" end2="78" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="76" end1="77" start2="79" end2="80" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="83" end1="84" start2="86" end2="87" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="87" end1="88" start2="90" end2="91" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="98" end1="98" start2="101" end2="102" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="171" end1="171" start2="175" end2="176" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="187" end1="194" start2="192" end2="208" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="195" end1="198" start2="209" end2="212" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="199" end1="202" start2="213" end2="216" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="203" end1="206" start2="217" end2="220" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="207" end1="219" start2="221" end2="223" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="220" end1="222" start2="224" end2="228" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="223" end1="225" start2="229" end2="231" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="226" end1="228" start2="232" end2="237" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="229" end1="231" start2="238" end2="241" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="232" end1="250" start2="242" end2="242" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="251" end1="252" start2="243" end2="294" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="284" end1="285" start2="326" end2="327" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="331" end1="332" start2="373" end2="382" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="333" end1="333" start2="383" end2="388" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="1406" end1="1411" start2="1461" end2="1936" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="1417" end1="1541" start2="1942" end2="1942" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Menus/MenuCliente2.java">
+      <ranges>
+        <range start1="12" end1="12" start2="12" end2="14" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="18" end1="18" start2="20" end2="22" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="19" end1="20" start2="23" end2="25" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="23" end1="23" start2="28" end2="29" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="46" end1="46" start2="52" end2="55" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="63" end1="64" start2="72" end2="76" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="66" end1="67" start2="78" end2="78" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="76" end1="76" start2="87" end2="89" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="77" end1="77" start2="90" end2="92" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="108" end1="109" start2="123" end2="124" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="110" end1="111" start2="125" end2="126" changelist="ea5c9efd-c51d-4304-a23c-1178363bef58" />
+        <range start1="162" end1="162" start2="177" end2="178" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="285" end1="285" start2="301" end2="302" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+        <range start1="290" end1="290" start2="307" end2="380" changelist="0b1b4cb2-7d90-4066-a891-9e134e628fa4" />
+      </ranges>
+    </file>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -53,27 +125,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/PC/Desktop/tpFinal&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/PC/Desktop/tpFinal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.idesettings.emmet",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\richa\OneDrive\Escritorio\TP FINAL\MercadoLibre\src" />
@@ -91,6 +160,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -121,23 +198,7 @@
       <option name="project" value="LOCAL" />
       <updated>1732223856665</updated>
     </task>
-    <task id="LOCAL-00003" summary="Manu avances menuAdmin agregar producto">
-      <option name="closed" value="true" />
-      <created>1732489169762</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1732489169762</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Manu avances menuAdmin agregar producto v2">
-      <option name="closed" value="true" />
-      <created>1732492406315</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1732492406315</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,8 +219,7 @@
     <MESSAGE value="workspace" />
     <MESSAGE value="Manu 20-11-24" />
     <MESSAGE value="Manu 21-11-24" />
-    <MESSAGE value="Manu avances menuAdmin agregar producto" />
-    <MESSAGE value="Manu avances menuAdmin agregar producto v2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Manu avances menuAdmin agregar producto v2" />
+    <MESSAGE value="Manu y richard 25-11-24" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manu y richard 25-11-24" />
   </component>
 </project>
