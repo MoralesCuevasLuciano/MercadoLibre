@@ -91,8 +91,7 @@ public abstract class Tecnologia extends Producto{
         return super.toString() +
                 "\nPeso:...........................: " + peso +
                 "\nColor:..........................: " + color +
-                "\nAnio:...........................: " + anio +
-                "\n==============================================\n\n";
+                "\nAño:...........................: " + anio;
     }
 
 }

@@ -40,6 +40,11 @@ public class JugueteManual extends Juguete{
         return super.equals(o);
     }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
     public static JugueteManual jugueteManualRandom(){
         JugueteManual jugueteManual = (JugueteManual) new JugueteManual()
                 .edad(random.nextInt(18))

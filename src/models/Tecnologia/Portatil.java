@@ -66,7 +66,6 @@ public class Portatil extends Computadora {
         return super.toString() +
                 "\nTamanio:........................: " + tamanio +
                 "\nDuracion de bateria:............: " + duracionBateria +
-                "\nTamanio:........................: " + tamanio +
                 "\n==============================================\n\n";
     }
 

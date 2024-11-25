@@ -2,6 +2,7 @@ package models;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 
+import java.text.DecimalFormat;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -139,10 +140,11 @@ public abstract class Producto implements Comparable<Producto> {
 
     @Override
     public String toString() {
+        DecimalFormat df = new DecimalFormat("#.##");
         return "\nid:............................: " + id +
                 "\nNombre:.........................: " + nombre +
                 "\nStock:..........................: " + stock +
-                "\nPrecio:.........................: " + precio +
+                "\nPrecio:.........................: $" + df.format(this.precio) +
                 "\nMarca:..........................: " +marca +
                 "\nModelo:.........................: " + modelo;
     }

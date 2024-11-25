@@ -88,7 +88,6 @@ public abstract class Computadora extends Tecnologia{
                 "\nSistema operativo:..............: " + so +
                 "\nProcesador:.....................: " + procesador +
                 "\nRam:............................: " + ram +
-                "\nCapacidad:......................: " + capacidad +
-                "\n==============================================\n\n";
+                "\nCapacidad:......................: " + capacidad;
     }
 }

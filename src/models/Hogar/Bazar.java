@@ -81,7 +81,7 @@ public class Bazar extends Hogar{
     @Override
     public String toString() {
         return super.toString() +
-                "\nTamanio:........................: " + tamanio +
+                "\nTamaño:........................: " + tamanio +
                 "\nResistencia Calor:..............: " + resistenteAlCalor +
                 "\n==============================================\n\n";
     }
