@@ -21,10 +21,9 @@ public class MenuPpal {
     private ClientesList clientes;
 
 
-    public MenuPpal(AdministradorList productos, Cliente cliente, ClientesList clientes)  {
+    public MenuPpal(AdministradorList productos, ClientesList clientes)  {
 
         this.productos = productos;
-        this.cliente = cliente;
         this.clientes = clientes;
 
         JFrame menu = new JFrame("Mercado Libre");
@@ -142,7 +141,8 @@ public class MenuPpal {
 
     private void ingresoCliente(JFrame menuppal){
         menuppal.setVisible(false);
-        MenuCliente2 mCliente = new MenuCliente2(this.productos,this.cliente, menuppal,this.clientes);
+
+        MenuCliente2 mCliente = new MenuCliente2(this.productos, menuppal,this.clientes);
 
     }
 
@@ -175,9 +175,7 @@ public class MenuPpal {
 
     }
 
-//    public void mostrar(){
-//        setVisible(true);
-//    }
+
 
     public Integer getOpcion() {
         return opcion;

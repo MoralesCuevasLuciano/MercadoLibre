@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
 
+
 import static json.JsonClientes.serializarClientes;
 import static json.JsonProductos.serializarProductos;
 
@@ -25,12 +26,12 @@ public class MenuCliente2 extends JFrame {
     private ClientesList clientes;
 
 
-    public MenuCliente2(AdministradorList productos, Cliente cliente, JFrame menuPpal, ClientesList clientes) {
+    public MenuCliente2(AdministradorList productos, JFrame menuPpal, ClientesList clientes) {
         this.productos = productos;
-        this.cliente = cliente;
         this.carrito = new CartMap();
         this.menuPpal = menuPpal;
         this.clientes = clientes;
+        this.cliente = this.cliente=seleccionarCliente(this.clientes);
 
         JFrame frame = new JFrame("Menu Cliente");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -386,5 +387,63 @@ public class MenuCliente2 extends JFrame {
     public void mostrar() {
         setVisible(true);
     }
+    private static Cliente seleccionarCliente(ClientesList<Cliente> clientesList) {
+        // Crear un frame para la selección
+        JFrame frame = new JFrame("Seleccionar Cliente");
+        frame.setSize(400, 300);
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+
+        // Panel para la lista de clientes
+        JPanel panel = new JPanel(new BorderLayout());
+
+        // Crear un modelo para la lista
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        for (Cliente cliente : clientesList.getClientes()) {
+            listModel.addElement(cliente.getNombre() + " " + cliente.getApellido());
+        }
+
+        // Crear la lista y añadirla a un JScrollPane
+        JList<String> list = new JList<>(listModel);
+        list.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        JScrollPane scrollPane = new JScrollPane(list);
+        panel.add(scrollPane, BorderLayout.CENTER);
+
+        // Crear un diálogo modal para manejar la selección
+        JDialog dialog = new JDialog(frame, "Seleccionar Cliente", true);
+        dialog.setSize(400, 300);
+        dialog.setLocationRelativeTo(null);
+        dialog.add(panel);
+
+        // Botón para confirmar la selección
+        JButton selectButton = new JButton("Seleccionar");
+        panel.add(selectButton, BorderLayout.SOUTH);
+
+        // Crear una referencia mutable para guardar el cliente seleccionado
+        final Cliente[] selectedCliente = {null};
+
+        // Acción al presionar el botón
+        selectButton.addActionListener(e -> {
+            int selectedIndex = list.getSelectedIndex();
+            if (selectedIndex != -1) {
+                selectedCliente[0] = clientesList.getClientes().get(selectedIndex);
+                dialog.dispose(); // Cerrar el diálogo
+            } else {
+                JOptionPane.showMessageDialog(
+                        dialog,
+                        "Por favor, seleccione un cliente.",
+                        "Advertencia",
+                        JOptionPane.WARNING_MESSAGE
+                );
+            }
+        });
+
+        // Mostrar el diálogo
+        dialog.setVisible(true);
+
+        // Retornar el cliente seleccionado
+        return selectedCliente[0];
+    }
+
 
 }

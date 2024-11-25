@@ -33,8 +33,8 @@ public class Main {
             //productos.cargarProductosRandom2(500);
             serializarProductos(productos);
 
-            Cliente cliente = seleccionarCliente(clientes);
-            MenuPpal menuPpal = new MenuPpal(productos, cliente,clientes);
+
+            MenuPpal menuPpal = new MenuPpal(productos,clientes);
             clientes.showAllClients();
             compareCollections(10000);
 

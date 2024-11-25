@@ -1259,5 +1259,725 @@
       "compras" : [ ]
     },
     "nameClient" : "Leandro"
+  }, {
+    "@class" : "Cliente",
+    "id" : "21fe4ba0-36ef-4db4-84b3-7b853e29a1c5",
+    "nombre" : "Graciela",
+    "apellido" : "Bravo",
+    "dni" : "39075214",
+    "sexo" : "m",
+    "telefono" : "(0221) 2813-7848",
+    "direccion" : {
+      "calle" : "España",
+      "numero" : "98630",
+      "address" : "España 98630"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Graciela"
+  }, {
+    "@class" : "Cliente",
+    "id" : "1b44e9eb-6b7a-47c3-8fb0-99eba43d05b7",
+    "nombre" : "Lourdes",
+    "apellido" : "Pérez",
+    "dni" : "98972781",
+    "sexo" : "f",
+    "telefono" : "(0236) 4444-2945",
+    "direccion" : {
+      "calle" : "Avenida Libertad",
+      "numero" : "044",
+      "address" : "Avenida Libertad 044"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Lourdes"
+  }, {
+    "@class" : "Cliente",
+    "id" : "c257dc81-6196-4650-a6c6-ffae7ee73713",
+    "nombre" : "Rodolfo",
+    "apellido" : "Alvarez",
+    "dni" : "61600399",
+    "sexo" : "m",
+    "telefono" : "(0221) 4546-2509",
+    "direccion" : {
+      "calle" : "Rawson",
+      "numero" : "8",
+      "address" : "Rawson 8"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Rodolfo"
+  }, {
+    "@class" : "Cliente",
+    "id" : "dd9dc391-d885-4ff0-a8df-1c8003416403",
+    "nombre" : "Ricardo",
+    "apellido" : "Córdoba",
+    "dni" : "90029586",
+    "sexo" : "f",
+    "telefono" : "(0221) 1346-9920",
+    "direccion" : {
+      "calle" : "Avenida Juan José Paso",
+      "numero" : "480",
+      "address" : "Avenida Juan José Paso 480"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Ricardo"
+  }, {
+    "@class" : "Cliente",
+    "id" : "4c46d3ae-308b-4719-b2a6-ba8f955f2c05",
+    "nombre" : "Virginia",
+    "apellido" : "Paredes",
+    "dni" : "74320252",
+    "sexo" : "m",
+    "telefono" : "(0221) 8619-2779",
+    "direccion" : {
+      "calle" : "La Rioja",
+      "numero" : "36",
+      "address" : "La Rioja 36"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Virginia"
+  }, {
+    "@class" : "Cliente",
+    "id" : "7386d99c-e368-406f-9486-6065fa935314",
+    "nombre" : "Paola",
+    "apellido" : "Luna",
+    "dni" : "51252270",
+    "sexo" : "f",
+    "telefono" : "(0223) 3948-9136",
+    "direccion" : {
+      "calle" : "Moreno",
+      "numero" : "51",
+      "address" : "Moreno 51"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Paola"
+  }, {
+    "@class" : "Cliente",
+    "id" : "5b17ec62-65d8-42dd-922b-5d5be69e00c7",
+    "nombre" : "Sabrina",
+    "apellido" : "Guerrero",
+    "dni" : "80068330",
+    "sexo" : "m",
+    "telefono" : "(011) 2332-7132",
+    "direccion" : {
+      "calle" : "Juan B. Justo",
+      "numero" : "69",
+      "address" : "Juan B. Justo 69"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Sabrina"
+  }, {
+    "@class" : "Cliente",
+    "id" : "5f434938-d615-4b51-9152-71bcf3498816",
+    "nombre" : "Rosa",
+    "apellido" : "Santiago",
+    "dni" : "52818750",
+    "sexo" : "m",
+    "telefono" : "(0351) 1920-2854",
+    "direccion" : {
+      "calle" : "Falucho",
+      "numero" : "905",
+      "address" : "Falucho 905"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Rosa"
+  }, {
+    "@class" : "Cliente",
+    "id" : "2de93b99-3e52-4bfa-a86a-28a70d6752b8",
+    "nombre" : "Mariana",
+    "apellido" : "Bermúdez",
+    "dni" : "30237206",
+    "sexo" : "f",
+    "telefono" : "(0236) 7959-4982",
+    "direccion" : {
+      "calle" : "La Rioja",
+      "numero" : "1",
+      "address" : "La Rioja 1"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Mariana"
+  }, {
+    "@class" : "Cliente",
+    "id" : "34030eac-63cf-4dae-96cc-2b83e2589c3a",
+    "nombre" : "Daniel",
+    "apellido" : "Ortiz",
+    "dni" : "45181063",
+    "sexo" : "f",
+    "telefono" : "(0351) 5779-9662",
+    "direccion" : {
+      "calle" : "Avenida Colón",
+      "numero" : "983",
+      "address" : "Avenida Colón 983"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Daniel"
+  }, {
+    "@class" : "Cliente",
+    "id" : "f80580db-950c-48a1-ad7c-6674f5fc6d5e",
+    "nombre" : "Eduardo",
+    "apellido" : "Ferrer",
+    "dni" : "99342100",
+    "sexo" : "m",
+    "telefono" : "(0223) 2895-10924",
+    "direccion" : {
+      "calle" : "Córdoba",
+      "numero" : "7",
+      "address" : "Córdoba 7"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Eduardo"
+  }, {
+    "@class" : "Cliente",
+    "id" : "3b33b256-c3b9-4074-984a-5ef8ddf2fcdd",
+    "nombre" : "Adriana",
+    "apellido" : "Silva",
+    "dni" : "98576740",
+    "sexo" : "f",
+    "telefono" : "(0341) 4565-9025",
+    "direccion" : {
+      "calle" : "San Luis",
+      "numero" : "72",
+      "address" : "San Luis 72"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Adriana"
+  }, {
+    "@class" : "Cliente",
+    "id" : "68337f84-100b-4363-9f8c-2c5692697f3f",
+    "nombre" : "Lucía",
+    "apellido" : "Quiroga",
+    "dni" : "32577603",
+    "sexo" : "m",
+    "telefono" : "(0351) 10802-3852",
+    "direccion" : {
+      "calle" : "12 de Octubre",
+      "numero" : "64034",
+      "address" : "12 de Octubre 64034"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Lucía"
+  }, {
+    "@class" : "Cliente",
+    "id" : "bb18187d-3afa-407d-98ad-2fb70669e868",
+    "nombre" : "Luciano",
+    "apellido" : "Solís",
+    "dni" : "39692487",
+    "sexo" : "f",
+    "telefono" : "(0381) 3394-3168",
+    "direccion" : {
+      "calle" : "Rawson",
+      "numero" : "68875",
+      "address" : "Rawson 68875"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Luciano"
+  }, {
+    "@class" : "Cliente",
+    "id" : "b75b7acc-0972-4bd2-a9d6-ca756b6c6353",
+    "nombre" : "César",
+    "apellido" : "Salazar",
+    "dni" : "68460129",
+    "sexo" : "m",
+    "telefono" : "(0341) 4993-10543",
+    "direccion" : {
+      "calle" : "Moreno",
+      "numero" : "71799",
+      "address" : "Moreno 71799"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "César"
+  }, {
+    "@class" : "Cliente",
+    "id" : "ba136873-6c4a-4d41-bff7-74b56983caf4",
+    "nombre" : "Ariel",
+    "apellido" : "Fuentes",
+    "dni" : "45140416",
+    "sexo" : "m",
+    "telefono" : "(0223) 5381-5438",
+    "direccion" : {
+      "calle" : "Italia",
+      "numero" : "00",
+      "address" : "Italia 00"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Ariel"
+  }, {
+    "@class" : "Cliente",
+    "id" : "29489fc0-5cc0-4182-a395-e672540c8e50",
+    "nombre" : "Lidia",
+    "apellido" : "Torres",
+    "dni" : "85531991",
+    "sexo" : "m",
+    "telefono" : "(0341) 4590-5254",
+    "direccion" : {
+      "calle" : "Rodríguez Peña",
+      "numero" : "9811",
+      "address" : "Rodríguez Peña 9811"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Lidia"
+  }, {
+    "@class" : "Cliente",
+    "id" : "9046d668-afc1-4caf-949d-daa62277d8f9",
+    "nombre" : "Verónica",
+    "apellido" : "Morales",
+    "dni" : "73104627",
+    "sexo" : "f",
+    "telefono" : "(0236) 5482-3427",
+    "direccion" : {
+      "calle" : "Peña",
+      "numero" : "3373",
+      "address" : "Peña 3373"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Verónica"
+  }, {
+    "@class" : "Cliente",
+    "id" : "7ed1cb0c-f370-4e31-92e0-603b0226e6b9",
+    "nombre" : "Santiago",
+    "apellido" : "Figueroa",
+    "dni" : "48337780",
+    "sexo" : "m",
+    "telefono" : "(0236) 6981-7032",
+    "direccion" : {
+      "calle" : "Avenida Arturo Alió",
+      "numero" : "7499",
+      "address" : "Avenida Arturo Alió 7499"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Santiago"
+  }, {
+    "@class" : "Cliente",
+    "id" : "baa4cde8-7b12-4ee7-9353-17ddf768a748",
+    "nombre" : "Emilia",
+    "apellido" : "Cano",
+    "dni" : "66043241",
+    "sexo" : "f",
+    "telefono" : "(0381) 3121-8045",
+    "direccion" : {
+      "calle" : "La Rioja",
+      "numero" : "151",
+      "address" : "La Rioja 151"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Emilia"
+  }, {
+    "@class" : "Cliente",
+    "id" : "d3b72690-84ac-408c-bed7-68856f2dc02d",
+    "nombre" : "Marcela",
+    "apellido" : "Sánchez",
+    "dni" : "33984956",
+    "sexo" : "f",
+    "telefono" : "(011) 3233-4001",
+    "direccion" : {
+      "calle" : "Peña",
+      "numero" : "9",
+      "address" : "Peña 9"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Marcela"
+  }, {
+    "@class" : "Cliente",
+    "id" : "12f4aa46-54dd-40b1-8b9b-ecc53ed81b22",
+    "nombre" : "Javier",
+    "apellido" : "Luna",
+    "dni" : "42118113",
+    "sexo" : "f",
+    "telefono" : "(0351) 9499-1374",
+    "direccion" : {
+      "calle" : "Avenida Luro",
+      "numero" : "7",
+      "address" : "Avenida Luro 7"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Javier"
+  }, {
+    "@class" : "Cliente",
+    "id" : "e4e3c10b-9e37-4d02-814d-b58ce8e28684",
+    "nombre" : "Raúl",
+    "apellido" : "Navarro",
+    "dni" : "32126369",
+    "sexo" : "m",
+    "telefono" : "(0221) 2375-2775",
+    "direccion" : {
+      "calle" : "Jujuy",
+      "numero" : "32",
+      "address" : "Jujuy 32"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Raúl"
+  }, {
+    "@class" : "Cliente",
+    "id" : "6b4f1523-dd1d-4220-802a-f0e51a3c568e",
+    "nombre" : "Sofía",
+    "apellido" : "Godoy",
+    "dni" : "30521923",
+    "sexo" : "m",
+    "telefono" : "(0351) 6925-10342",
+    "direccion" : {
+      "calle" : "Güemes",
+      "numero" : "31745",
+      "address" : "Güemes 31745"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Sofía"
+  }, {
+    "@class" : "Cliente",
+    "id" : "54880e99-8e9f-4759-83b1-9e04d91d0cd9",
+    "nombre" : "César",
+    "apellido" : "Cano",
+    "dni" : "70068398",
+    "sexo" : "f",
+    "telefono" : "(0221) 7648-1935",
+    "direccion" : {
+      "calle" : "Patricio Peralta Ramos",
+      "numero" : "59520",
+      "address" : "Patricio Peralta Ramos 59520"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "César"
+  }, {
+    "@class" : "Cliente",
+    "id" : "442e2d7e-2ad2-440d-b4e0-943dea77be1b",
+    "nombre" : "Esteban",
+    "apellido" : "Ríos",
+    "dni" : "61081647",
+    "sexo" : "f",
+    "telefono" : "(0223) 5137-4698",
+    "direccion" : {
+      "calle" : "Güemes",
+      "numero" : "038",
+      "address" : "Güemes 038"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Esteban"
+  }, {
+    "@class" : "Cliente",
+    "id" : "74872ceb-bb56-4c25-a2df-68326e0502b5",
+    "nombre" : "Emilia",
+    "apellido" : "Delgado",
+    "dni" : "42429386",
+    "sexo" : "f",
+    "telefono" : "(0236) 5753-4362",
+    "direccion" : {
+      "calle" : "9 de Julio",
+      "numero" : "7189",
+      "address" : "9 de Julio 7189"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Emilia"
+  }, {
+    "@class" : "Cliente",
+    "id" : "dc18ec45-c79c-4d74-a48c-41a58bef4ef4",
+    "nombre" : "Leandro",
+    "apellido" : "Márquez",
+    "dni" : "89724523",
+    "sexo" : "f",
+    "telefono" : "(0381) 5808-2055",
+    "direccion" : {
+      "calle" : "Falucho",
+      "numero" : "24225",
+      "address" : "Falucho 24225"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Leandro"
+  }, {
+    "@class" : "Cliente",
+    "id" : "fe1b2979-5860-4c76-9d70-2d9d197dda96",
+    "nombre" : "Sofía",
+    "apellido" : "Rey",
+    "dni" : "37094975",
+    "sexo" : "f",
+    "telefono" : "(0351) 9383-9017",
+    "direccion" : {
+      "calle" : "Avenida Libertad",
+      "numero" : "36029",
+      "address" : "Avenida Libertad 36029"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Sofía"
+  }, {
+    "@class" : "Cliente",
+    "id" : "a78b6021-932b-40fb-9e6e-51e911fe685a",
+    "nombre" : "Victoria",
+    "apellido" : "Sánchez",
+    "dni" : "61442809",
+    "sexo" : "f",
+    "telefono" : "(0351) 2407-1966",
+    "direccion" : {
+      "calle" : "Bolívar",
+      "numero" : "01394",
+      "address" : "Bolívar 01394"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Victoria"
+  }, {
+    "@class" : "Cliente",
+    "id" : "f2d3c81a-63de-42eb-9bad-8b932a2930dc",
+    "nombre" : "Hernán",
+    "apellido" : "Guerrero",
+    "dni" : "51159011",
+    "sexo" : "m",
+    "telefono" : "(011) 1733-5210",
+    "direccion" : {
+      "calle" : "Rawson",
+      "numero" : "98945",
+      "address" : "Rawson 98945"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Hernán"
+  }, {
+    "@class" : "Cliente",
+    "id" : "a8c25efd-494a-4e9f-a2a8-47d5ec04007d",
+    "nombre" : "Tomás",
+    "apellido" : "Cortés",
+    "dni" : "47986701",
+    "sexo" : "f",
+    "telefono" : "(0223) 1512-5842",
+    "direccion" : {
+      "calle" : "Avellaneda",
+      "numero" : "0084",
+      "address" : "Avellaneda 0084"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Tomás"
+  }, {
+    "@class" : "Cliente",
+    "id" : "46c039fa-5d9c-4a20-a4bf-cf3811811676",
+    "nombre" : "Eduardo",
+    "apellido" : "Salinas",
+    "dni" : "97978185",
+    "sexo" : "m",
+    "telefono" : "(0381) 9123-9351",
+    "direccion" : {
+      "calle" : "Francia",
+      "numero" : "380",
+      "address" : "Francia 380"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Eduardo"
+  }, {
+    "@class" : "Cliente",
+    "id" : "86e6f4ec-15ab-40cb-8059-99e86a3b15a3",
+    "nombre" : "Daniel",
+    "apellido" : "Figueroa",
+    "dni" : "70778132",
+    "sexo" : "m",
+    "telefono" : "(0381) 1838-7776",
+    "direccion" : {
+      "calle" : "12 de Octubre",
+      "numero" : "8",
+      "address" : "12 de Octubre 8"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Daniel"
+  }, {
+    "@class" : "Cliente",
+    "id" : "89744dac-fe30-4191-91b2-4fa4bf59e0b9",
+    "nombre" : "Rosa",
+    "apellido" : "Bravo",
+    "dni" : "49581230",
+    "sexo" : "m",
+    "telefono" : "(0223) 2052-9577",
+    "direccion" : {
+      "calle" : "Patricio Peralta Ramos",
+      "numero" : "582",
+      "address" : "Patricio Peralta Ramos 582"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Rosa"
+  }, {
+    "@class" : "Cliente",
+    "id" : "d48f8ad8-baa3-4bcb-b65c-9b456043e4da",
+    "nombre" : "Liliana",
+    "apellido" : "Solís",
+    "dni" : "96299936",
+    "sexo" : "f",
+    "telefono" : "(0381) 1576-10265",
+    "direccion" : {
+      "calle" : "Bolívar",
+      "numero" : "7",
+      "address" : "Bolívar 7"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Liliana"
+  }, {
+    "@class" : "Cliente",
+    "id" : "81a65572-138f-4f4d-8655-73412c6db0b6",
+    "nombre" : "Alejandra",
+    "apellido" : "Cáceres",
+    "dni" : "36679036",
+    "sexo" : "m",
+    "telefono" : "(0236) 9154-2400",
+    "direccion" : {
+      "calle" : "Avenida Fortunato de la Plaza",
+      "numero" : "0523",
+      "address" : "Avenida Fortunato de la Plaza 0523"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Alejandra"
+  }, {
+    "@class" : "Cliente",
+    "id" : "3cd1b7ac-4bca-4423-9e51-12d9da9d0ae2",
+    "nombre" : "Laura",
+    "apellido" : "Guerra",
+    "dni" : "77403679",
+    "sexo" : "f",
+    "telefono" : "(0341) 7508-8507",
+    "direccion" : {
+      "calle" : "Avellaneda",
+      "numero" : "939",
+      "address" : "Avellaneda 939"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Laura"
+  }, {
+    "@class" : "Cliente",
+    "id" : "8a0aa09a-d068-421d-a4a2-fa85a9d01be2",
+    "nombre" : "Ivana",
+    "apellido" : "Alvarado",
+    "dni" : "79903874",
+    "sexo" : "f",
+    "telefono" : "(0221) 3516-9922",
+    "direccion" : {
+      "calle" : "Arenales",
+      "numero" : "5",
+      "address" : "Arenales 5"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Ivana"
+  }, {
+    "@class" : "Cliente",
+    "id" : "572666a4-8335-43d2-b4e2-a2b3ee81968d",
+    "nombre" : "Carla",
+    "apellido" : "Morales",
+    "dni" : "96177767",
+    "sexo" : "f",
+    "telefono" : "(0341) 7061-2533",
+    "direccion" : {
+      "calle" : "Falucho",
+      "numero" : "43255",
+      "address" : "Falucho 43255"
+    },
+    "saldo" : 0.0,
+    "historialCompras" : {
+      "compras" : [ ]
+    },
+    "nameClient" : "Carla"
   } ]
 }
