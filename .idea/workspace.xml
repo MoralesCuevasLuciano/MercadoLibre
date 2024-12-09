@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Actualizacion elegir cliente y permanencia de datos">
+    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Creacion de admin, adminList y comienzo de json admin">
+      <change afterPath="$PROJECT_DIR$/src/admins.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/json/JsonAdmins.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Usuario/Admin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/Usuario/AdminList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_11_2024_19_57_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_11_2024_19_57__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/clientes.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productos.json" beforeDir="false" afterPath="$PROJECT_DIR$/productos.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menus/MenuCliente2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuCliente2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menus/MenuPpal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menus/MenuPpal.java" afterDir="false" />
@@ -112,6 +119,9 @@
       <workItem from="1732218013240" duration="13443000" />
       <workItem from="1732294975009" duration="3695000" />
       <workItem from="1732364591468" duration="5524000" />
+      <workItem from="1732568640145" duration="970000" />
+      <workItem from="1732793915156" duration="7000" />
+      <workItem from="1733775260333" duration="3209000" />
     </task>
     <task id="LOCAL-00001" summary="Manu 20-11-24">
       <option name="closed" value="true" />
@@ -137,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732567555803</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Actualizacion elegir cliente y permanencia de datos mejorado">
+      <option name="closed" value="true" />
+      <created>1732568526757</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732568526757</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +178,8 @@
     <MESSAGE value="Manu 21-11-24" />
     <MESSAGE value="Manu y richard 25-11-24" />
     <MESSAGE value="Actualizacion elegir cliente y permanencia de datos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion elegir cliente y permanencia de datos" />
+    <MESSAGE value="Actualizacion elegir cliente y permanencia de datos mejorado" />
+    <MESSAGE value="Creacion de admin, adminList y comienzo de json admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion de admin, adminList y comienzo de json admin" />
   </component>
 </project>

@@ -25,7 +25,7 @@ public class Main {
     public static void main(String[] args) {
 
         ClientesList<Cliente> clientes = deserializarClientes();
-        clientes.cargarClientesRandom(10);
+        //clientes.cargarClientesRandom(10);
         serializarClientes(clientes);
         // Inicializar el hilo de eventos de Swing
         SwingUtilities.invokeLater(() -> {

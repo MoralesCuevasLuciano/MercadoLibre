@@ -173,6 +173,21 @@ public class MenuPpal {
         // Mostrar el JOptionPane con el panel creado
         int option = JOptionPane.showConfirmDialog(frame, panel, "Iniciar Sesión", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
 
+        if (option == JOptionPane.OK_OPTION) {
+            // Obtener los valores ingresados
+            String usuario = textUsuario.getText();
+            char[] contraseña = passwordContraseña.getPassword();
+
+            // Validación de ejemplo
+            if ("admin".equals(usuario) && String.valueOf(contraseña).equals("1234")) {
+                JOptionPane.showMessageDialog(frame, "Inicio de sesión exitoso.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(frame, "Credenciales incorrectas.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+
+            // Limpiar el arreglo de la contraseña por seguridad
+//            Arrays.fill(contraseña, '\0');
+        }
     }
 
 

@@ -175,9 +175,11 @@ public class MenuCliente2 extends JFrame {
                     if(p!=null) {
                         Prueba k = new Prueba(p.toString(), p, frameProductos, cliente);
                         k.mostrar();
+
                     }else{
                         JOptionPane.showMessageDialog(null,"El producto que buscas no existe en nuestra tienda");
                     }
+
                 }
             });
 
