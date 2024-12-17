@@ -3,7 +3,7 @@ package models.Usuario;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminList<A extends Persona> {
+public class AdminList<A extends Admin> {
     List<Admin> adminsList;
     public AdminList() {
         adminsList = new ArrayList<>();

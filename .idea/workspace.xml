@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Creacion de admin, adminList y comienzo de json admin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ea5c9efd-c51d-4304-a23c-1178363bef58" name="Changes" comment="Pruebas para cargar el JSON">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/admins.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/admins.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/json/JsonAdmins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/json/JsonAdmins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/admins.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Usuario/AdminList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/AdminList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Usuario/Persona.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Usuario/Persona.java" afterDir="false" />
     </list>
     <list id="0b1b4cb2-7d90-4066-a891-9e134e628fa4" name="Changes by Richa" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,7 +113,7 @@
       <workItem from="1732568640145" duration="970000" />
       <workItem from="1732793915156" duration="7000" />
       <workItem from="1733775260333" duration="3246000" />
-      <workItem from="1734431109032" duration="2887000" />
+      <workItem from="1734431109032" duration="3184000" />
     </task>
     <task id="LOCAL-00001" summary="Manu 20-11-24">
       <option name="closed" value="true" />
@@ -159,7 +155,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733778505665</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Pruebas para cargar el JSON">
+      <option name="closed" value="true" />
+      <created>1734434409970</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1734434409970</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +188,7 @@
     <MESSAGE value="Actualizacion elegir cliente y permanencia de datos" />
     <MESSAGE value="Actualizacion elegir cliente y permanencia de datos mejorado" />
     <MESSAGE value="Creacion de admin, adminList y comienzo de json admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de admin, adminList y comienzo de json admin" />
+    <MESSAGE value="Pruebas para cargar el JSON" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pruebas para cargar el JSON" />
   </component>
 </project>

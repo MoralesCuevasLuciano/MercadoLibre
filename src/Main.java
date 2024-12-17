@@ -37,7 +37,7 @@ public class Main {
 
         adminList=deserializarAdmins();
 
-        System.out.println(adminList.toString());
+        adminList.show();
         ClientesList<Cliente> clientes = deserializarClientes();
         //clientes.cargarClientesRandom(10);
         serializarClientes(clientes);
