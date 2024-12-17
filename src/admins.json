@@ -1,0 +1,12 @@
+{
+  "adminsList" : [ {
+    "@class" : "Admin",
+    "id" : "1d8275b8-c9a8-4f46-9ac2-b894271cec6a",
+    "nombre" : "Manolo",
+    "apellido" : null,
+    "dni" : null,
+    "sexo" : null,
+    "telefono" : null,
+    "direccion" : null
+  } ]
+}

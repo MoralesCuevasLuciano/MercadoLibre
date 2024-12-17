@@ -9,5 +9,11 @@ public class Admin extends Persona{
     public Admin() {
     }
 
+    public Admin(String usuario, String password, String nombre) {
+        this.usuario = usuario;
+        this.password = password;
+        super.nombre(nombre);
+    }
+
     public Admin(String nombre, String apellido, String usuario, String password) {}
 }

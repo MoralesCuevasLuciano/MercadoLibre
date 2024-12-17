@@ -5,6 +5,8 @@ import models.Herramienta.HerramientaElectrica;
 import models.Herramienta.HerramientaManual;
 import models.Juguete.JuegoDeMesa;
 import models.Producto;
+import models.Usuario.Admin;
+import models.Usuario.AdminList;
 import models.Usuario.Cliente;
 import models.Usuario.ClientesList;
 
@@ -13,6 +15,8 @@ import java.awt.*;
 import java.util.*;
 import java.util.List;
 
+import static json.JsonAdmins.deserializarAdmins;
+import static json.JsonAdmins.serializarAdmins;
 import static json.JsonClientes.deserializarClientes;
 import static json.JsonClientes.serializarClientes;
 import static json.JsonProductos.deserializarProductos;
@@ -24,21 +28,31 @@ public class Main {
     private static int opcion;
     public static void main(String[] args) {
 
+        Admin admin = new Admin("Manuel", "1234", "Manolo");
+
+        AdminList<Admin> adminList = new AdminList<>();
+        adminList.addAdmin(admin);
+
+        serializarAdmins(adminList);
+
+        adminList=deserializarAdmins();
+
+        System.out.println(adminList.toString());
         ClientesList<Cliente> clientes = deserializarClientes();
         //clientes.cargarClientesRandom(10);
         serializarClientes(clientes);
         // Inicializar el hilo de eventos de Swing
-        SwingUtilities.invokeLater(() -> {
-            AdministradorList<Producto> productos = deserializarProductos();
-            //productos.cargarProductosRandom2(500);
-            serializarProductos(productos);
-
-
-            MenuPpal menuPpal = new MenuPpal(productos,clientes);
-            clientes.showAllClients();
-            compareCollections(10000);
-
-        });
+//        SwingUtilities.invokeLater(() -> {
+//            AdministradorList<Producto> productos = deserializarProductos();
+//            //productos.cargarProductosRandom2(500);
+//            serializarProductos(productos);
+//
+//
+//            MenuPpal menuPpal = new MenuPpal(productos,clientes);
+//            clientes.showAllClients();
+//            compareCollections(10000);
+//
+//        });
     }
 
     private static void compareCollections(int numProductos) {

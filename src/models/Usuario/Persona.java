@@ -35,7 +35,10 @@ public abstract class Persona {
         this.id = UUID.randomUUID().toString();
     }
 
-
+    public Persona(String nombre) {
+        this.nombre = nombre;
+        this.id = UUID.randomUUID().toString();
+    }
 
     /**Getters y Setters*/
 
