@@ -30,7 +30,7 @@ public class Main {
 
         Admin admin = new Admin("Manuel", "1234", "Manolo");
 
-        AdminList<Admin> adminList = new AdminList<>();
+        AdminList adminList = new AdminList();
         adminList.addAdmin(admin);
 
         serializarAdmins(adminList);
@@ -39,6 +39,8 @@ public class Main {
 
         adminList.show();
         ClientesList<Cliente> clientes = deserializarClientes();
+
+
         //clientes.cargarClientesRandom(10);
         serializarClientes(clientes);
         // Inicializar el hilo de eventos de Swing

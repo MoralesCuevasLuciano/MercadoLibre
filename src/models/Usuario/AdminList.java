@@ -1,9 +1,13 @@
 package models.Usuario;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AdminList<A extends Admin> {
+@JsonIgnoreProperties(ignoreUnknown = true)
+
+public class AdminList {
     List<Admin> adminsList;
     public AdminList() {
         adminsList = new ArrayList<>();
