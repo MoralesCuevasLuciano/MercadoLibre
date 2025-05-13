@@ -37,3 +37,9 @@ Specifically, I was responsible for:
 1. Clone the repository:
    ```bash
    git clone https://github.com/MoralesCuevasLuciano/MercadoLibre.git
+
+## 📄 License
+
+This is an academic project developed for educational purposes only.  
+Not intended for commercial use or redistribution.
+  
