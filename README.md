@@ -32,7 +32,7 @@ Specifically, I was responsible for:
 - Collaborating in the design and logic of the shopping flow, including inventory control and validations.
 - Coordinating and contributing to the team's overall progress.
 
-## 🚀 How to Run the Project (optional)
+## 🚀 How to Run the Project
 
 1. Clone the repository:
    ```bash
